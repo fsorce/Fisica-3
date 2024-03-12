@@ -20,7 +20,12 @@
 
 
 %--------- Comandi dattilografici ------------
-
+\NewDocumentCommand{\ddb}{O{}mmm}{
+    {\left.\frac{d^{#1}{#3}}{d{#2}^{#1}}\right|_{#4}}
+}
+\NewDocumentCommand{\ppb}{O{}mmm}{
+    {\left.\frac{\partial^{#1}{#3}}{\partial{#2}^{#1}}\right|_{#4}}
+}
 
 % ============================================
 \title{Fisica 3\\
@@ -41,18 +46,55 @@ A.A. 2023/24}
 
 \part{Termodinamica}
 \include{01Temperatura}
-\include{02GasIdeale}
+\include{02TrasferimentoCalore}
 
 
 %\part{Relativit\`a speciale}
 
 %\part{Basi di meccanica quantistica}
 
-\part*{Formulario}
 
+\appendix
+\chapter{Richiami matematici}
+\section{Derivate parziali e Jacobiane}
+Da una relazione $f(x,y,z)=0$ possiamo ricavare $x=x(y,z)$ e $y=y(x,z)$.\\
+Possiamo dunque sviluppare i differenziali
+\begin{align*}
+dx=&\ppb yxzdy+\ppb zxydz\\
+dy=&\ppb xyzdx+\ppb zyxdz.
+\end{align*}
 
+\begin{proposition}[Propriet\`a delle derivate parziali]\label{ProprietaDerivateParziali}
+Valgono le seguenti propriet\`a, dette \textbf{dell'inversa} e \textbf{ciclicit\`a} rispettivamente:
+\[\ppb yxz=\pa{\ppb xyz}\ii,\qquad \ppb yxz\ppb zyx\ppb xzy=-1.\]
+\end{proposition}
+\begin{proof}
+Considerando le espressioni date sopra e sostituiendo $dy$ dentro lo sviluppo di $dx$ ricaviamo l'equazione
+\[\pa{1-\ppb yxz\ppb xyz}dx=\pa{\ppb yxz\ppb zyx+\ppb zxy}dz.\]
+Se fissiamo $z$ il membro di sinistra non cambia, mentre quello di destra risulta nullo ($dz=0$). Poich\'e questo \`e vero anche per $dx\neq 0$ necessariamente ricaviamo
+\[1=\ppb yxz\ppb xyz\]
+che \`e la propriet\`a dell'inversa.\medskip
 
-%\appendix
+\noindent Avendo mostrato questo ricaviamo che il membro di sinistra \`e sempre nullo, anche per $dz\neq 0$, quindi segue l'equazione
+\[\ppb yxz\ppb zyx+\ppb zxy=0,\]
+la quale corrisponde alla propriet\`a di ciclicit\`a.
+\end{proof}
+
+\noindent Consideriamo le seguenti relazioni
+\[\begin{cases}
+x=x(u,v)\\
+y=y(u,v)
+\end{cases}.\]
+Poniamo
+\[\pp{(u,v)}{(x,y)}=det{\mat{\displaystyle\pp ux &\displaystyle\pp vx\\\\ \displaystyle\pp uy & \displaystyle\pp vy}}.\]
+\begin{remark}[Jacobiane notevoli]\label{JacobianeNotevoli}
+Si ha che
+\[\pp{(x,y)}{(x,y)}=1,\quad \pp{(u,v)}{(x,x)}=0,\quad \pp{(u,v)}{(x,y)}=-\pp{(u,v)}{(y,x)}=\pp{(u,v)}{(-x,y)}.\]
+Inoltre
+\[\pp{(u,y)}{(x,y)}=\ppb uxy,\quad \pp{(u,v)}{(x,u)}=\pp{(r,s)}{(x,u)}\pp{(u,v)}{(r,s)},\quad \pp{(u,v)}{(x,y)}=\pa{\pp{(x,y)}{(u,v)}}\ii.\]
+\end{remark}
+
+%\part*{Formulario}
 %\include{Riconoscimenti.tex}
 
 \end{document}

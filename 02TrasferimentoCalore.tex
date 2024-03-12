@@ -1,0 +1,310 @@
+\chapter{Trasferimento di calore}
+
+\section{Modalit\`a di trasferimento di calore}
+Il trasperimento di calore, cio\`e di energia derivante da una differenza di temperatura, avviene in tre modi: conduzione, covezione ed irraggiamento.
+
+\subsection{Conduzione}
+Parliamo di \textbf{conduzione} quando il tresferimento di calore avviene per contatto ma senza scambio di materia (attraverso una parete diatermica).\medskip
+
+\noindent Empiricamente riscontriamo
+\begin{fact}[Legge di Fourier]
+Vale la relazione
+\[\frac1A\frac{\delta Q}{\Delta t}=-\kappa\frac{\Delta T}{\Delta X},\]
+dove $T$ \`e la temperatura, $X$ \`e la distanza tra i punti tra cui stiamo calcolando la differenza di temperatura, $A$ \`e l'area ortogonale alla direzione lungo la quale si propaga il calore e $\kappa$ \`e una costante detta \textbf{conducibilit\`a termica}.
+\end{fact}
+
+\noindent L'unit\`a di misura della conducibilit\`a termica \`e
+\[[\kappa]=\frac W{mK}\approx \begin{cases}
+10^2 &\text{metalli}\\
+0.1 &\text{gas}
+\end{cases}.\]
+\noindent Possiamo precisare la legge di Fourier introducendo la
+\textbf{corrente di calore} $\vec J_Q$. La legge assume la forma
+\[\vec J_Q=-k\vec \nabla T.\]
+Concentrandosi su uno dei sistemi possiamo scrivere
+\[\boxed{\delta Q= cm\delta T}\]
+dove $m$ \`e la massa e $c$ \`e il \textbf{calore specifico}.\bigskip
+
+\noindent Possiamo calcolare il calore totale che entra dentro una superficie per unit\`a di tempo come
+\[\int_V c\pp tT\rho dV=\frac1{\Delta t}\int_{\del V} \delta Q=-\int_{\del V} \vec J_Q\cdot \vec d\Sigma=-\int_V \nabla \cdot \vec J_Q dV=\int_Vk\nabla^2 T dV.\]
+Ricaviamo dunque
+\[\boxed{\pp tT=\frac{\kappa}{\rho c}\nabla^2T}\]
+Questa \`e la famosa \textit{equazione del calore}.
+
+\subsection{Convezione}
+Parliamo di \textbf{convezione} quando il trasferimento di calore avviene tramite lo spostamento di materia.\\ La formula rilevante in questo caso \`e
+\[\frac1A\frac{\delta Q}{\Delta t}=h\Delta T,\]
+dove $h$ \`e il \textbf{coefficiente convettivo}.
+
+\subsection{Irraggiamento}
+Parliamo di \textbf{irraggiamento} quando un corpo semplicemente emette energia come radiazione.\\ 
+La formula rilevante in questo caso \`e
+\[\frac1A\frac{\delta Q}{\Delta t}=\e \sigma(T^4-T_0^4),\]
+dove $T_0$ \`e la temperatura dell'ambiente, $\sigma$ \`e una costante uguale per tutti i materiali e $\e$ dipende dai materiali.
+
+\section{Primo principio della termodinamica}
+
+\begin{fact}[Primo principio della termodinamica]
+\textbf{L'energia interna di un sistema di conserva. Esplicitamente}
+\[\boxed{\Delta U=Q+W}\]
+\end{fact}
+
+\begin{remark}
+Il calore e il lavoro non sono funzioni di stato, ma la loro somma s\`i.
+\end{remark}
+
+\begin{remark}[Primo principio in forma differenziale]
+Scrivendo il primo principio in termini di infinitesimi restituisce
+\[dU=\delta Q+\delta W,\]
+in particolare per i gas ideali troviamo
+\[dU=\delta Q-pdV.\]
+\end{remark}
+
+
+
+\begin{definition}[Caloria]
+Una \textbf{caloria} \`e la quantit\`a di calore necessaria per far variare la temperatura di un grammo di acqua da $14.5^\circ\mathrm{C}$ a $15.5^\circ\mathrm{C}$.\\
+In Joule si ha che
+\[\boxed{1\ \mathrm{cal}=4.186\ \mathrm{J}}\]
+\end{definition}
+
+
+\begin{remark}
+In una trasformazione adiabatica, il lavoro \`e dato dalla differenza di energia interna.
+\end{remark}
+\begin{example}[Coppia di sistemi dentro un contenitore adiabatico]
+Consideriamo due sistemi $A$ e $B$ dentro un contenitore adiabatico. Per il primo principio
+\[0=\Delta U=\Delta U_A+\Delta U_B=Q_A+Q_B+\under{=W}{W_A+W_B}.\]
+I trasferimenti di calore possono avvenire solo tra $A$ e $B$, quindi $Q_A+Q_B=0$ e $W=0$. Quanto scritto \`e una ``legge di conservazione del calore" in questo tipo di sistema.
+\end{example}
+
+
+
+\section{Capacit\`a termica}
+\begin{definition}[Capacit\`a termica]
+Definiamo la \textbf{capacit\`a termica} come\footnote{Nota che NON \`e una derivata in quanto $Q$ non \`e una funzione di stato, quindi in particolare non \`e una funzione di $T$}
+\[C=\lim_{\delta T\to 0}\frac{\delta Q}{\delta T}.\]
+L'unit\`a di misura \`e $[C]=\mathrm{J}/\mathrm{K}$.\\
+La \textbf{capacit\`a termica molare} \`e data da $c=C/n$.\\
+Il \textbf{calore specifico} \`e dato da $C/m$.
+\end{definition}
+
+\begin{definition}[Termometro e Termostato]
+Un \textbf{termostato} \`e un oggetto ideale con capacit\`a termica infinita\footnote{intuitivamente \`e un sistema grande a sufficienza in modo che anche se viene aggiunto calore, la temperatura non cambia.}.\\ 
+Un \textbf{termometro} \`e un oggetto ideale con capacit\`a termica nulla\footnote{intuitivamente \`e un sistema piccolo a sufficienza in modo da poter trascurare gli scambi di calore.}.
+\end{definition}
+
+\begin{remark}
+Possiamo scrivere la capacit\`a termica in termini di $U,\ V,\ p$ e $T$ come segue:
+\[C=\frac{\delta Q}{\delta T}=\ppb TUV+\pa{\ppb VUT+p}\dd TV\]
+\end{remark}
+\begin{proof}
+Sviluppando $dU$ troviamo
+\[dU=\ppb TUVdT+\ppb VUTdV,\]
+da cui
+\[\delta Q=dU+pdV=\ppb TUVdT+\pa{\ppb VUT+p}dV.\]
+Ora possiamo ``dividere" per $dT$ e trovare la tesi.
+\end{proof}
+
+\begin{definition}[Capacit\`a termica a volume/pressione costante]
+Definiamo la \textbf{capacit\`a termica a volume} (risp. \textbf{pressione}) \textbf{costante} come le due seguenti quantit\`a
+\begin{align*}
+C_V=&\rbar{\frac{\delta Q}{\delta T}}_V=\ppb TUV\\
+C_p=&\rbar{\frac{\delta Q}{\delta T}}_p=\ppb TUV +\pa{\ppb VUT+p}\ppb TVp=\ppb TUV +\pa{\ppb VUT+p}V\al
+\end{align*} 
+\end{definition}
+
+\begin{remark}[Disuguaglianza tra capacit\`a termiche]\label{DisguguaglianzaCapacitaTermiche}
+Vale sempre $C_p>C_V$.
+\end{remark}
+
+\begin{remark}\label{DerivataEnergiaInternaRispettoAlVolume}
+In un gas generale
+\[\boxed{\ppb VUT=\frac{C_p-C_V}{V\al}-p}\]
+\end{remark}
+
+\subsection{Capacit\`a termica per gas ideali}
+
+\begin{definition}[Coefficiente di Joule]
+Definiamo il \textbf{coefficiente di Joule} come
+\[\mu_J=\ppb VTU\]
+\end{definition}
+
+\begin{fact}[In gas ideale l'energia interna dipende solo dalla temperatura]\label{InGasIdealeUdipendeSoloDaT}
+In un gas ideale $U$ dipende solo da $T$.
+\end{fact}
+\begin{proof}[Esperimento: Espansione libera adiabatica di Joule]
+Consideriamo un contenitore adiabatico separato internamente da una parete adiabaita. In uno dei due volumi si trova un gas ideale, il secondo \`e vuoto.
+
+[DISEGNO]
+
+\noindent
+Improvvisamente eliminiamo la parete interna e lasciamo che il gas si espanda\footnote{notiamo che questo NON \`e una processo quasistatico.}.\smallskip
+
+\noindent
+Chiaramente $Q=W=0$ in quanto il vuoto non subisce/effettua lavoro e non scambia calore, dunque $\Delta U=0$.\\
+Segue che $\mu_J=\ppb VTU=\dd VT$ e Joule ha misurato che in queste circostanze la seconda \`e nulla, dunque
+\[0=\ppb VTU\pasgnl={(\ref{ProprietaDerivateParziali})}-\pa{\ppb UVT}\ii\pa{\ppb TUV}\ii=-\ppb VUT\frac1{C_V},\]
+in particolare $\displaystyle\ppb VUT=0$.\medskip
+
+\noindent Poich\'e in un gas ideale $p$ \`e determinata da $V$ e $T$, $U=U(V,T)$. Per quanto appena detto $U$ non dipende da $V$, quindi dipende solo da $T$.
+\end{proof}
+
+
+\begin{corollary}
+In un gas ideale
+\[dU=nc_V dT.\]
+\end{corollary}
+\begin{proof}
+Ricordiamo che
+\[C_V=\ppb TUV,\]
+ma poich\'e $U$ non dipende da $V$ possiamo scrivere
+\[C_V=\dd TU,\]
+che \`e la tesi.
+\end{proof}
+
+\begin{proposition}[Relazione di Mayer]\label{RelazioneMayer}
+Per gas ideali si ha che $c_p-c_V=R$, o equivalentemente $C_p-C_V=nR$.
+\end{proposition}
+\begin{proof}
+Ricordiamo (\ref{CoefficienteEspansioneECompressibilitaIsotermaPerGasIdeali}) che per gas ideali $\al=T\ii$. Poich\'e $U$ dipende solo da $T$ si ha che
+\[0=\ppb VUT\pasgnl={(\ref{DerivataEnergiaInternaRispettoAlVolume})}\frac{C_p-C_V}{V\al}-p,\]
+da cui
+\[C_p-C_V=pV\al=\frac{nRT}T=nR.\]
+\end{proof}
+
+
+
+\begin{fact}[Calore specifico a volume costante in funzione dei gradi di libert\`a]
+In un gas ideale
+\[C_V=\frac\nu2nR\]
+dove $\nu$ \`e il \textbf{numero di gradi di libert\`a}.
+\end{fact}
+\begin{remark}
+Per un gas ideale monoatomico $\nu=3$, mentre per un gas biatomico $\nu=5$.\\
+Segue che
+\[c_V^{mono}=\frac32R\approx 12.47\frac{\mathrm{J}}{\mathrm{K\ mol}},\qquad c_V^{bi}=\frac32R\approx 20.74\frac{\mathrm{J}}{\mathrm{K\ mol}}.\]
+\end{remark}
+
+\begin{remark}[L'aria \`e un gas ideale biatomico]
+L'aria \`e composta principalmente da particelle biatomiche ($O_2$ e $N_2$).
+\end{remark}
+
+\begin{proposition}[Calore infinitesimale con capacit\`a]\label{CaloreInfinitesimaleConCapacita}
+Per gas ideali valgono le seguenti equazioni
+\begin{enumerate}
+\item $\delta Q=C_VdT+pdV$
+\item $\delta Q=C_p dT-Vdp$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+Mostriamo i due punti:
+\setlength{\leftmargini}{0cm}
+\begin{itemize}
+\item[$\boxed{1}$] Ricordiamo la relazione \[\delta Q=\under{=C_V}{\ppb TUV} dT+\pa{{\ppb VUT}+p}dV,\]
+da cui, usando il fatto che $\ppb UVT=0$, troviamo che $\delta Q=C_V dT+pdV$.
+\item[$\boxed{2}$] Osserviamo che il differenziale di $pV=nRT$ \`e
+\[nRdT=pdV+Vdp,\]
+da cui sfruttando la relazione precedente
+\[\delta Q=C_VdT+pdV=({C_V+nR})dT-Vdp\pasgnl={(\ref{RelazioneMayer})}C_p dT-Vdp.\]
+\end{itemize}
+\setlength{\leftmargini}{0.5cm}
+\end{proof}
+\begin{remark}
+Osservando la prima equazione ricaviamo nuovamente che $\delta Q$ non \`e un differenziale, infatti se lo fosse avremmo il seguente assurdo:
+\[0=\ppb V{C_V}T=\ppb TpV=\frac{nR}V\neq 0.\]
+\end{remark}
+
+
+
+
+\section{Energia in funzione delle trasformazioni per gas ideali}
+
+\noindent In questa sezione calcoliamo lavoro, calore e variazione di energia interna per i tipi principali di processi quasistatici.\medskip
+
+\noindent Notiamo che $\Delta U=nc_V\Delta T$ in ogni circostanza in quanto $U$ non dipende da $V$.
+\subsection{Isobara}
+\begin{proposition}[Energie per isobara]\label{EnergieIsobara}
+Per una trasformazione isobara valgono le seguenti identit\`a:
+\[W=-nR\Delta T,\quad
+Q=nc_p\Delta T,\quad
+\Delta U=nc_V\Delta T.\]
+\end{proposition}
+\begin{proof}
+Calcoliamo:
+\begin{align*}
+W=&-\int_{V_i}^{V_f}pdV\pasgnl={isobara}-p\Delta V\pasgnl={gas ideale}-nR\Delta T\\
+Q\pasgnl={isobara}&\int_{T_i}^{T_f}nc_pdT=nc_p\Delta T\\
+\Delta U=&Q+W=n(c_p-R)\Delta T=nc_V\Delta T.
+\end{align*}
+\end{proof}
+
+\subsection{Isocora}
+\begin{proposition}[Energie per isocora]\label{EnergieIsocora}
+Per una trasformazione isocora valgono le seguenti identit\`a:
+\[W=0,\quad
+Q=nc_v\Delta T,\quad
+\Delta U=nc_V\Delta T.\]
+\end{proposition}
+\begin{proof}
+Calcoliamo:
+\begin{align*}
+W=&-\int_{V_i}^{V_f}pdV\pasgnlmath={V_i=V_f}0\\
+Q\pasgnl={isocora}&\int_{T_i}^{T_f}nc_VdT=nc_V\Delta T\\
+\Delta U=&Q+W=nc_V\Delta T.
+\end{align*}
+\end{proof}
+
+\subsection{Isoterma}
+\begin{proposition}[Energie per isoterma]\label{EnergieIsoterma}
+Per una trasformazione isoterma valgono le seguenti identit\`a:
+\[W=-nRT\log\pa{\frac{V_f}{V_i}},\quad
+Q=nRT\log\pa{\frac{V_f}{V_i}},\quad
+\Delta U=0.\]
+\end{proposition}
+\begin{proof}
+Poich\'e stiamo considerando un gas ideale \[\Delta U=nc_V\Delta T\pasgnl={isoterma}0.\] 
+Per il primo principio si ha $Q=-W$, quindi per concludere basta calcolare il lavoro.
+\[W=-\int_{V_i}^{V_f}pdV\pasgnl={gas ideale}-nRT\int_{V_i}^{V_f}\frac1VdV=-nRT\log\pa{\frac{V_f}{V_i}}.\]
+\end{proof}
+
+\subsection{Adiabatica}
+\begin{proposition}[Equazione di stato per adiabatica]\label{EquazioneStatoAdiabatica}
+Poniamo $\gamma=c_p/c_V$. Si ha che $pV^\gamma$ \`e costante seguendo un processo adiabatico.
+\end{proposition}
+\begin{proof}
+Poich\'e il sistema in esame \`e un gas ideale valgono le seguenti uguaglianze
+\[0\pasgnl={adiabatica}\delta Q=dU-\delta W\pasgnl={gas ideale}nc_VdT+pdV=\frac{nc_V}{nR}d(pV)+p dV.\]
+Segue che
+\[-\frac{c_VV}{\cancel{R}}dp=\pa{\frac{pc_V+pR}{\cancel{R}}}dV\pasgnl={(\ref{RelazioneMayer})}\frac{pc_p}{\cancel{R}}dV,\]
+da cui
+\[-\frac{dp}p=\gamma\frac{dV}V.\]
+Integrando troviamo
+\[-\log p+Const.=\gamma\log V\coimplies \log pV^\gamma=Const.\coimplies pV^\gamma=e^{Const.}\]
+che \`e quello che volevamo mostrare.
+\end{proof}
+\begin{remark}
+Si ha che \[c_v=\frac R{\gamma-1}.\]
+\end{remark}
+\begin{proof}
+Per definizione di $\gamma$
+\[c_v=\frac{c_p}\gamma\pasgnl={(\ref{RelazioneMayer})}\frac{R+c_v}\gamma,\]
+dunque
+\[\gamma c_v=c_v+R\]
+e la tesi segue.
+\end{proof}
+
+\begin{proposition}[Energie per adiabatica]\label{EnergieAdiabatica}
+Per una trasformazione adiabatica valgono le seguenti identit\`a:
+\[W=\frac{p_fV_f-p_iV_i}{\gamma-1},\quad
+Q=0,\quad
+\Delta U=\frac{p_fV_f-p_iV_i}{\gamma-1}.\]
+\end{proposition}
+\begin{proof}
+Poich\'e il processo \`e adiabatico, $Q=0$. Segue per il primo principio che $\Delta Q=W$. Dato che stiamo considerando un gas ideale
+\[\Delta U=nc_V\Delta T=n\frac R{\gamma-1}\Delta T=n\frac R{\gamma-1}\Delta (pV)=\frac{p_fV_f-p_iV_i}{\gamma-1}.\]
+\end{proof}
+
+\begin{remark}
+Potevamo ricavare energia e lavoro anche sfruttando la relazione \[pV^\gamma=p_iV_i^\gamma=p_fV_f^\gamma,\] ma avendola ricavata come sopra sappiamo che l'espressione \`e \textbf{valida anche per processi adiabatici NON quasistatici}.
+\end{remark}

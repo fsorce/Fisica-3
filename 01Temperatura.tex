@@ -88,16 +88,10 @@ Se non sono presenti ``attriti", un processo quasistatico \`e detto \textbf{reve
 Un processo \`e detto \textbf{totalmente reversibile} se \`e reversibile e la sua interazione con l'ambiente \`e reversibile.
 \end{definition}
 
-\begin{definition}[Termostato]
-Un \textbf{termostato} \`e un sistema grande a sufficienza in modo che anche se vi si aggiunge calore esso non cambia di temperatura. \`E dunque una sorgente ideale di calore.
-\end{definition}
-
-\begin{definition}[Termometro]
-Un \textbf{termometro} \`e un sistema piccola a sufficienza in modo che ogni scambio di calore \`e trascurabile.
-\end{definition}
-
 \section{Definizione di temperatura}
-Principio $0$: Due sistemi in equilibrio termico con un terzo sono in equilibrio tra loro.
+\begin{fact}[0-esimo principio della termodinamica]
+\textbf{Due sistemi in equilibrio termico con un terzo sono in equilibrio tra loro.}
+\end{fact}
 
 \begin{proposition}[Temperatura empirica]\label{TemperaturaEmpirica}
 Ogni sistema termodinamico ammette una funzione che \`e costante in stato di equilibrio. La costante \`e detta \textbf{temperatura empirica}.
@@ -146,49 +140,6 @@ dove $p^{(PT)}$ \`e la pressione del gas nel termometro quando questo sistema \`
 
 \noindent Quando il gas \`e alla temperatura che vogliamo misurare misuriamo la differenza di altezza tra il livello a contatto con il gas e il livello di controllo posto a pressione atmosferica. Questa differenza \`e proporzionale alla differenza di pressione e questo ci permette di ricavare la temperatura se la fissiamo per quando \`e nel punto critico.
 
-
-\section{Trasferimento di calore}
-Il trasperimento di calore, cio\`e di energia derivante da una differenza di temperatura, avviene in tre modi: conduzione, covezione ed irraggiamento.
-
-\subsection{Conduzione}
-Parliamo di \textbf{conduzione} quando il tresferimento di calore avviene per contatto ma senza scambio di materia (attraverso una parete diatermica).\medskip
-
-\noindent Empiricamente riscontriamo
-\begin{fact}[Legge di Fourier]
-Vale la relazione
-\[\frac1A\frac{\delta Q}{\Delta t}=-\kappa\frac{\Delta T}{\Delta X},\]
-dove $T$ \`e la temperatura, $X$ \`e la distanza tra i punti tra cui stiamo calcolando la differenza di temperatura, $A$ \`e l'area ortogonale alla direzione lungo la quale si propaga il calore e $\kappa$ \`e una costante detta \textbf{conducibilit\`a termica}.
-\end{fact}
-
-\noindent L'unit\`a di misura della conducibilit\`a termica \`e
-\[[\kappa]=\frac W{mK}\approx \begin{cases}
-10^2 &\text{metalli}\\
-0.1 &\text{gas}
-\end{cases}.\]
-\noindent Possiamo precisare la legge di Fourier introducendo la
-\textbf{corrente di calore} $\vec J_Q$. La legge assume la forma
-\[\vec J_Q=-k\vec \nabla T.\]
-Concentrandosi su uno dei sistemi possiamo scrivere
-\[\boxed{\delta Q= cm\delta T}\]
-dove $m$ \`e la massa e $c$ \`e il \textbf{calore specifico}.\bigskip
-
-\noindent Possiamo calcolare il calore totale che entra dentro una superficie per unit\`a di tempo come
-\[\int_V c\pp tT\rho dV=\frac1{\Delta t}\int_{\del V} \delta Q=-\int_{\del V} \vec J_Q\cdot \vec d\Sigma=-\int_V \nabla \cdot \vec J_Q dV=\int_Vk\nabla^2 T dV.\]
-Ricaviamo dunque
-\[\boxed{\pp tT=\frac{\kappa}{\rho c}\nabla^2T}\]
-Questa \`e la famosa \textit{equazione del calore}.
-
-\subsection{Convezione}
-Parliamo di \textbf{convezione} quando il trasferimento di calore avviene tramite lo spostamento di materia.\\ La formula rilevante in questo caso \`e
-\[\frac1A\frac{\delta Q}{\Delta t}=h\Delta T,\]
-dove $h$ \`e il \textbf{coefficiente convettivo}.
-
-\subsection{Irraggiamento}
-Parliamo di \textbf{irraggiamento} quando un corpo semplicemente emette energia come radiazione.\\ 
-La formula rilevante in questo caso \`e
-\[\frac1A\frac{\delta Q}{\Delta t}=\e \sigma(T^4-T_0^4),\]
-dove $T_0$ \`e la temperatura dell'ambiente, $\sigma$ \`e una costante uguale per tutti i materiali e $\e$ dipende dai materiali.
-
 \section{Relazione tra parametri indipendenti ed espressioni per l'energia}
 
 \begin{fact}[Relazione tra parametri indipendenti e espressioni per l'energia]
@@ -203,3 +154,159 @@ Le formule per l'energia contengono $\tau$ ed $L$ per il lavoro ($\delta W=\tau 
 \begin{example}[Fluidi]
 Ragioniamo in modo simile a prima, stavolta i parametri sono volume, pressione e temperatura.
 \end{example}
+
+\section{Gas ideali}
+
+\begin{definition}[Mole]
+Una \textbf{mole di una sostanza} corrisponde a $6.02\cdot 10^{23}$ particelle di quella sostanza. La costante \`e detta \textbf{numero di Avogadro} e la indichiamo con $N_a$. 
+\end{definition}
+
+\begin{definition}[Densit\`a]
+Definiamo la \textbf{denstit\`a} come
+\[\rho=\frac mV.\]
+\end{definition}
+\begin{remark}
+Il differenziale della densit\`a \`e
+\[d\rho=-\frac m{V^2}dV.\]
+\end{remark}
+
+\begin{definition}[Condizioni standard]
+Un gas \`e in \textbf{condizioni standard} (\textbf{STP}) se \`e alla temperatura di $0^\circ\mathrm C$ e alla pressione di $1\ \mathrm{atm}=101.3245\ \mathrm{kPa}$.
+\end{definition}
+
+\noindent Per i gas ideali valgono le seguenti leggi:
+\begin{fact}[Legge di Boyle]
+Se $T$ \`e costante
+\[V\propto \frac1p\]
+\end{fact}
+\begin{fact}[Legge di Charles]
+Se $p$ \`e costante
+\[V\propto (1+\al T)\]
+\end{fact}
+\begin{fact}[Legge di Gay-Lussac]
+Se $V$ \`e costante
+\[p\propto T\]
+\end{fact}
+\begin{fact}[Legge di Avogadro]
+Se $p$ e $T$ sono fissate, tutti i gas occupano lo stesso volume se consistono della stessa quantit\`a di materia, in particolare
+\[V\propto n.\]
+Una mole di gas in condizioni standard occupa un volume di $22.4\ell$ (litri).
+\end{fact}
+
+\noindent Combinando le leggi appena citate arriviamo alla \textbf{legge dei Gas perfetti}
+\[\boxed{pV=nRT}\]
+dove $p$ \`e la pressione, $V$ \`e il volume, $n$ \`e il numero di moli, $T$ \`e la temperatura e $R$ \`e la \textbf{costante fondamentale dei gas} e vale $8.314 \frac{\mathrm{J}}{\mathrm{K}\ \mathrm{mol}}$.
+
+\begin{definition}[Costante di Boltzmann]
+Definiamo la \textbf{costante di Boltzmann} $k_b$ in modo tale che 
+\[R=N_a k_b.\]
+\end{definition}
+
+
+
+
+\section{Esempi principali di processi quasistatici}
+\begin{definition}[Tipi rilevanti di processi]
+Un processo si dice
+\begin{itemize}
+\item \textbf{isotermo} se $T$ resta costante,
+\item \textbf{isobaro} se $p$ resta costante,
+\item \textbf{isocore} se $V$ resta costante o
+\item \textbf{adiabatico} se non avviene scambio di calore\footnote{definiremo il calore successivamente. Intuitivamente \`e lo scambio di energia che deriva da una variazione di temperatura.}.
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Coefficiente di espansione volumetrica]
+Definiamo il \textbf{coefficiente di espansione volumetrica} come
+\[\al=\frac1V\ppb TVp=-\frac mV\frac1{\rho^2}\ppb T\rho p=-\frac1\rho\ppb T\rho p.\]
+L'unit\`a di misura \`e $[\al]=\mathrm{K}\ii$.
+\end{definition}
+
+
+\begin{definition}[Compressibilit\`a isoterma]
+Definiamo la \textbf{compressibilit\`a isoterma} come
+\[\beta_T=-\frac1V\ppb pVT.\]
+L'unit\`a di misura \`e $[\beta_T]=\mathrm{Pa}\ii$.\\
+L'inversa $k_T=1/\beta_T$ \`e detta \textbf{modulo di compressibilit\`a isoterma}.
+\end{definition}
+
+\noindent Riportiamo alcuni valori di $\al$ e $\beta_T$ per dare una intuizione sui valori tipici\footnote{il Sitall \`e materiale fatto apposta per avere coefficiente di espansione volumetrica piccolo}
+\begin{center}
+\begin{tabular}[ht]{|c|c|c|}
+\hline 
+Materiale&$\al\ [\mathrm{K}\ii]$&$\beta_T\ [\mathrm{Pa}\ii]$\\\hline
+Acqua&$0.2\cdot 10^{-3}$&$4.6\cdot 10^{-10}$\\
+Diamante&$3\cdot 10^{-6}$&?\\
+Sitall&$\leq 10^{-7}$&?\\
+Sabbia&?&$\sim10^{-8}$\\
+Mercurio&$1.8\cdot 10^{-4}$&$4\cdot10^{-11}$\\
+Rame&?&$7.2\cdot10^{-12}$\\
+\hline
+\end{tabular}
+\end{center}
+
+
+\begin{remark}
+Non \`e necessario battezzare $\displaystyle\ppb TpV$ in quanto per la propriet\`a ciclica (\ref{ProprietaDerivateParziali})
+\[\ppb TpV=-\ppb VpT\ppb TVp=\frac\al{\beta_T}.\]
+\end{remark}
+
+\begin{remark}[Relazione differenziale tra $\al$ e $\beta_T$]
+Per il teorema di Schwarz si ha che
+\[\pp{p\del T}{^2V}=\ppb p\al T=-\ppb T{\beta_T}p.\]
+\end{remark}
+
+\begin{proposition}[$\al$ e $\beta_T$ per gas ideali]\label{CoefficienteEspansioneECompressibilitaIsotermaPerGasIdeali}
+Se il sistema in esame \`e un gas ideale valgono le seguenti identit\`a:
+\[\al=\frac 1T,\qquad \beta_T=\frac 1p.\]
+\end{proposition}
+\begin{proof}
+Segue calcolando:
+\begin{align*}
+\al=&\frac1V\ppb T{(nRT/p)}p=\frac{nR}{pV}=\frac1T,\\
+\beta_T=&-\frac1V\ppb p{(nRT/p)}T=\frac1V nRT\frac1{p^2}=\frac1p.
+\end{align*}
+\end{proof}
+
+\begin{proposition}[Differenziale della pressione]\label{DifferenzialePressione}
+Si ha che
+\[dp=\frac\al{\beta_T}dT-\frac1{\beta_T V}dV.\]
+\end{proposition}
+\begin{proof}
+Osserviamo che
+\[\ppb TpV\pasgnl={(\ref{ProprietaDerivateParziali})}-\ppb VpT \ppb TVp=\frac \al{\beta_T},\]
+dunque ricaviamo
+\[dp=\ppb TpVdT+\ppb VpT=\frac\al{\beta_T}dT-\frac1{\beta_T V}dV.\]
+\end{proof}
+\begin{corollary}
+In una trasformazione isocora $\Delta p=\frac\al{\beta_T}\Delta T$.
+\end{corollary}
+
+\begin{remark}[Differenziale logaritmico nel volume]\label{DifferenzialeLogaritmicoNelVolume}
+Spesso torner\`a comodo ricordare il seguente sviluppo differenziale
+\[d\log V=\frac1VdV=\al dT-\beta_T dp\]
+\end{remark}
+\begin{proof}
+Segue calcolando:
+\[\frac1VdV=\frac1V\pa{\ppb TVp dT+\ppb pVTdp}=\al dT-\beta_T dp\]
+\end{proof}
+
+
+\subsection{Compressione e Lavoro}
+Immagino di comprimere un sistema come in figura 
+
+[FIGURA]
+
+\noindent
+Se spingiamo molto lentamente possiamo con buona approssimazione supporre che il processo sia quasistatico, dunque $F=pS$. Segue che
+\[\boxed{\delta W=Fdx=pSdx}\]
+Se il sistema in questione \`e un gas ideale allora
+\[\delta W=p(-dV)=-pdV\]
+Il lavoro totale per passare da uno stato $A$ ad uno stato $B$ diventa
+\[W=-\int_{A}^{B} p(V,T)dV,\]
+ma $p$ come cambia al variare di $V$? Dipende dal tipo di processo.
+
+[QUALCHE GRAFICO]
+
+\noindent
+Questo mostra in particolare che il lavoro non \`e una funzione di stato.
