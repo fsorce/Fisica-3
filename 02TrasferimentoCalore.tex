@@ -111,7 +111,7 @@ Definiamo la \textbf{capacit\`a termica a volume} (risp. \textbf{pressione}) \te
 \begin{align*}
 C_V=&\rbar{\frac{\delta Q}{\delta T}}_V=\ppb TUV\\
 C_p=&\rbar{\frac{\delta Q}{\delta T}}_p=\ppb TUV +\pa{\ppb VUT+p}\ppb TVp=\ppb TUV +\pa{\ppb VUT+p}V\al
-\end{align*} 
+\end{align*}
 \end{definition}
 
 \begin{remark}[Disuguaglianza tra capacit\`a termiche]\label{DisguguaglianzaCapacitaTermiche}
@@ -173,6 +173,10 @@ da cui
 \[C_p-C_V=pV\al=\frac{nRT}T=nR.\]
 \end{proof}
 
+\begin{notation}
+Denotiamo il rapporto $\frac{C_V}{C_p}=\frac{c_V}{c_p}$ con $\gamma$.
+\end{notation}
+
 
 
 \begin{fact}[Calore specifico a volume costante in funzione dei gradi di libert\`a]
@@ -183,7 +187,9 @@ dove $\nu$ \`e il \textbf{numero di gradi di libert\`a}.
 \begin{remark}
 Per un gas ideale monoatomico $\nu=3$, mentre per un gas biatomico $\nu=5$.\\
 Segue che
-\[c_V^{mono}=\frac32R\approx 12.47\frac{\mathrm{J}}{\mathrm{K\ mol}},\qquad c_V^{bi}=\frac32R\approx 20.74\frac{\mathrm{J}}{\mathrm{K\ mol}}.\]
+\[c_V^{mono}=\frac32R\approx 12.47\frac{\mathrm{J}}{\mathrm{K\ mol}},\qquad c_V^{bi}=\frac52R\approx 20.74\frac{\mathrm{J}}{\mathrm{K\ mol}}.\]
+Da queste scritture segue anche che
+\[c_p^{mono}=\frac52R,\quad \gamma^{mono}=\frac53,\quad\qquad c_p^{bi}=\frac72R,\quad \gamma^{bi}=\frac75.\]
 \end{remark}
 
 \begin{remark}[L'aria \`e un gas ideale biatomico]
@@ -308,3 +314,53 @@ Poich\'e il processo \`e adiabatico, $Q=0$. Segue per il primo principio che $\D
 \begin{remark}
 Potevamo ricavare energia e lavoro anche sfruttando la relazione \[pV^\gamma=p_iV_i^\gamma=p_fV_f^\gamma,\] ma avendola ricavata come sopra sappiamo che l'espressione \`e \textbf{valida anche per processi adiabatici NON quasistatici}.
 \end{remark}
+
+
+\section{Processi politropici}
+\begin{definition}[Processo politropico]
+Un processo \`e \textbf{politropico} se la capacit\`a termica \`e costante.
+\end{definition}
+
+\begin{proposition}[Curve per processi politropici]\label{CurveProcessiPolitropici}
+Considerando un processo politropicorelativo ad un gas ideale e definiamo
+\[\delta=\frac{C_p-C}{C_V-C},\]
+allora seguendo questo processo si ha che $pV^\delta=cost.$.
+\end{proposition}
+\begin{proof}
+Poich\'e $\delta Q=CdT=C_VdT+pdV=C_pdT-Vdp$ ricaviamo che
+\[-\frac V{C-C_p}dp=dT=\frac p{C-C_V}dV,\]
+da cui
+\[-\frac Vp\dd Vp=\frac{C_p-C}{C_V-C}=\delta.\]
+Questa espressione restituisce una equazione differenziale
+\[-\frac{dp}p=\delta\frac{dV}V,\]
+la cui soluzioni hanno la forma voluta.
+\end{proof}
+
+\noindent
+Possiamo interpretare processi isocori, isobari, isotermi e adiabatici come processi politropici:
+\begin{center}
+\begin{tabular}[ht]{|c||c|c|c|c|}
+\hline
+Processo & Isocoro & Isobaro & Isotermo & Adiabatico\\\hline&&&&\\
+$\delta$ & $\infty$ & $0$ & $1$ & $\displaystyle\gamma=\frac{c_p}{c_V}$\\ &&&&\\\hline
+\end{tabular}
+\end{center}
+
+
+
+\section{Processo ciclico}
+\begin{definition}[Processo ciclico]
+Un processo \`e \textbf{ciclico} se lo stato iniziale e finale sono lo stesso. Se qualcosa realizza un processo ciclico \`e detto \textbf{motore}.
+\end{definition}
+
+\begin{remark}
+Per un processo ciclico, $\Delta U=0$, dunque $Q=-W$.
+\[-W=Q=Q_H+Q_L\]
+dove $Q_H$ \`e il calore che il sistema acquista da una sorgente calda e $Q_L$ \`e il calore che acquista da una sorgente fredda\footnote{$Q_L$ \`e negativo}. Notiamo che
+\[\abs W=\abs{Q_H}-\abs{Q_L}.\]
+\end{remark}
+
+\begin{definition}[Efficienza]
+L'\textbf{efficienza} di un processo ciclico \`e data da\footnote{Intuitivamente l'efficienza \`e una misura di quanto lavoro riesco a realizzare in proporzione a quanto calore abbiamo dovuto inserire nel sistema. L'altra forma ci dice che l'efficienza \`e data dalla perfezione eccetto per il calore che viene disperso senza diventare lavoro ($Q_L$).}
+\[\eta=\frac{\abs W}{\abs{Q_H}}=1-\frac{\abs{Q_L}}{\abs{Q_H}}.\]
+\end{definition}
