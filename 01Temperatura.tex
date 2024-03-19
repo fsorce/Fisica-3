@@ -1,4 +1,4 @@
-\chapter{Temperatura e calore}
+\chapter{Principi della termodinamica}
 \noindent
 La termodinamica \`e lo studio di sistemi dal punto di vista macroscopico.\\
 Le massime fondamentali della termodinamica sono
@@ -30,6 +30,11 @@ Dato un sistema termodinamico, delle variabili ad esso inerenti si dicono \textb
 Il volume e l'energia sono grandezze estensive mentre la pressione e la temperatura sono intensive.
 \end{example}
 
+\begin{remark}
+Il lavoro meccanico \`e dato da $W=\int \vec F\cdot \vec{d\ell}$. \`E un fatto generale che il lavoro ha la forma
+\[\int(\text{intensiva})d(\text{estensiva}).\]
+\end{remark}
+
 \begin{definition}[Sistemi isolati, chiusi e aperti]
 Un sistema termodinamico si dice 
 \begin{itemize}
@@ -51,6 +56,8 @@ Una parete tra due sistemi \`e
 \end{itemize}
 \end{definition}
 
+\section{Principio 0, Equilibrio e Temperatura empirica}
+\subsection{Tipi di equilibrio}
 \begin{definition}[Equilibrio]
 Un sistema \`e in \textbf{equilibrio} se le sue funzioni di stato restano ``costanti" (per molto tempo rispetto alla scala temporale rilevante).\\
 Un sistema \`e in \textbf{equilibrio termico} se non ci sono differenze di temperatura\footnote{definiremo la temperatura in seguito.}.\\
@@ -61,37 +68,47 @@ Un sistema \`e in \textbf{equilibrio termodinamico} se \`e in equilibrio meccani
 I sistemi tendono spontaneamente ed irreversibilmente all'equilibrio termodinamico.
 \end{remark}
 
+\begin{fact}[0-esimo principio della termodinamica]
+\textbf{Due sistemi in equilibrio termico con un terzo sono in equilibrio tra loro.}
+\end{fact}
+
 \begin{definition}[Equazione di stato]
 Se quando un sistema \`e in equilibrio vale una equazione tra le funzioni di stato, queste si dicono \textbf{equazioni di stato}.
 \end{definition}
 
-\begin{definition}[Tipi di trasferimenti di energia]
-Considerato un sistema termodinamico e l'ambiete definiamo le seguenti tipologie di scambi di energia:
-\begin{itemize}
-\item uno scambio di energia meccanica \`e detto \textbf{lavoro},
-\item uno scambio di energia termica \`e detto \textbf{calore},
-\item uno scambio di energia chimica \`e definito da \[\Delta E=\int \mu dn,\] dove $n$ \`e il numero di particelle coinvolte e $\mu$ \`e il \textbf{potenziale chimico}.\footnote{questa quantit\`a ha senso solo per sistemi aperti.}
-\end{itemize}
-Affermiamo per convenzione che uno scambio di energia ha segno \textit{positivo} se il sistema \underline{acquista energia dall'ambiente}.
-\end{definition}
-
-\begin{remark}
-Il lavoro meccanico \`e dato da $W=\int \vec F\cdot \vec{d\ell}$. \`E un fatto generale che il lavoro ha la forma
-\[\int(\text{intensiva})d(\text{estensiva}).\]
+\begin{remark}[Segno degli scambi di energia]
+\underline{\textbf{NOTA BENE:}} Affermiamo per convenzione che uno scambio di energia ha segno \textit{positivo} se il sistema \textbf{\textit{acquista energia dall'ambiente}}.
 \end{remark}
 
 
 
+\subsection{Processi quasistatici}
+
 \begin{definition}[Processi quasistatici]
-Un sistema \`e \textbf{quasi in equilibrio} se \`e cos\`i vicino all'equilibrio che le equazioni di stato si possono considerare valide. Un \textbf{processo quasistatico} \`e descrivibile da una successione di variazioni infinitesime tra stati vicini all'equilibrio.\\
+Un sistema \`e \textbf{quasi in equilibrio} se \`e cos\`i vicino all'equilibrio che le equazioni di stato si possono considerare valide.\\ 
+Un \textbf{processo quasistatico} \`e un processo tale per cui il sistema \`e quasi in equilibrio in ogni istante.\\
 Se non sono presenti ``attriti", un processo quasistatico \`e detto \textbf{reversibile}.\\
 Un processo \`e detto \textbf{totalmente reversibile} se \`e reversibile e la sua interazione con l'ambiente \`e reversibile.
 \end{definition}
 
-\section{Definizione di temperatura}
-\begin{fact}[0-esimo principio della termodinamica]
-\textbf{Due sistemi in equilibrio termico con un terzo sono in equilibrio tra loro.}
-\end{fact}
+\begin{remark}
+Un processo quasi statico va pensato come un processo molto lento; cos\`i lento da poter pensare al sistema come ``sempre in equilibrio".
+\end{remark}
+
+
+\begin{definition}[Principali processi quasistatici per gas]
+Un processo si dice\footnote{Per le definizioni di temperatura o calore finite di leggere questo capitolo.}
+\begin{itemize}
+\item \textbf{isotermo} se $T$ resta costante,
+\item \textbf{isobaro} se $p$ resta costante,
+\item \textbf{isocore} se $V$ resta costante o
+\item \textbf{adiabatico} se non avviene scambio di calore.
+\end{itemize}
+\end{definition}
+
+
+
+\subsection{Temperatura empirica}
 
 \begin{proposition}[Temperatura empirica]\label{TemperaturaEmpirica}
 Ogni sistema termodinamico ammette una funzione che \`e costante in stato di equilibrio. La costante \`e detta \textbf{temperatura empirica}.
@@ -117,13 +134,14 @@ Dato un sistema termodinamico e un valore $\theta_0$ di temperatura empirica, ch
 \end{definition}
 
 
+\subsection{Definizione di temperatura tramite gas}
 \begin{fact}[Punto triplo]
 \emph{Considerando come sistema termodinamico dell'acqua esiste una precisa combinazione di temperatura e pressione tale per cui essa risulta in trasizione tra gli stati solido liquido e gassoso simultaneamente.\\
 Questo stato si chiama \textbf{punto triplo} e i valori in questione sono una temperatura di $0.01 ^\circ \mathrm{C}$ e una pressione di $0.006\ \mathrm{atm}$.}
 \end{fact}
+\medskip
 
-
-\subsection{Definizione di temperatura tramite gas}
+\noindent
 A bassa pressione i gas si comportano tutti allo stesso modo\footnote{rispettano l'equazione di stato $pV=f(\theta)$}.\\
 Se fissiamo il volume e la quantit\`a di materia del gas possiamo definire $\theta$ in modo tale che $p=p_0(1+\al\theta)$, cio\`e poniamo 
 \[\theta=\frac1\al\frac{p-p_0}{p_0}.\] 
@@ -138,175 +156,168 @@ dove $p^{(PT)}$ \`e la pressione del gas nel termometro quando questo sistema \`
 
 [FIGURA TERMOMETRO A GAS]
 
-\noindent Quando il gas \`e alla temperatura che vogliamo misurare misuriamo la differenza di altezza tra il livello a contatto con il gas e il livello di controllo posto a pressione atmosferica. Questa differenza \`e proporzionale alla differenza di pressione e questo ci permette di ricavare la temperatura se la fissiamo per quando \`e nel punto critico.
+\noindent Quando il gas \`e alla temperatura che vogliamo misurare, misuriamo la differenza di altezza tra il livello a contatto con il gas e il livello di controllo posto a pressione atmosferica. 
+Questa differenza \`e proporzionale alla differenza di pressione e questo ci permette di ricavare la temperatura se la fissiamo per quando \`e nel punto critico.
 
-\section{Relazione tra parametri indipendenti ed espressioni per l'energia}
+\section{Primo principio e Definizione di calore}
 
-\begin{fact}[Relazione tra parametri indipendenti e espressioni per l'energia]
-Il numero di parametri di un sistema indipendenti \`e pari al numero di coppie di variabili che compaiono nelle espressioni per l'energia.
+\begin{fact}[Primo principio della termodinamica]
+\textbf{L'energia interna di un sistema di conserva.}
 \end{fact}
 
-\begin{example}[Filo]
-Un filo ha come funzioni di stato la lunghezza, la tensione e la temperatura, che indichiamo $L,\ \tau\ \text{e }T$ rispettivamente.\\
-Le formule per l'energia contengono $\tau$ ed $L$ per il lavoro ($\delta W=\tau dL$) e $L$ e $T$ per il calore\footnote{$L$ appare implicitamente in quanto unica grandezza estensiva.}. Segue che il sistema filo ha due parametri indipendenti, dunque deve esistere una equazione che lega i parametri citati. In questo caso \`e la legge di Hooke ($\tau=-k(L-L_0)$).
-\end{example}
-
-\begin{example}[Fluidi]
-Ragioniamo in modo simile a prima, stavolta i parametri sono volume, pressione e temperatura.
-\end{example}
-
-\section{Gas ideali}
-
-\begin{definition}[Mole]
-Una \textbf{mole di una sostanza} corrisponde a $6.02\cdot 10^{23}$ particelle di quella sostanza. La costante \`e detta \textbf{numero di Avogadro} e la indichiamo con $N_a$. 
+\begin{definition}[Calore]
+Il \textbf{calore} \`e la differenza tra la variazione di energia interna e il lavoro compiuto su un sistema termodinamico, esplicitamente
+\[\boxed{\Delta U=Q+W}\]
 \end{definition}
 
-\begin{definition}[Densit\`a]
-Definiamo la \textbf{denstit\`a} come
-\[\rho=\frac mV.\]
-\end{definition}
 \begin{remark}
-Il differenziale della densit\`a \`e
-\[d\rho=-\frac m{V^2}dV.\]
+Il calore e il lavoro non sono funzioni di stato, ma la loro somma s\`i.
 \end{remark}
 
-\begin{definition}[Condizioni standard]
-Un gas \`e in \textbf{condizioni standard} (\textbf{STP}) se \`e alla temperatura di $0^\circ\mathrm C$ e alla pressione di $1\ \mathrm{atm}=101.3245\ \mathrm{kPa}$.
-\end{definition}
+\begin{remark}[Primo principio in forma differenziale]
+Scrivendo il primo principio in termini di infinitesimi troviamo
+\[dU=\delta Q+\delta W,\]
+in particolare per i gas ideali vale
+\[dU=\delta Q-pdV.\]
+\end{remark}
 
-\noindent Per i gas ideali valgono le seguenti leggi:
-\begin{fact}[Legge di Boyle]
-Se $T$ \`e costante
-\[V\propto \frac1p\]
-\end{fact}
-\begin{fact}[Legge di Charles]
-Se $p$ \`e costante
-\[V\propto (1+\al T)\]
-\end{fact}
-\begin{fact}[Legge di Gay-Lussac]
-Se $V$ \`e costante
-\[p\propto T\]
-\end{fact}
-\begin{fact}[Legge di Avogadro]
-Se $p$ e $T$ sono fissate, tutti i gas occupano lo stesso volume se consistono della stessa quantit\`a di materia, in particolare
-\[V\propto n.\]
-Una mole di gas in condizioni standard occupa un volume di $22.4\ell$ (litri).
-\end{fact}
 
-\noindent Combinando le leggi appena citate arriviamo alla \textbf{legge dei Gas perfetti}
-\[\boxed{pV=nRT}\]
-dove $p$ \`e la pressione, $V$ \`e il volume, $n$ \`e il numero di moli, $T$ \`e la temperatura e $R$ \`e la \textbf{costante fondamentale dei gas} e vale $8.314 \frac{\mathrm{J}}{\mathrm{K}\ \mathrm{mol}}$.
-
-\begin{definition}[Costante di Boltzmann]
-Definiamo la \textbf{costante di Boltzmann} $k_b$ in modo tale che 
-\[R=N_a k_b.\]
+\begin{definition}[Caloria]
+Una \textbf{caloria} \`e la quantit\`a di calore necessaria per far variare la temperatura di un grammo di acqua da $14.5^\circ\mathrm{C}$ a $15.5^\circ\mathrm{C}$.\\
+In Joule si ha che
+\[\boxed{1\ \mathrm{cal}=4.186\ \mathrm{J}}\]
 \end{definition}
 
 
+\begin{remark}
+In una trasformazione adiabatica, il lavoro \`e dato dalla differenza di energia interna.
+\end{remark}
+\begin{example}[Coppia di sistemi dentro un contenitore adiabatico]
+Consideriamo due sistemi $A$ e $B$ dentro un contenitore adiabatico. Per il primo principio
+\[0=\Delta U=\Delta U_A+\Delta U_B=Q_A+Q_B+\under{=W}{W_A+W_B}.\]
+I trasferimenti di calore possono avvenire solo tra $A$ e $B$, quindi $Q_A+Q_B=0$ e $W=0$. Quanto scritto \`e una ``legge di conservazione del calore" in questo tipo di sistema.
+\end{example}
 
+\section{Secondo principio e cicli}
+\subsection{Enunciati del secondo principio}
+\begin{fact}[Secondo principio della termodinamica, formulazione di Kelvin]
+\textbf{Non esiste un processo che traformi \ul{interamente} calore in lavoro.}
+\end{fact}
 
-\section{Esempi principali di processi quasistatici}
-\begin{definition}[Tipi rilevanti di processi]
-Un processo si dice
+\begin{fact}[Secondo principio della termodinamica, formulazione di Clausius]
+\textbf{Non esiste un processo il cui \ul{unico risulato} sia trasferire calore da una sorgente pi\`u fredda ad una pi\`u calda.}
+\end{fact}
+
+\begin{proposition}
+Le due formulazioni del secondo principio sono equivalenti.
+\end{proposition}
+\begin{proof}
+Mostrimo che le loro negazioni sono equivalenti:
+\setlength{\leftmargini}{0cm}
 \begin{itemize}
-\item \textbf{isotermo} se $T$ resta costante,
-\item \textbf{isobaro} se $p$ resta costante,
-\item \textbf{isocore} se $V$ resta costante o
-\item \textbf{adiabatico} se non avviene scambio di calore\footnote{definiremo il calore successivamente. Intuitivamente \`e lo scambio di energia che deriva da una variazione di temperatura.}.
+\item[$\boxed{\neg K\implies \neg C}$] Consideriamo il diagramma
+
+[DIAGRAMMA]
+
+Notiamo che $\abs{Q'}+\abs{W}>\max{\cpa{\abs{Q'},\abs{W}}}=\max{\cpa{\abs{Q'},\abs{Q}}}$. Considerando ora il sistema di due macchine come un insieme troviamo una macchina che trasferisce un calore $\abs{Q'}$ dala sorgente fredda alla sorgente calda, negando Clausius.
+\item[$\boxed{\neg C\implies \neg K}$] Procediamo analogamente a prima
+
+[DIAGRAMMA]
+
+e leggendo questo diagramma come un insieme la macchina avrebbe preso del calore $\abs Q-\abs{Q'}$ dalla sorgente $T_L$ e lo ha trasformato interamente in lavoro, negando Kelvin.
 \end{itemize}
+\setlength{\leftmargini}{0.5cm}
+\end{proof}
+
+\subsection{Processo ciclico}
+\begin{definition}[Processo ciclico]
+Un processo \`e \textbf{ciclico} se lo stato iniziale e finale sono lo stesso. Se qualcosa realizza un processo ciclico \`e detto \textbf{motore}.
 \end{definition}
 
-\begin{definition}[Coefficiente di espansione volumetrica]
-Definiamo il \textbf{coefficiente di espansione volumetrica} come
-\[\al=\frac1V\ppb TVp=-\frac mV\frac1{\rho^2}\ppb T\rho p=-\frac1\rho\ppb T\rho p.\]
-L'unit\`a di misura \`e $[\al]=\mathrm{K}\ii$.
-\end{definition}
+\begin{remark}[Diagramma di una macchina a due sorgenti]
+Spesso torna comodo fare diagrammi come in figura
 
-
-\begin{definition}[Compressibilit\`a isoterma]
-Definiamo la \textbf{compressibilit\`a isoterma} come
-\[\beta_T=-\frac1V\ppb pVT.\]
-L'unit\`a di misura \`e $[\beta_T]=\mathrm{Pa}\ii$.\\
-L'inversa $k_T=1/\beta_T$ \`e detta \textbf{modulo di compressibilit\`a isoterma}.
-\end{definition}
-
-\noindent Riportiamo alcuni valori di $\al$ e $\beta_T$ per dare una intuizione sui valori tipici\footnote{il Sitall \`e materiale fatto apposta per avere coefficiente di espansione volumetrica piccolo}
-\begin{center}
-\begin{tabular}[ht]{|c|c|c|}
-\hline 
-Materiale&$\al\ [\mathrm{K}\ii]$&$\beta_T\ [\mathrm{Pa}\ii]$\\\hline
-Acqua&$0.2\cdot 10^{-3}$&$4.6\cdot 10^{-10}$\\
-Diamante&$3\cdot 10^{-6}$&?\\
-Sitall&$\leq 10^{-7}$&?\\
-Sabbia&?&$\sim10^{-8}$\\
-Mercurio&$1.8\cdot 10^{-4}$&$4\cdot10^{-11}$\\
-Rame&?&$7.2\cdot10^{-12}$\\
-\hline
-\end{tabular}
-\end{center}
-
+[DIAGRAMMA]
+\end{remark}
 
 \begin{remark}
-Non \`e necessario battezzare $\displaystyle\ppb TpV$ in quanto per la propriet\`a ciclica (\ref{ProprietaDerivateParziali})
-\[\ppb TpV=-\ppb VpT\ppb TVp=\frac\al{\beta_T}.\]
+Per un processo ciclico, $\Delta U=0$, dunque $Q=-W$.
+\[-W=Q=Q_H+Q_L\]
+dove $Q_H$ \`e il calore che il sistema acquista da una sorgente calda e $Q_L$ \`e il calore che acquista da una sorgente fredda\footnote{$Q_L$ \`e negativo}. Notiamo che
+\[\abs W=\abs{Q_H}-\abs{Q_L}.\]
 \end{remark}
 
-\begin{remark}[Relazione differenziale tra $\al$ e $\beta_T$]
-Per il teorema di Schwarz si ha che
-\[\pp{p\del T}{^2V}=\ppb p\al T=-\ppb T{\beta_T}p.\]
-\end{remark}
+\begin{definition}[Efficienza]
+L'\textbf{efficienza} di un processo ciclico \`e data da\footnote{Intuitivamente l'efficienza \`e una misura di quanto lavoro riesco a realizzare in proporzione a quanto calore abbiamo dovuto inserire nel sistema. L'altra forma ci dice che l'efficienza \`e una coversione perfetta eccetto per il calore che viene disperso senza diventare lavoro ($Q_L$).}
+\[\eta=\frac{\abs W}{\abs{Q_H}}=1-\frac{\abs{Q_L}}{\abs{Q_H}}.\]
+\end{definition}
 
-\begin{proposition}[$\al$ e $\beta_T$ per gas ideali]\label{CoefficienteEspansioneECompressibilitaIsotermaPerGasIdeali}
-Se il sistema in esame \`e un gas ideale valgono le seguenti identit\`a:
-\[\al=\frac 1T,\qquad \beta_T=\frac 1p.\]
-\end{proposition}
+\begin{definition}[Frigorifero e coefficiente di prestazione]
+Un \textbf{frigorifero} \`e un motore che trasferisce calore da una sorgente fredda ad una calda. Il suo \textbf{coefficiente di prestazione} \`e dato da
+\[COP=\frac{\abs{Q_L}}{\abs{W}}=\frac{1-\eta}\eta.\]
+\end{definition}
+
+\begin{definition}[Pompa di calore]
+Una \textbf{pompa di calore} \`e una macchina volta a trasformare lavoro in calore verso la sorgente calda. La sua efficienza \`e quindi l'inversa di quella di un motore standard:
+\[\frac{\abs{Q_H}}{\abs{W}}=\frac1\eta.\]
+\end{definition}
+
+\begin{theorem}[di Carnot]\label{TeoremaDiCarnot}
+Un ciclo reversibile \`e il pi\`u efficiente che lavori tra due sorgenti $\theta_H$ e $\theta_L$.
+\end{theorem}
 \begin{proof}
-Segue calcolando:
-\begin{align*}
-\al=&\frac1V\ppb T{(nRT/p)}p=\frac{nR}{pV}=\frac1T,\\
-\beta_T=&-\frac1V\ppb p{(nRT/p)}T=\frac1V nRT\frac1{p^2}=\frac1p.
-\end{align*}
+Consideriamo due cicli $S$ ed $S'$ di cui $S$ reversibile. Per il primo principio $-W=\abs{Q_H}-\abs{Q_L}$ e $-W'=\abs{Q_H'}-\abs{Q_L'}$.\\
+Con precisione arbitraria, siano $N$ ed $N'$ interi positivi tali che
+\[\frac{\abs{Q_H}}{\abs{Q_H'}}\approx \frac{N'}{N}.\]
+Facendo fare $N'$ cicli a $S'$ ed $N$ cicli reversibili \textit{al contrario}\footnote{qu\`i usiamo la reversibilit\`a. Se prima il sistema trasformava calore in lavoro con qualche perdita di calore ora il sistema riceve lavoro e un po' di calore per fornire calore alla sorgente calda} a $S$ troviamo
+\[-W_{tot}=N'(-W')-N(-W)=N'(\abs{Q_H'}-\abs{Q_L'})-N(\abs{Q_H}-\abs{Q_L})\]
+\[Q_{H,tot}=N'\abs{Q_H'}-N\abs{Q_H}\]
+\[-Q_{L,tot}=N'\abs{Q_L'}-N\abs{Q_L}.\]
+Per il primo principio, facendo lavorare in parallelo le due macchine
+\[-W_{tot}=Q_{H,tot}+Q_{L,tot}.\]
+Scegliendo $N$ ed $N'$ arbitrariamente grandi possiamo approssimare $Q_{H,tot}\approx 0$, e quindi
+\[-W_{tot}\approx Q_{L,tot}.\]
+Per la formulazione di Kelvin del secondo principio si ha che $-W_{tot}\leq0$\footnote{se cos\`i non fosse la macchina composta starebbe convertendo il calore $\abs{Q_{L,tot}}$ in lavoro sull'esterno $\abs{W_{tot}}$, contraddicendo il secondo principio.}, quindi $Q_{L,tot}\leq 0$, cio\`e
+\[N'\abs{Q_L'}-N\abs{Q_L}\geq 0\coimplies \frac{N'}N\geq \frac{\abs{Q_L}}{\abs{Q_L'}}.\]
+Passando al limite negli $N$ e $N'$ si ha che
+\[\frac{\abs{Q_L}}{\abs{Q_H}}\leq \frac{\abs{Q_L'}}{\abs{Q_H'}}\implies \eta=1-\frac{\abs{Q_L}}{\abs{Q_H}}\geq 1-\frac{\abs{Q_L'}}{\abs{Q_H'}}=\eta'.\]
 \end{proof}
 
-\begin{proposition}[Differenziale della pressione]\label{DifferenzialePressione}
-Si ha che
-\[dp=\frac\al{\beta_T}dT-\frac1{\beta_T V}dV.\]
-\end{proposition}
-\begin{proof}
-Osserviamo che
-\[\ppb TpV\pasgnl={(\ref{ProprietaDerivateParziali})}-\ppb VpT \ppb TVp=\frac \al{\beta_T},\]
-dunque ricaviamo
-\[dp=\ppb TpVdT+\ppb VpT=\frac\al{\beta_T}dT-\frac1{\beta_T V}dV.\]
-\end{proof}
-\begin{corollary}
-In una trasformazione isocora $\Delta p=\frac\al{\beta_T}\Delta T$.
+\begin{corollary}[I cicli reversibili hanno la stessa efficienza]\label{CicliReversibiliHannoLaStessaEfficienza}
+Tutti i cicli reversibili hanno la stessa efficienza.
 \end{corollary}
-
-\begin{remark}[Differenziale logaritmico nel volume]\label{DifferenzialeLogaritmicoNelVolume}
-Spesso torner\`a comodo ricordare il seguente sviluppo differenziale
-\[d\log V=\frac1VdV=\al dT-\beta_T dp\]
-\end{remark}
 \begin{proof}
-Segue calcolando:
-\[\frac1VdV=\frac1V\pa{\ppb TVp dT+\ppb pVTdp}=\al dT-\beta_T dp\]
+Applicando il teorema abbiamo le due disuguaglianze scambiando i ruoli tra i due cicli.
 \end{proof}
 
-
-\subsection{Compressione e Lavoro}
-Immagino di comprimere un sistema come in figura 
-
-[FIGURA]
+\subsection{Definizione della temperatura tramite cicli reversibili}
+Il teorema di Carnot (\ref{TeoremaDiCarnot}) ci suggerisce un modo per ridefinire la temperatura in termini della temperatura empirica senza bisogno di ricorrere ai gas:
+\medskip
 
 \noindent
-Se spingiamo molto lentamente possiamo con buona approssimazione supporre che il processo sia quasistatico, dunque $F=pS$. Segue che
-\[\boxed{\delta W=Fdx=pSdx}\]
-Se il sistema in questione \`e un gas ideale allora
-\[\delta W=p(-dV)=-pdV\]
-Il lavoro totale per passare da uno stato $A$ ad uno stato $B$ diventa
-\[W=-\int_{A}^{B} p(V,T)dV,\]
-ma $p$ come cambia al variare di $V$? Dipende dal tipo di processo.
+Per il teorema di Carnot esiste $f$ tale che dopo un ciclo reversibile
+\[\frac{\abs{Q_H}}{\abs{Q_L}}=f(\theta_L,\theta_H).\]
+Collegando due tali processi facendo s\`i che il calore rilasciato dal primo sia quello assorbito dal secondo ricaviamo le equazioni
+\[\frac{\abs{Q_3}}{\abs{Q_2}}=f(\theta_2,\theta_3),\quad\frac{\abs{Q_2}}{\abs{Q_1}}=f(\theta_1,\theta_2),\quad \frac{\abs{Q_3}}{\abs{Q_1}}=f(\theta_1,\theta_3),\]
+dove $\theta_1\leq \theta_2\leq \theta_3$.\\
+Segue dunque l'identit\`a
+\[f(\theta_1,\theta_2)=\frac{f(\theta_1,\theta_3)}{f(\theta_2,\theta_3)}.\]
+Derivando rispetto a $\theta_3$ ricaviamo
+\begin{gather*}
+0=\frac1{f(\theta_2,\theta_3)}\pp{\theta_3}{f}(\theta_1,\theta_3)-\frac{f(\theta_1,\theta_3)}{(f(\theta_2,\theta_3))^2}\pp{\theta_3}f(\theta_2,\theta_3)\\
+\frac1{f(\theta_1,\theta_3)}\pp{\theta_3}{f}(\theta_1,\theta_3)=\frac1{f(\theta_2,\theta_3)}\pp{\theta_3}{f}(\theta_2,\theta_3).
+\end{gather*}
+Abbiamo dunque mostrato che $\frac1{f(\theta_1,\theta_3)}\pp{\theta_3}f(\theta_1,\theta_3)$ non dipende da $\theta_1$, cio\`e
+\begin{gather*}
+\pp{\theta_3}{}(\log(f(\theta_1,\theta_3)))=A(\theta_3)\\
+\log(f(\theta_1,\theta_3))=B(\theta_3)+C(\theta_1),
+\end{gather*}
+dove $B(\theta_3)$ \`e una primitiva di $A(\theta_3)$.\\
+Notiamo ora che $f(\theta,\theta)=1$ in quanto tanto calore viene rilasciato quanto viene assorbito se le sorgenti sono alla stessa temperatura.\\ 
+Segue che $\log(f(\theta,\theta))=0$, cio\`e $B(\theta)=-C(\theta)$.
+\[\log(f(\theta_1,\theta_3))=B(\theta_3)-B(\theta_1)\implies f(\theta_1,\theta_3)\pasgnlmath={g(\theta)=e^{B(\theta)}}\frac{g(\theta_3)}{g(\theta_1)}.\]
+Possiamo dunque definire la \textbf{temperatura assoluta} come
+\[T=g(\theta).\]
+Tutto ci\`o che abbiamo detto fin'ora in termini della temperatura definita tramite gas continua ad essere valido per la temperatura assoluta.
 
-[QUALCHE GRAFICO]
 
-\noindent
-Questo mostra in particolare che il lavoro non \`e una funzione di stato.
