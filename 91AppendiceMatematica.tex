@@ -43,17 +43,49 @@ Ricordiamo che una forma $\sum A_i dx_i$ \`e chiusa quando per ogni coppia $i,j$
 Se il dominio \`e semplicemente connesso allora questa condizione caratterizza anche le forme esatte.
 
 \begin{proposition}[Esattezza tramite Pfaff]\label{EsattezzaPfaff}
-Sia $\sum_i A_idx_i$ una forma. Se l'equazione Pfaff
+Sia $\sum_i A_idx_i$ una forma. Se l'equazione di Pfaff
 \[\sum_i A_idx_i=0\]
-\`e integrabile (cio\`e i punti che la verificano sono descrivibili tramite una equazione $F(x_1,\cdots, x_n)=cost.$) allora la forma \`e chiusa ed esiste $u(x_1,\cdots, x_n)$ tale che $\sum uA_i dx_i$ \`e esatta.
+\`e integrabile\footnote{cio\`e i punti che la verificano sono descrivibili tramite una equazione $F(x_1,\cdots, x_n)=cost.$} allora la forma \`e chiusa ed esiste $u(x_1,\cdots, x_n)$ tale che $\sum uA_i dx_i$ \`e esatta.
 \end{proposition}
 \begin{proof}
 Sia $\cpa{F=0}$ l'equazione del luogo dove vale l'equazione Pfaff. Segue che
 \[dF=\sum_i\pp{x_i}F dx_i=0=\sum_i A_idx_i,\]
-dunque possiamo definire $u$ in modo tale che
-\[\pp{x_i}F=u(x_1,\cdots, x_n)A_i.\]
-Osserviamo inoltre che
+esiste dunque $u$ tale che
+\[\pp{x_i}F=u(x_1,\cdots, x_n)A_i,\]
+da cui derivando
 \[\pp{x_i}{}(uA_j)=\pp{x_i\del x_j}{^2F}=\pp{x_j}{}(uA_i),\]
 cio\`e $\sum_i uA_idx_i$ \`e chiusa.
 \end{proof}
 
+\begin{fact}[Condizione di integrabilit\`a]
+Se per ogni terna $i,\ j,\ k$ di indici distinti vale
+\[A_k\pa{\pp {x_i}{A_j}-\pp {x_j}{A_i}}+A_j\pa{\pp {x_k}{A_i}-\pp {x_i}{A_k}}+A_i\pa{\pp {x_j}{A_k}-\pp {x_k}{A_j}}=0\]
+allora $\sum A_i dx_i=0$ \`e integrabile.
+\end{fact}
+
+\begin{remark}\label{IntegrabilitaPuntiRaggiungibili}
+Un sistema \`e integrabile se nell'intorno di un punto $P$ esistono infiniti punti non raggiungibili tramite percorsi su cui vale $\sum_i A_idx_i=0$ (ipersuperficie ha dimensione minore dello spazio ambiente).\medskip
+
+\noindent
+Segue che se posso raggiungere ogni punto rispettando l'equazione allora non avevamo integrabilit\`a
+\end{remark}
+
+
+\begin{example}
+Consideriamo l'equazione $ydx+dy+dz=0$ e passiamo da $(0,0,0)$ a $(a,b,c)$:
+\begin{itemize}
+\item Variamo solo la $x$ ($dy=dz=0$). Poich\'e $y=0$ e non cambia l'equazione \`e rispettata e passiamo da $(0,0,0)$ a $(x_0,0,0)$ per un qualsiasi $x_0$.
+\item Fissiamo $x=x_0$ ($dx=0$) e muoviamoci in modo tale che $dy=dz$ (lungo una diagonale) e cos\`i passiamo da $(x_0,0,0)$ a $(x_0,b,-b)$.
+\item Fissiamo $y=b$ ($dy=0$) e muoviamoci in modo che $dz=-bdx$. Passiamo da $(x_0+(a-x_0),b,-b+(a-x_0)(-b))$. Se avevamo scelto $x_0$ in modo tale che $-b+(a-x_0)(-b)=c$ allora abbiamo finito.
+\end{itemize}
+\end{example}
+
+
+
+
+\section{Trasformazione di Legendre}
+Sia $F(x,y)$ con $dF=udx+vdy$\footnote{cio\`e $u=\ppb xFy$ e $v=\ppb yFx$.} e supponiamo di voler riformulare l'espressione in termini di $u$ e $y$. Definiamo 
+\[G(u,y)=F-ux\]
+e notiamo che
+\[dG=dF-udx-xdu=\cancel{udx}+vdy-\cancel{udx}-xdu=vdy-xdu,\]
+cio\`e $G$ effettivamente dipende esplicitamente solo da $u$ e $y$.

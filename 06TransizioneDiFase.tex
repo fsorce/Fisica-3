@@ -1,0 +1,40 @@
+\chapter{Transizione di fase}
+
+
+\section{Equazione di stato dei gas reali}
+Cosa pu\`o contribuire a negare l'approssimazione di gas ideale?
+\begin{itemize}
+\item \textbf{Interazione attrattiva tra particelle:} Una particella vicino al bordo \`e attratta dalle particelle pi\`u interne, dunque la pressione interna al gas \`e pi\`u grande di quella misurata 
+\[p_{real}=p+a\frac {n^2}{V^2}.\]
+\item \textbf{Volume occupato dalle particelle:} Le particelle in genere occupano un volume
+\[V_{real}=V-bn\]
+\end{itemize}
+\begin{fact}[Legge di Van der Waals]
+In prima approssimazione l'equazione di \textbf{Van del Waals}
+\[\pa{p+a \frac{n^2}{V^2}}(V-bn)=nRT.\]
+\end{fact}
+\begin{remark}
+Di solito $a$ si aggira tra $10^{-2}$ e $10$ $\displaystyle\frac{\ell^2\mathrm{atm}}{\mathrm{mol}^2}$, mentre $b$ si aggira tra $10^{-2}$ e $10^{-1}$ $\ell/\mathrm{mol}$.
+\end{remark}
+
+\noindent
+Sotto una temperatura critica, le isoterme secondo l'equazione di Van der Waals diventano cubiche con un picco e una valle, in realt\`a quello che succederebbe nella realt\`a \`e che raggiungiamo le condizioni per \textit{transizioni di fase}.
+
+\section{Transizione di fase}
+Generalmente transizioni di stato avvengono per $p$ e $T$ costanti, quindi la forma di energia pi\`u utile da considerare \`e l'energia libera di Gibbs
+\[\Delta G=\Delta H-T\Delta S.\]
+Poich\'e $dG=-SdT-Vdp$, si ha che se $p$ e $T$ restano costanti allora $\Delta G=0$, cio\`e \[T\Delta S=\Delta H.\]
+\subsection{Liquido-Vapore}
+Siano $n_L$ le moli di liquido e $n_V$ le moli di vapore.
+\begin{remark}
+Si ha che
+\[G=G_L(p_L,T_L,n_L)+G_V(p_V,T_V,n_V)\pasgnl={}n_Lg_L(p_L,T_L)+n_Vg_V(p_V,T_V)\]
+dove $g$ \`e l'\textbf{energia libera di Gibbs molare}.
+\end{remark}
+Per conservazione della materia $n_L+n_V=n$ \`e costante. Se $\al$ \`e la proporzione di liquido, cio\`e $n_L=\al n$ e $n_V=(1-\al)n$ allora
+\[G=n\al g_L(p_L,T_L)+n(i-\al)g_V(p_V,T_V).\]
+Poich\'e consideriamo tutto in regime di quasi equilibrio $T_L=T_V$ e $p_L=p_V$\footnote{le pressioni sono le stesse perch\'e c'\`e equilibrio meccanico.}. Abbiamo dunque ricavato che $G$ dipende solo da $p,\ T$ e $\al$.
+\begin{remark}
+Per $p$ e $T$ costanti, siamo all'equilibrio se $G(\al)$ \`e minima\footnote{o massima, ma nella realt\`a minima. Poich\'e l'entropia tende ad aumentare, $G$ tende a diminuire.}, cio\`e
+\[0=\pp\al G=ng_L+0-n g_V\implies g_L=g_V.\]
+\end{remark}

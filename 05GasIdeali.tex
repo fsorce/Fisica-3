@@ -1,4 +1,4 @@
-\chapter{Gas Ideali}
+\chapter{Gas e Gas ideali}
 
 \section{Definizioni e legge dei gas perfetti}
 \begin{definition}[Mole]
@@ -280,4 +280,233 @@ Se $T_L=4^\circ\mathrm{C}$ e $T_H=20^\circ\mathrm{C}$ (caso tipico del frigorife
 Per una pompa di calore, la massima efficienza \`e data da
 \[\frac{T_H}{T_H-T_L}.\]
 \end{remark}
+
+
+\section{Tipi di energie nei gas}
+\subsection{Energia interna ed entropia}
+
+\begin{remark}[Differenziali]
+Osserviamo che
+\[TdS=\rbar{\delta Q}_{rev}=dU-\rbar{\delta W}_{rev}=dU+pdV,\]
+dunque
+\[\boxed{dU=TdS-pdV}\]
+\end{remark}
+\begin{remark}
+\underline{\textbf{NOTA BENE:}} Questo sembra un altro modo di scrivere il primo principio $dU=\delta Q+\delta W$, ma se il processo non \`e reversibile allora non \`e detto che $pdV=\delta W$.
+\end{remark}
+
+\begin{proposition}[Equazione di Helmholtz]\label{EquazioneHelmholtz}
+Vale la seguente identit\`a
+\[\boxed{\ppb VUT=T\ppb TpV-p}=T^2\ppb T{(p/T)}V\]
+\end{proposition}
+\begin{proof}
+Sviluppiamo il differenziale dell'entropia
+\[dS=\frac{dU}T+\frac{pdV}T=\frac1T\pa{\ppb TUVdT+\ppb VUTdV}+\frac pTdV.\]
+Poich\'e $dS$ \`e un differenziale esatto, le derivate incrociate devono coincidere:
+\begin{gather*}
+\pp V{}\pa{\frac1T\ppb TUV}=\rbar{\pp T{}\pa{\frac1T\pa{\ppb VUT+p}}}_V\\
+\cancel{\frac1T\pp{V\del T}{^2U}}=-\frac1{T^2}\pa{\ppb VUT+p}+\cancel{\frac1T\pp{V\del T}{^2U}}+\frac1T\ppb TpV\\
+\ppb VUT=T\ppb TpV-p.
+\end{gather*}
+\end{proof}
+\begin{remark}
+Osserviamo che 
+\[dU=\under{=C_V}{\ppb TUV}dT+\ppb VUTdV,\]
+quindi la formula di Helmholtz misura ``quanto un gas non \`e ideale" (ricordiamo (\ref{DerivataEnergiaInternaRispettoAlVolume}))
+\end{remark}
+\begin{remark}
+Se $dU=0$ allora
+\[dT=-\frac{\ppb VUT}{\ppb TUV}dV=\ppb VTUdV\pasgnl={(\ref{EquazioneHelmholtz})}\frac1{C_V}\pa{p-T\ppb TpV}dV.\]
+Questa identit\`a pu\`o essere interpretata come test per Gas ideali, basta capire se $T\ppb pTV$ coincide con $\frac{nRT}V$.
+\end{remark}
+
+\begin{remark}
+Valgono le seguenti identit\`a
+\[C_V=T\ppb TSV,\quad C_p=T\ppb TSp,\qquad \gamma=\frac{\ppb VpS}{\ppb Vpp}=\frac{\beta_T}{\beta_S}\]
+\end{remark}
+\begin{proof}
+ESERCIZIO
+\end{proof}
+
+
+\subsubsection{Per gas ideali}
+Il calore scambiato per trasformazioni reversibili nei gas ideali si pu\`o sviluppare in
+\[\rbar{\delta Q}_{rev}=dU+pdV=C_VdT+\frac{nRT}VdV,\]
+da cui
+\[dS=\frac{\delta Q}T=\frac{C_V}TdT+\frac{nR}VdV.\]
+\begin{proposition}[Entropia per gas ideali]\label{EntropiaGasIdeali}
+Valgono le seguenti espressioni:
+\begin{align*}
+S_B-S_A=&C_V\log\pa{\frac{T_B}{T_A}}+nR\log\pa{\frac{V_B}{V_A}}\\
+=&C_V\log\pa{\frac{p_BV_B^\gamma}{p_AV_A^\gamma}}\\
+=&nc_p\log\pa{\frac{T_B}{T_A}}-nR\log\pa{\frac{p_B}{p_A}}
+\end{align*}
+\end{proposition}
+\begin{proof}
+Ricaviamo le tre formulazioni:
+\begin{itemize}
+\item Integrando $dS=\frac{C_V}TdT+\frac{nR}VdV$ troviamo la prima espressione.
+\item Sfruttando la proporzionalit\`a $\displaystyle \frac{T_B}{T_A}=\frac{p_BV_B}{p_AV_A}$ possiamo rielaborare la prima forma come segue
+\begin{align*}
+S_B-S_A=&C_V\log\pa{\frac{p_B}{p_A}}+(C_V+nR)\log\pa{\frac{V_B}{V_A}}=\\
+=&C_V\log\pa{\frac{p_B}{p_A}}+C_p\log\pa{\frac{V_B}{V_A}}=\\
+=&C_V\pa{\log\pa{\frac{p_B}{p_A}}+\log\pa{\pa{\frac{V_B}{V_A}}^\gamma}}=\\
+=&C_V\log\pa{\frac{p_BV_B^\gamma}{p_AV_A^\gamma}},
+\end{align*}
+ricavando la seconda espressione.
+\item Ricordiamo che $\delta Q=nc_p dT-Vdp$. Dividendo per $T$ e poi integrando\footnote{stiamo usando che $-V/T=-nR/p$.} ricaviamo
+\[S_B-S_A=nc_p\log\pa{\frac{T_B}{T_A}}-nR\log\pa{\frac{p_B}{p_A}}.\]
+\end{itemize}
+\end{proof}
+
+
+\begin{remark}
+Se ci spostiamo lungo una adiabatica reversibile, dalla seconda formula ricaviamo $\Delta S=0$ come ci aspettiamo.
+\end{remark}
+
+\begin{proposition}[Entropia in gas ideali per processi standard]
+Valgono le seguenti espressioni:
+
+\begin{itemize}
+\item[$\boxed{\text{Isocora}}$] $\Delta S=nc_V\log\pa{\frac{T_B}{T_A}}\leadsto dS=nc_V\frac{dT}T,$
+\item[$\boxed{\text{Isobara}}$] $\Delta S=nc_p\log\pa{\frac{T_B}{T_A}}\leadsto dS=nc_p\frac{dT}T.$
+\item[$\boxed{\text{Isoterma}}$] $\Delta S=nR\log\pa{\frac{V_B}{V_A}}=-nR\log\pa{\frac{p_B}{p_A}}.$
+\end{itemize}
+\end{proposition}
+\begin{proof}
+Basta applicare le espressioni trovate (\ref{EntropiaGasIdeali}).
+\end{proof}
+
+
+
+\subsection{Espansione di Joule-Thompson: Entalpia}
+
+[DESCRIVI L'ESPERIMENTO]
+
+\begin{definition}[Entalpia]
+L'\textbf{entalpia} in un gas \`e definita da\footnote{cio\`e l'energia interna sommata al ``lavoro necessario per portare il volume da $0$ a $V$ a pressione costante".}
+\[H=U+pV.\]
+\end{definition}
+
+\begin{remark}
+L'entalpia \`e ottenuta da $U$ come trasformazione di Legendre:\\
+Consideriamo $U(S,V)$ e cambiamo la coordinata $V$ in $-p=\ppb VUS$, che possiamo fare ponendo $H(S,p)=U-(-pV)=U+pV$.
+\end{remark}
+
+\begin{remark}[Differenziale dell'entalpia]
+Il differenziale di $H$ \`e dato da
+\[dH=dU+pdV+Vdp=TdS+Vdp\pasgnl={se reversibile}\delta Q+Vdp\]
+oppure da
+\[dH=dU+p(\al VdT-\beta_T Vdp)+Vdp=dU+p\al VdT+V(1-\beta_Tp)dp.\]
+\end{remark}
+\begin{corollary}
+Valgono le seguenti identit\`a
+\[\ppb SHp=T,\quad \ppb pHS=V,\quad \ppb THp=C_p.\]
+\end{corollary}
+\begin{proof}
+Le prime due seguono immediatamente da $dH=TdS+Vdp$, mentre l'ultima segue sviluppando la definizione di $C_p$:
+\[C_p=\rbar{\frac{\delta Q}{\delta T}}_p=\ppb TUp+p\ppb TVp=\rbar{\pp T{}(U+pV)}_p=\ppb THp.\]
+\end{proof}
+
+
+
+
+\begin{definition}[Coefficiente di Joule-Thomson]
+Definiamo il \textbf{coefficiente di Joule-Thomson} come
+\[\mu_{JT}=\ppb pTH.\]
+\end{definition}
+\begin{fact}
+Per ogni gas esiste una temperatura, detta \textbf{temperatura di inversione}, tale che sotto questa temperatura $\mu_{JT}>0$
+\end{fact}
+
+\subsubsection{Per gas ideali}
+Nel caso dei gas ideali si ha che
+\[dH=dU+pdV+Vdp=C_VdT+d(pV)=n(c_V+R)dT=nc_pdT.\]
+\begin{remark}
+Poich\'e nei gas ideali $U$ dipende solo da $T$ e $pV=nRT$, si ha che anche $H$ dipende solo da $T$ per gas ideali. Segue che possiamo testare se un gas \`e ideale verificando se $\mu_{JT}=0$ o meno.
+\end{remark}
+
+
+\section{Energia libera di Helmholtz e Gibbs}
+\noindent
+Diamo un nome alle rimanenti trasformazioni di Legendre di $U$:
+\begin{definition}[Energia libera di Helmholtz]
+Dall'energia interna cambiamo $S$ in $\ppb SUV=T$, definendo $F=U-TS$, detta \textbf{energia libera di Helmholtz}. Osserviamo che
+\[dF=-SdT-pdV.\]
+\end{definition}
+
+\begin{remark}
+L'energia libera di Helmholtz ci permette di ricavare il ``massimo lavoro estraibile tra due stati".
+\end{remark}
+\begin{proof}
+Per il secondo principio $Q/T\leq \Delta S$, dunque
+\[W=\Delta U-Q\geq \Delta U-T\Delta S=\Delta F,\]
+cio\`e il lavoro che pu\`o fare il sistema ($-W$) \`e al massimo $-\Delta F$.
+\end{proof}
+
+\begin{remark}
+Si ha che
+\[\ppb TFV=-S,\quad \ppb VFT=-p.\]
+\end{remark}
+
+\begin{definition}[Energia libera di Gibbs]
+Dall'entalpia cambiamo $S$ in $\ppb SHp=T$, definendo $G=H-TS=U+pdV-TS=F+pV$, detta \textbf{energia libera di Gibbs}. Osserviamo che
+\[dG=-SdT-Vdp.\]
+\end{definition}
+
+\begin{remark}
+Si ha che
+\[\ppb pGT=V,\quad \ppb TGp=-S.\]
+\end{remark}
+
+
+\begin{proposition}[Relazioni di Maxwell]\label{RelazioniMaxwell}
+Valgono anche le equazioni
+\[\ppb VTS=-\ppb SpV,\quad \ppb pTS=\ppb SVp,\quad \ppb VST=\ppb TpV,\quad \ppb pST=-\ppb TVp\]
+o equivalentemente
+\[\pp{(p,V)}{(T,S)}=1.\]
+\end{proposition}
+\begin{proof}
+***********************************
+\end{proof}
+
+\subsection{Riassunto}
+Riassumiamo il comportamento di queste quantit\`a nella seguente tabella:
+\begin{center}
+\begin{tabular}{|c||c||c|}
+\hline
+Esp. libera di Joule & Esp. di Joule-Thompson &\\\hline\hline
+$U$ costante & $H$ costante & $F$ costante\\\hline
+$\mu_J=\ppb VTU$ & $\mu_{JT}=\ppb pTH$&\\\hline
+$dU=\delta Q-pdV$ & $dH =\delta Q+Vdp$&\\\hline
+$C_V=\ppb TUV$ & $C_p=\ppb THp$&\\\hline
+In isocora $\Delta U=Q$ & In isocora $\Delta H=Q$&\\\hline
+In adiabatica $\Delta U=-\int pdV$ & In adiabatica $\Delta H=\int Vdp$&\\\hline
+$\ppb SUV=T,\quad \ppb VUS=-p$ & $\ppb SHp=T,\quad \ppb pHS=V$&\\\hline
+In gas ideale $\Delta U=\int c_VdT$ & In gas ideale $\Delta H=\int c_pdT$&\\\hline
+\end{tabular}
+\end{center}
+******************************************************
+
+\section{Sistemi aperti di gas}
+Per sistemi di gas aperto
+\[\Delta U=Q+W+\Delta U_{materia},\]
+o in forma differenziale
+\[dU=TdS-pdV+\mu dn\]
+dove $\mu$ \`e il \textbf{potenziale chimico}.
+\begin{remark}
+Valgono le identit\`a differenziali
+\[\ppb SU{V,n}=T,\qquad \ppb VU{S,n}=-p,\qquad \ppb nU{S,V}=\mu.\]
+\end{remark}
+
+
+
+
+
+
+
+
+
+
+
 

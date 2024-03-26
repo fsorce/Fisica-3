@@ -184,8 +184,11 @@ Possiamo dunque definire la \textbf{temperatura assoluta} come
 \[T=g(\theta).\]
 Tutto ci\`o che abbiamo detto fin'ora in termini della temperatura definita tramite gas continua ad essere valido per la temperatura assoluta.
 
-\section{Entropia}
 
+
+
+\section{Entropia}
+\subsection{Teorema di Clausius e definizione}
 \begin{lemma}[Isoterme fibrano]\label{IsotermeFibrano}
 Due isoterme non si incrociano
 \end{lemma}
@@ -258,6 +261,7 @@ Se l'adiabatica non \`e reversibile l'entropia potrebbe cambiare.
 Per un \underline{qualsiasi} ciclo (anche irreversibile), $\Delta S=0$, in quanto \`e una funzione di stato.
 \end{remark}
 
+\subsection{Entropia globale aumenta}
 \begin{proposition}[Per un ciclo irreversibile l'entropia aumenta globalmente]\label{EntropiaAumentaGlobalmentePerCicloIrreversibile}
 Sia $\Sigma$ un ciclo che acquista una quantit\`a di calore $\delta Q$ da una sorgente a temperatura $T_s$ e che produce una quantit\`a di lavoro $W$, allora \[\oint \frac{\delta Q}T\leq 0,\]
 dove $T$ \`e la temperatura a cui lavora $\Sigma$.
@@ -306,6 +310,7 @@ assurdo per ipotesi.
 Se un sistema \`e isolato, $\delta Q=0$, quindi \[\Delta S\geq \int \frac{\delta Q}T=0.\]
 \end{remark}
 
+\subsubsection{Differenziale dell'entropia}
 \begin{remark}[Differenziale dell'entropia]
 Poich\'e $U$ \`e una funzione di stato
 \[dU=\delta Q+\delta W=\delta Q_{rev}+\delta W_{rev},\]
@@ -314,4 +319,52 @@ dunque
 Per il teorema (\ref{VariazioneEntropiaSuperaIntegrale}) si ha che $dS\geq \delta Q/T$, quindi per la forma sopra
 \[\delta W\geq \delta W_{rev},\]
 che \`e una riformulazione del teorema di Carnot (\ref{TeoremaDiCarnot}) se stiamo attenti ai segni.
+\end{remark}
+
+\begin{remark}
+Scriviamo le forme $\delta Q=\sum_i A_idx_i$ e $\delta W=\sum_i X_idx_i$.\\
+Sappiamo che questi non sono differenziali esatti, ma possiamo moltiplicare $\delta Q$ per $1/T$ e rendere quel differenziale esatto ($\delta Q/T=dS$). Questa \`e una manifestazione della proposizione (\ref{EsattezzaPfaff}).
+\end{remark} 
+
+\noindent
+Ricalcando l'osservazione (\ref{IntegrabilitaPuntiRaggiungibili}) segue un'altra riformulazione del secondo principio:
+\begin{proposition}[Secondo principio, formulazione di Caratheodory]\label{SecondoPrincipioCaratheodory}
+Vicino ad ogni punto di equilibrio esistono infiniti punti non raggiungibili con adiabatiche reversibili.
+\end{proposition}
+\begin{proof}
+NON DATA
+\end{proof}
+
+\begin{remark}
+Se consideriamo una adiabatica reversibile $\delta Q=0$, gli stati vegono divisi in due regioni. In una regione troviamo punti raggiungibili tramite adiabatiche irreversibili, nell'altra troviamo punti irraggiungibili da qualsiasi adiabatica.
+\end{remark}
+
+
+\subsection{Sistema, Ambiente ed Entropia}
+
+\begin{remark}
+Un processo \`e reversibile se e solo se $\Delta S_{globale}=0$.
+\end{remark}
+
+\noindent
+L'entropia pu\`o variare per due motivi: 
+\begin{enumerate}
+\item scambio di calore tra temperature diverse (causa \textit{esterna})
+\item sono presenti attriti (causa \textit{interna})
+\end{enumerate}
+
+\begin{example}[Sistema e sorgente]
+Consideriamo un universo formato unicamente da una sorgente a temperatura $T_s$ e un sistema che assorbe un un calore $Q$.
+\begin{enumerate}
+\item Supponiamo che il sistema non contenga attriti, cio\`e $\Delta S_{sist}^{(int)}$.\\ 
+Per definizione di sorgente $\Delta S_{sorg}=-Q/T_s$, mentre
+\[\Delta S_{sist}^{(ext)}\geq \int \frac{\delta Q}T\pasgnlmath\geq{T_s\geq T} \frac Q{T_s}.\]
+\item Supponiamo che il sistema compia solo scambi di calore reversibili (cio\`e $\Delta S_{sorg}+\Delta S_{sist}^{(ext)}=0$), allora
+\[\Delta S_{sorg}=\frac Q{T_s},\quad \Delta S_{sist}^{(ext)}=-\frac Q{T_s},\quad \Delta S_{sist}^{(int)}\geq 0.\]
+\end{enumerate}
+\end{example}
+
+
+\begin{remark}[Cicli irreversibili]
+Se un sistema fa un ciclo in modo irreversibile allora l'ambiente NON PU\`O aver fatto un ciclo in quanto altrimenti l'entropia non sarebbe aumentata.
 \end{remark}
