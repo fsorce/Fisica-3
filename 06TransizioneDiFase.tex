@@ -1,5 +1,7 @@
 \chapter{Transizione di fase}
-
+Generalmente transizioni di stato avvengono per $p$ e $T$ costanti, quindi la forma di energia pi\`u utile da considerare \`e l'energia libera di Gibbs
+\[\Delta G=\Delta H-T\Delta S.\]
+Poich\'e $dG=-SdT-Vdp$, si ha che se $p$ e $T$ restano costanti allora $\Delta G=0$, cio\`e \[T\Delta S=\Delta H.\]
 
 \section{Equazione di stato dei gas reali}
 Cosa pu\`o contribuire a negare l'approssimazione di gas ideale?
@@ -20,21 +22,143 @@ Di solito $a$ si aggira tra $10^{-2}$ e $10$ $\displaystyle\frac{\ell^2\mathrm{a
 \noindent
 Sotto una temperatura critica, le isoterme secondo l'equazione di Van der Waals diventano cubiche con un picco e una valle, in realt\`a quello che succederebbe nella realt\`a \`e che raggiungiamo le condizioni per \textit{transizioni di fase}.
 
-\section{Transizione di fase}
-Generalmente transizioni di stato avvengono per $p$ e $T$ costanti, quindi la forma di energia pi\`u utile da considerare \`e l'energia libera di Gibbs
-\[\Delta G=\Delta H-T\Delta S.\]
-Poich\'e $dG=-SdT-Vdp$, si ha che se $p$ e $T$ restano costanti allora $\Delta G=0$, cio\`e \[T\Delta S=\Delta H.\]
-\subsection{Liquido-Vapore}
+
+\section{Transizione tra due fasi}
+Chiamiamo le due fasi ``liquido" e ``vapore".\\
 Siano $n_L$ le moli di liquido e $n_V$ le moli di vapore.
-\begin{remark}
-Si ha che
+\begin{remark}[Energia libera di Gibbs molare]
+Si ha che\footnote{nell'ultima uguaglianza abbiamo usato il fatto che l'energia \`e una grandezza estensiva.}
 \[G=G_L(p_L,T_L,n_L)+G_V(p_V,T_V,n_V)\pasgnl={}n_Lg_L(p_L,T_L)+n_Vg_V(p_V,T_V)\]
 dove $g$ \`e l'\textbf{energia libera di Gibbs molare}.
 \end{remark}
-Per conservazione della materia $n_L+n_V=n$ \`e costante. Se $\al$ \`e la proporzione di liquido, cio\`e $n_L=\al n$ e $n_V=(1-\al)n$ allora
-\[G=n\al g_L(p_L,T_L)+n(i-\al)g_V(p_V,T_V).\]
+
+\begin{remark}[Proporzione tra le fasi]
+Per conservazione della materia $n_L+n_V=n$ \`e costante. Se $\al$ \`e la proporzione di liquido, cio\`e $n_L=\al n$ e $n_V=(1-\al)n$.
+\end{remark}
+Possiamo riscrivere l'energia libera di Gibbs in termini di $n$ ed $\al$:
+\[G=n\al g_L(p_L,T_L)+n(1-\al)g_V(p_V,T_V).\]
 Poich\'e consideriamo tutto in regime di quasi equilibrio $T_L=T_V$ e $p_L=p_V$\footnote{le pressioni sono le stesse perch\'e c'\`e equilibrio meccanico.}. Abbiamo dunque ricavato che $G$ dipende solo da $p,\ T$ e $\al$.
-\begin{remark}
-Per $p$ e $T$ costanti, siamo all'equilibrio se $G(\al)$ \`e minima\footnote{o massima, ma nella realt\`a minima. Poich\'e l'entropia tende ad aumentare, $G$ tende a diminuire.}, cio\`e
+
+\begin{remark}[Condizione di equilibrio]
+Per $p$ e $T$ costanti sappiamo che $G$ tende a diminuire (\ref{GibbsDiminuiscePerPressioneETemperaturaCostanti}), quindi siamo all'equilibrio se $G(\al)$ \`e minima, cio\`e
 \[0=\pp\al G=ng_L+0-n g_V\implies g_L=g_V.\]
+\end{remark}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*****************************
+
+
+Modelliamo una contenitore chiuso ($U=cost$, $V=cost$). In questo caso
+
+\begin{align*}
+V=&n\al v_L+n(1-\al)v_V\\
+U=&n\al u_L+n(1-\al)u_V\\
+S=&n\al s_L+n(1-\al)s_V
+\end{align*}
+
+
+All'equilibrio $0=dV=dU=dS=dn$.
+
+\begin{align*}
+0=&dU+pdV-TdS=\\
+=&n\al (du_L+pdv_L-Tds_L)+n(1-\al)(du_V+pdv_V-Tds_V)+\\
+&+(d\al (u_L+pv_L-Ts_L)-d\al (u_V+pv_V-Ts_V))n
+\end{align*}
+Per essere all'equilibrio le tre parentesi sono nulle, dunque
+\[u_L+pv_L-Ts_L=u_V+pv_V-Ts_V,\]
+cio\`e evidenziando le moli
+\[\under{=\frac{G_L}{n_L}}{\frac{U_L}{n_L}+p\frac{V_L}{n_L}-T\frac{S_L}{n_L}}=\under{=\frac{G_V}{n_V}}{\frac{U_V}{n_V}+p\frac{V_V}{n_V}-T\frac{S_V}{n_V}},\]
+ovvero
+\[g_L=g_V.\]
+
+
+
+\section{Caso generale}
+Consideriamo $N$ componenti\footnote{moralmente $N$ \`e il numero di sostanze diverse} e $F$ fasi. Sia $n^{(i)}_k$ il numero di moli della componente $i$ nella fase $k$.\medskip
+
+\noindent
+Osserviamo che
+\[G=\sum_{k\in\cpa{1,\cdots, F}}G_k(T,p,(n_k^{(i)})_{i\in\cpa{1,\cdots, N}}),\]
+cio\`e a priori $G$ dipende da $NF+2$ variabili.
+
+\begin{proposition}[Regola delle fasi di Gibbs]\label{RegolaFasiGibbs}
+Il numero di gradi di libert\`a \`e
+\[\nu=2+N-F.\]
+Questa \`e la \textbf{regola delle fasi (di Gibbs)}.
+\end{proposition}
+\begin{proof}
+Consideriamo due fasi ($a$ e $b$) e la transizione dalla fase $a$ alla fase $b$:
+\[\begin{cases}
+n_a^{(i)}\to n_a^{(i)}-\delta n^{(i)}\\
+n_b^{(i)}\to n_b^{(i)}-\delta n^{(i)}
+\end{cases}.\]
+Si ha che all'equilibrio
+\[0=dG=dG_a+dG_b=\pp {n_a^{(i)}}{G_a}(-\delta n^{(i)})+\pp {n_b^{(i)}}{G_a}(\delta n^{(i)}),\]
+ma l'energia libera di Gibbs \`e una grandezza estensiva, quindi vale la dipendeza lineare
+\[\pp {n_k^{(i)}}{G_k}=\frac{G_k}{n_k^{(i)}},\]
+segue dunque che
+\[g_a^{(i)}=\frac{G_a}{n_a^{(i)}}=\frac{G_b}{n_b^{(i)}}=g_b^{(i)}.\]
+Queste sono $F-1$ condizioni indipendenti per ogni componente.
+\bigskip
+
+\noindent Osserviamo inoltre che per ogni fase possiamo eliminare un grado di libert\`a considerando i rapporti tra le moli di componenti in quella fase***********.\bigskip
+
+\noindent Tirando le somme si ha che i gradi di libert\`a sono
+\[NF+2-(N(F-1)+F)=2+N-F.\]
+\end{proof}
+
+
+
+\begin{example}
+Studiamo i valori di $N$, $F$ e $\nu$ per alcuni sistemi
+\begin{itemize}
+\item Fluido omogeneo: $N=1$, $F=1$, $\nu=2$
+\item Fluido omogeneo dato da due gas: $N=2$, $F=1$, $\nu=3$
+\item Acqua e vapore: $N=1$, $F=2$, $\nu=1$
+\item Acqua, vapore e ghiaccio: $N=1$, $F=3$, $\nu=0$\footnote{non stupisce in quanto abbiamo tutte le fasi sono nel punto triplo.}
+\end{itemize}
+\end{example}
+
+
+[ROBA SUI GRAFICI DEI PUNTI CRITICI]
+
+\section{Calore latente}
+Alla transizione di fase
+
+
+\[p_{trans}(T),\quad V(p,T)=V(T)\]
+\begin{align*}
+n=&n_L+n_V\\
+V=&n_Lv_L(T)+n_Vv_V(T)\\
+U=&n_Lu_L(T)+n_Vu_V(T)
+\end{align*}
+Osserviamo che $dn_L=-dn_V$, quindi
+\[\ppb VUT=\frac{u_V-u_L}{v_V-v_L}.\]
+Per il primo principio
+\[\delta Q=dU+pdV=dn_V(u_L-u_L+p(v_V-v_L))\]
+
+\begin{definition}[Calore latente]
+Definiamo il \textbf{calore latente (molare) di vaporizzazione} come
+\[\la=\frac{\delta Q}{dn_V}=u_V-u_L+p(v_V-v_L).\]
+\end{definition}
+
+\begin{proposition}[Equazione di Clapeyron]\label{EquazioneClapeyron}
+Sulla transizione di fase
+\[\dd Tp=\frac\la{T(v_V-v_L)}\]
+\end{proposition}
+\begin{remark}[Equazione di Clausius-Clapeyron]
+Se $v_V\gg v_L$ allora per gas ideali
+\[\dd Tp=\frac\la{RT^2}p\leadsto p\propto e^{-\la/RT}.\]
 \end{remark}

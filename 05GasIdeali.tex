@@ -459,34 +459,98 @@ Si ha che
 \[\ppb pGT=V,\quad \ppb TGp=-S.\]
 \end{remark}
 
+\begin{proposition}[Secondo principio per energia libera di Gibbs]\label{GibbsDiminuiscePerPressioneETemperaturaCostanti}
+Se $T$ e $p$ sono costanti l'energia libera di Gibbs tende a diminuire.
+\end{proposition}
+\begin{proof}
+Per il secondo principio $TdS-\delta Q\geq 0$. Sviluppando $\delta Q$ troviamo
+\[TdS-dU-pdV\geq0.\]
+Se $p$ \`e costante allora $dH=dU+pdV$, quindi in tal caso
+\[TdS-dH\geq 0\]
+Se ora $T$ resta costante si ha che $dG=dH-TdS$, cio\`e
+\[dG\leq 0.\]
+Segue dunque che se $T$ e $p$ sono costanti, $G$ tende a diminuire.
+\end{proof}
+
 
 \begin{proposition}[Relazioni di Maxwell]\label{RelazioniMaxwell}
 Valgono anche le equazioni
-\[\ppb VTS=-\ppb SpV,\quad \ppb pTS=\ppb SVp,\quad \ppb VST=\ppb TpV,\quad \ppb pST=-\ppb TVp\]
-o equivalentemente
-\[\pp{(p,V)}{(T,S)}=1.\]
+\[\ppb VTS=-\ppb SpV,\quad \ppb pTS=\ppb SVp,\quad \ppb VST=\ppb TpV,\quad \ppb pST=-\ppb TVp.\]
 \end{proposition}
 \begin{proof}
-***********************************
+Derivano dall'eguagliare derivate seconde delle energie che abbiamo definito. In ordine le quattro equazioni sono uguali a
+\[\pp[2]{V\del S}U,\quad \pp[2]{p\del S}H,-\quad \pp[2]{V\del T}F,\quad \pp[2]{p\del T}G.\]
 \end{proof}
+
+\begin{remark}[Jacobiano $p,V$ - $T,S$]
+Possiamo derivare le relazioni di Maxwell anche constratando che
+\[\pp{(p,V)}{(T,S)}=1.\]
+\end{remark}
+\begin{proof}
+Mostriamo che l'identit\`a vale e poi ricaviamo le relazioni da essa.
+\setlength{\leftmargini}{0cm}
+\begin{itemize}
+\item[$\boxed{dPdV=dTdS}$] Per il primo principio
+\[dU=TdS-PdV\leadsto 0=d^2U=dTdS-dPdV,\]
+segue dunque per unicit\`a della scrittura in base che lo Jacobiano in esame vale $1$.
+\item[$\boxed{\text{Relazioni}}$] Ricaviamo la prima, le altre seguono in modo analogo
+\[\ppb VTS=\pp{(V,S)}{(T,S)}=\pa{\pp{(p,V)}{(T,S)}}\ii\pp{(V,S)}{(T,S)}=\pp{(V,S)}{(p,V)}=-\pp{(S,V)}{(p,V)}=-\ppb SpV.\]
+\end{itemize}
+\setlength{\leftmargini}{0.5cm}
+\end{proof}
+
+
+
 
 \subsection{Riassunto}
 Riassumiamo il comportamento di queste quantit\`a nella seguente tabella:
 \begin{center}
-\begin{tabular}{|c||c||c|}
+\begin{tabular}{|c||c|c|c|}
 \hline
-Esp. libera di Joule & Esp. di Joule-Thompson &\\\hline\hline
-$U$ costante & $H$ costante & $F$ costante\\\hline
-$\mu_J=\ppb VTU$ & $\mu_{JT}=\ppb pTH$&\\\hline
-$dU=\delta Q-pdV$ & $dH =\delta Q+Vdp$&\\\hline
-$C_V=\ppb TUV$ & $C_p=\ppb THp$&\\\hline
-In isocora $\Delta U=Q$ & In isocora $\Delta H=Q$&\\\hline
-In adiabatica $\Delta U=-\int pdV$ & In adiabatica $\Delta H=\int Vdp$&\\\hline
-$\ppb SUV=T,\quad \ppb VUS=-p$ & $\ppb SHp=T,\quad \ppb pHS=V$&\\\hline
-In gas ideale $\Delta U=\int c_VdT$ & In gas ideale $\Delta H=\int c_pdT$&\\\hline
+Energia & Definizione &Differenziale & Rel. Maxwell\\\hline
+Interna & $U=Q+W$ & $+TdS-p\ dV$ & $\ppb VTS=-\ppb SpV$\\
+Entalpia & $H=U+pV$ & $+TdS+Vdp$ & $\ppb pTS=\ppb SVp$\\
+Helmholtz & $F=U-TS$ & $-SdT-p\ dV$ & $\ppb VST=\ppb TpV$\\
+Gibbs & $G=U+pV-TS$ & $-SdT+Vdp$ & $-\ppb pST=\ppb TVp$\\\hline
 \end{tabular}
 \end{center}
-******************************************************
+Mettendo a confronto energia interna ed entalpia troviamo ulteriori similitudini:
+\begingroup
+\renewcommand{\arraystretch}{1.5}
+\begin{center}
+\begin{tabular}{|c||c||c|}
+\hline
+Argomento & Energia interna & Entalpia\\\hline\hline
+Espansione & libera di Joule & di Joule-Thompson\\\hline
+Quanto non ideale?& $\mu_J=\ppb VTU$ & $\mu_{JT}=\ppb pTH$\\\hline
+Differenziale reversibile &$dU=\delta Q-pdV$ & $dH =\delta Q+Vdp$\\\hline
+C. di Esp. Termica&$C_V=\ppb TUV$ & $C_p=\ppb THp$\\\hline
+Su isocora & $\Delta U=Q$ & $\Delta H=Q$\\\hline
+Su adiabatica & $\Delta U=-\int pdV$ &  $\Delta H=\int Vdp$\\\hline
+In gas ideale & $\Delta U=\int c_VdT$ & $\Delta H=\int c_pdT$\\\hline
+\end{tabular}
+\end{center}
+\endgroup
+
+\bigskip
+\noindent
+Per ricordare le varie derivate parziali pu\`o essere utile il \textbf{diagramma di Konis-Born}
+% https://q.uiver.app/#q=WzAsNCxbMCwwLCJUIl0sWzEsMCwiViJdLFswLDEsIlAiXSxbMSwxLCJTIl0sWzIsMywiSCIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCwxLCJGIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxLDMsIlUiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzAsMiwiRyIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMiwxLCIiLDMseyJsYWJlbF9wb3NpdGlvbiI6NjAsInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMywwLCIiLDEseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV1d
+\[\begin{tikzcd}
+	T & V \\
+	p & S
+	\arrow["H"', no head, from=2-1, to=2-2]
+	\arrow["F", no head, from=1-1, to=1-2]
+	\arrow["U", no head, from=1-2, to=2-2]
+	\arrow["G"', no head, from=1-1, to=2-1]
+	\arrow[tail, from=2-1, to=1-2]
+	\arrow[tail, from=2-2, to=1-1]
+\end{tikzcd}\]
+I due vertici di uno stesso lato contengono le variabili che appaiono nei differenziali mentre le diagonali indicano il valore della derivata dell'energia di un dato lato per la variabile del vertice. Il verso delle diagonali indica il segno di queste derivata, quindi per esempio per il lato destro ricaviamo
+\[\ppb SUV=T,\quad \ppb VUS=-p.\]
+Le due coppie di lati opposti corrispondono ognuna a due relazioni di Maxwell. Per capire i segni basta considerare i due triangoli che si formano scegliendo uno degli altri lati e completando con le due diagonali, per esempio la relazione
+\[\ppb VTS=-\ppb SpV\]
+si pu\`o leggere associando al membro di sinistra il triangolo $TVS$ e a quello di destra il triangolo $pSV$.
 
 \section{Sistemi aperti di gas}
 Per sistemi di gas aperto
