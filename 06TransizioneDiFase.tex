@@ -134,6 +134,35 @@ Studiamo i valori di $N$, $F$ e $\nu$ per alcuni sistemi
 
 [ROBA SUI GRAFICI DEI PUNTI CRITICI]
 
+\subsection{Definizione di temperatura tramite gas}
+L'esistenza del punto triplo ci permette di definire la temperatura in termini di una grandezza che possiamo misurare direttamente. 
+\begin{fact}[Punto triplo]
+\emph{Considerando come sistema termodinamico dell'acqua esiste una precisa combinazione di temperatura e pressione tale per cui essa risulta in trasizione tra gli stati solido liquido e gassoso simultaneamente.\\
+Questo stato si chiama \textbf{punto triplo} e i valori in questione sono una temperatura di $0.01 ^\circ \mathrm{C}$ e una pressione di $0.006\ \mathrm{atm}$.}
+\end{fact}
+\medskip
+
+\noindent
+A bassa pressione i gas si comportano tutti allo stesso modo\footnote{rispettano l'equazione di stato $pV=f(\theta)$}.\\
+Se fissiamo il volume e la quantit\`a di materia del gas possiamo definire $\theta$ in modo tale che $p=p_0(1+\al\theta)$, cio\`e poniamo 
+\[\theta=\frac1\al\frac{p-p_0}{p_0}.\] 
+Se imponiamo che l'acqua congeli per $\theta=0$ e evapori per $\theta=100$ allora ricaviamo $1/\al=273.15$. Notiamo inoltre\footnote{l'addizione di $\al\ii$ corrisponde alla traslazione che trasforma gradi Celsius in gradi Kelvin.}
+\[\frac{p_2}{p_1}=\frac{\al\ii+\theta_2}{\al\ii +\theta_1}=\frac{\theta_2'}{\theta_1'}.\]
+Possiamo dunque definire la temperatura (in Kelvin) come
+\[T=\lim_{p^{(PT)}\to 0}273.16 \frac{p}{p^{(PT)}}\]
+dove $p^{(PT)}$ \`e la pressione del gas nel termometro quando questo sistema \`e in equilibrio con il sistema di punto triplo con l'acqua. Il limite corrisponde a prendere gas sempre pi\`u rarefatti, cio\`e a lavorare nel limite dei gas perfetti dove vale la proporzionalit\`a sopra.
+\medskip
+
+\noindent Sfruttando questa definizione possiamo costruire un termometro a gas come in figura
+
+[FIGURA TERMOMETRO A GAS]
+
+\noindent Quando il gas \`e alla temperatura che vogliamo misurare, misuriamo la differenza di altezza tra il livello a contatto con il gas e il livello di controllo posto a pressione atmosferica. 
+Questa differenza \`e proporzionale alla differenza di pressione e questo ci permette di ricavare la temperatura se la fissiamo per quando \`e nel punto critico.
+
+
+
+
 \section{Calore latente}
 Alla transizione di fase
 
@@ -162,3 +191,14 @@ Sulla transizione di fase
 Se $v_V\gg v_L$ allora per gas ideali
 \[\dd Tp=\frac\la{RT^2}p\leadsto p\propto e^{-\la/RT}.\]
 \end{remark}
+
+
+
+
+
+
+\begin{definition}[Caloria]
+Una \textbf{caloria} \`e la quantit\`a di calore necessaria per far variare la temperatura di un grammo di acqua da $14.5^\circ\mathrm{C}$ a $15.5^\circ\mathrm{C}$.\\
+In Joule si ha che
+\[\boxed{1\ \mathrm{cal}=4.186\ \mathrm{J}}\]
+\end{definition}

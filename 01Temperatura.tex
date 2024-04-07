@@ -123,36 +123,10 @@ Dato un sistema termodinamico e un valore $\theta_0$ di temperatura empirica, ch
 \end{definition}
 
 
-\subsection{Definizione di temperatura tramite gas}
-\begin{fact}[Punto triplo]
-\emph{Considerando come sistema termodinamico dell'acqua esiste una precisa combinazione di temperatura e pressione tale per cui essa risulta in trasizione tra gli stati solido liquido e gassoso simultaneamente.\\
-Questo stato si chiama \textbf{punto triplo} e i valori in questione sono una temperatura di $0.01 ^\circ \mathrm{C}$ e una pressione di $0.006\ \mathrm{atm}$.}
-\end{fact}
-\medskip
-
-\noindent
-A bassa pressione i gas si comportano tutti allo stesso modo\footnote{rispettano l'equazione di stato $pV=f(\theta)$}.\\
-Se fissiamo il volume e la quantit\`a di materia del gas possiamo definire $\theta$ in modo tale che $p=p_0(1+\al\theta)$, cio\`e poniamo 
-\[\theta=\frac1\al\frac{p-p_0}{p_0}.\] 
-Se imponiamo che l'acqua congeli per $\theta=0$ e evapori per $\theta=100$ allora ricaviamo $1/\al=273.15$. Notiamo inoltre\footnote{l'addizione di $\al\ii$ corrisponde alla traslazione che trasforma gradi Celsius in gradi Kelvin.}
-\[\frac{p_2}{p_1}=\frac{\al\ii+\theta_2}{\al\ii +\theta_1}=\frac{\theta_2'}{\theta_1'}.\]
-Possiamo dunque definire la temperatura (in Kelvin) come
-\[T=\lim_{p^{(PT)}\to 0}273.16 \frac{p}{p^{(PT)}}\]
-dove $p^{(PT)}$ \`e la pressione del gas nel termometro quando questo sistema \`e in equilibrio con il sistema di punto triplo con l'acqua. Il limite corrisponde a prendere gas sempre pi\`u rarefatti, cio\`e a lavorare nel limite dei gas perfetti dove vale la proporzionalit\`a sopra.
-\medskip
-
-\noindent Sfruttando questa definizione possiamo costruire un termometro a gas come in figura
-
-[FIGURA TERMOMETRO A GAS]
-
-\noindent Quando il gas \`e alla temperatura che vogliamo misurare, misuriamo la differenza di altezza tra il livello a contatto con il gas e il livello di controllo posto a pressione atmosferica. 
-Questa differenza \`e proporzionale alla differenza di pressione e questo ci permette di ricavare la temperatura se la fissiamo per quando \`e nel punto critico.
-
-
 \section{Primo principio e Definizione di calore}
 
 \begin{fact}[Primo principio della termodinamica]
-\textbf{L'energia interna di un sistema di conserva.}
+\textbf{L'energia interna di un sistema isolato si conserva.}
 \end{fact}
 
 \begin{definition}[Calore]
@@ -170,14 +144,6 @@ Scrivendo il primo principio in termini di infinitesimi troviamo
 in particolare per i gas ideali vale
 \[dU=\delta Q-pdV.\]
 \end{remark}
-
-
-\begin{definition}[Caloria]
-Una \textbf{caloria} \`e la quantit\`a di calore necessaria per far variare la temperatura di un grammo di acqua da $14.5^\circ\mathrm{C}$ a $15.5^\circ\mathrm{C}$.\\
-In Joule si ha che
-\[\boxed{1\ \mathrm{cal}=4.186\ \mathrm{J}}\]
-\end{definition}
-
 
 \begin{remark}
 In una trasformazione adiabatica, il lavoro \`e dato dalla differenza di energia interna.
