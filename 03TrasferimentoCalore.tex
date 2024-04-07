@@ -1,4 +1,7 @@
-\chapter{Trasferimento di calore}
+\chapter{Introduzione al Calore}
+
+
+
 
 \section{Modalit\`a di trasferimento di calore}
 Il trasperimento di calore, cio\`e di energia derivante da una differenza di temperatura, avviene in tre modi: conduzione, covezione ed irraggiamento.
@@ -20,13 +23,13 @@ dove $T$ \`e la temperatura, $X$ \`e la distanza tra i punti tra cui stiamo calc
 \end{cases}.\]
 \noindent Possiamo precisare la legge di Fourier introducendo la
 \textbf{corrente di calore} $\vec J_Q$. La legge assume la forma
-\[\vec J_Q=-k\vec \nabla T.\]
+\[\vec J_Q=-\kappa\vec \nabla T.\]
 Concentrandosi su uno dei sistemi possiamo scrivere
 \[\boxed{\delta Q= cm\delta T}\]
 dove $m$ \`e la massa e $c$ \`e il \textbf{calore specifico}.\bigskip
 
 \noindent Possiamo calcolare il calore totale che entra dentro una superficie per unit\`a di tempo come
-\[\int_V c\pp tT\rho dV=\frac1{\Delta t}\int_{\del V} \delta Q=-\int_{\del V} \vec J_Q\cdot \vec d\Sigma=-\int_V \nabla \cdot \vec J_Q dV=\int_Vk\nabla^2 T dV.\]
+\[\int_V c\pp tT\rho dV=\frac1{\Delta t}\int_{\del V} \delta Q=-\int_{\del V} \vec J_Q\cdot \vec d\Sigma\pasgnl={T.Div.}-\int_V \nabla \cdot \vec J_Q dV=\int_V\kappa\nabla^2 T dV.\]
 Ricaviamo dunque
 \[\boxed{\pp tT=\frac{\kappa}{\rho c}\nabla^2T}\]
 Questa \`e la famosa \textit{equazione del calore}.
@@ -41,47 +44,4 @@ Parliamo di \textbf{irraggiamento} quando un corpo semplicemente emette energia 
 La formula rilevante in questo caso \`e
 \[\frac1A\frac{\delta Q}{\Delta t}=\e \sigma(T^4-T_0^4),\]
 dove $T_0$ \`e la temperatura dell'ambiente, $\sigma$ \`e una costante uguale per tutti i materiali e $\e$ dipende dai materiali.
-
-\section{Capacit\`a termica}
-\begin{definition}[Capacit\`a termica]
-Definiamo la \textbf{capacit\`a termica} come\footnote{Nota che NON \`e una derivata in quanto $Q$ non \`e una funzione di stato, quindi in particolare non \`e una funzione di $T$}
-\[C=\lim_{\delta T\to 0}\frac{\delta Q}{\delta T}.\]
-L'unit\`a di misura \`e $[C]=\mathrm{J}/\mathrm{K}$.\\
-La \textbf{capacit\`a termica molare} \`e data da $c=C/n$.\\
-Il \textbf{calore specifico} \`e dato da $C/m$.
-\end{definition}
-
-\begin{definition}[Termometro e Termostato]
-Un \textbf{termostato} \`e un oggetto ideale con capacit\`a termica infinita\footnote{intuitivamente \`e un sistema grande a sufficienza in modo che anche se viene aggiunto calore, la temperatura non cambia.}.\\ 
-Un \textbf{termometro} \`e un oggetto ideale con capacit\`a termica nulla\footnote{intuitivamente \`e un sistema piccolo a sufficienza in modo da poter trascurare gli scambi di calore.}.
-\end{definition}
-
-\begin{remark}
-Possiamo scrivere la capacit\`a termica in termini di $U,\ V,\ p$ e $T$ come segue:
-\[C=\frac{\delta Q}{\delta T}=\ppb TUV+\pa{\ppb VUT+p}\dd TV\]
-\end{remark}
-\begin{proof}
-Sviluppando $dU$ troviamo
-\[dU=\ppb TUVdT+\ppb VUTdV,\]
-da cui
-\[\delta Q=dU+pdV=\ppb TUVdT+\pa{\ppb VUT+p}dV.\]
-Ora possiamo ``dividere" per $dT$ e trovare la tesi.
-\end{proof}
-
-\begin{definition}[Capacit\`a termica a volume/pressione costante]
-Definiamo la \textbf{capacit\`a termica a volume} (risp. \textbf{pressione}) \textbf{costante} come le due seguenti quantit\`a
-\begin{align*}
-C_V=&\rbar{\frac{\delta Q}{\delta T}}_V=\ppb TUV\\
-C_p=&\rbar{\frac{\delta Q}{\delta T}}_p=\ppb TUV +\pa{\ppb VUT+p}\ppb TVp=\ppb TUV +\pa{\ppb VUT+p}V\al
-\end{align*}
-\end{definition}
-
-\begin{remark}[Disuguaglianza tra capacit\`a termiche]\label{DisguguaglianzaCapacitaTermiche}
-Vale sempre $C_p>C_V$.
-\end{remark}
-
-\begin{remark}\label{DerivataEnergiaInternaRispettoAlVolume}
-In un gas generale
-\[\boxed{\ppb VUT=\frac{C_p-C_V}{V\al}-p}\]
-\end{remark}
 

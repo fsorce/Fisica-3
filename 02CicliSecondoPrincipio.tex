@@ -1,44 +1,5 @@
-\chapter{Primo e Secondo principio}
-\section{Primo principio e Definizione di calore}
-
-\begin{fact}[Primo principio della termodinamica]
-\textbf{L'energia interna di un sistema di conserva.}
-\end{fact}
-
-\begin{definition}[Calore]
-Il \textbf{calore} \`e la differenza tra la variazione di energia interna e il lavoro compiuto su un sistema termodinamico, esplicitamente
-\[\boxed{\Delta U=Q+W}\]
-\end{definition}
-
-\begin{remark}
-Il calore e il lavoro non sono funzioni di stato, ma la loro somma s\`i.
-\end{remark}
-
-\begin{remark}[Primo principio in forma differenziale]
-Scrivendo il primo principio in termini di infinitesimi troviamo
-\[dU=\delta Q+\delta W,\]
-in particolare per i gas ideali vale
-\[dU=\delta Q-pdV.\]
-\end{remark}
-
-
-\begin{definition}[Caloria]
-Una \textbf{caloria} \`e la quantit\`a di calore necessaria per far variare la temperatura di un grammo di acqua da $14.5^\circ\mathrm{C}$ a $15.5^\circ\mathrm{C}$.\\
-In Joule si ha che
-\[\boxed{1\ \mathrm{cal}=4.186\ \mathrm{J}}\]
-\end{definition}
-
-
-\begin{remark}
-In una trasformazione adiabatica, il lavoro \`e dato dalla differenza di energia interna.
-\end{remark}
-\begin{example}[Coppia di sistemi dentro un contenitore adiabatico]
-Consideriamo due sistemi $A$ e $B$ dentro un contenitore adiabatico. Per il primo principio
-\[0=\Delta U=\Delta U_A+\Delta U_B=Q_A+Q_B+\under{=W}{W_A+W_B}.\]
-I trasferimenti di calore possono avvenire solo tra $A$ e $B$, quindi $Q_A+Q_B=0$ e $W=0$. Quanto scritto \`e una ``legge di conservazione del calore" in questo tipo di sistema.
-\end{example}
-
-\section{Secondo principio e cicli}
+\chapter{Secondo principio e cicli}
+\section{Secondo principio e temperatura assoluta}
 \subsection{Enunciati del secondo principio}
 \begin{fact}[Secondo principio della termodinamica, formulazione di Kelvin]
 \textbf{Non esiste un processo che traformi \ul{interamente} calore in lavoro.}
@@ -64,7 +25,7 @@ Notiamo che $\abs{Q'}+\abs{W}>\max{\cpa{\abs{Q'},\abs{W}}}=\max{\cpa{\abs{Q'},\a
 
 [DIAGRAMMA]
 
-e leggendo questo diagramma come un insieme la macchina avrebbe preso del calore $\abs Q-\abs{Q'}$ dalla sorgente $T_L$ e lo ha trasformato interamente in lavoro, negando Kelvin.
+e leggendo questo diagramma come un insieme la macchina avrebbe preso del calore $\abs Q-\abs{Q'}$ dalla sorgente $\theta_L$ e lo ha trasformato interamente in lavoro, negando Kelvin.
 \end{itemize}
 \setlength{\leftmargini}{0.5cm}
 \end{proof}
@@ -83,7 +44,7 @@ Spesso torna comodo fare diagrammi come in figura
 \begin{remark}
 Per un processo ciclico, $\Delta U=0$, dunque $Q=-W$.
 \[-W=Q=Q_H+Q_L\]
-dove $Q_H$ \`e il calore che il sistema acquista da una sorgente calda e $Q_L$ \`e il calore che acquista da una sorgente fredda\footnote{$Q_L$ \`e negativo}. Notiamo che
+dove $Q_H$ \`e il calore che il sistema acquista da una sorgente calda e $Q_L$ \`e il calore che acquista da una sorgente fredda\footnote{Di solito $Q_H$ \`e positivo e $Q_L$ \`e negativo.}. Notiamo che
 \[\abs W=\abs{Q_H}-\abs{Q_L}.\]
 \end{remark}
 
@@ -137,12 +98,11 @@ Definiamo esplicitamente un ciclo reversibile:
 \begin{definition}[Ciclo di Carnot]
 Il \textbf{ciclo di Carnot} \`e composto dalle seguenti trasformazioni quasistatiche reversibili:
 \begin{enumerate}
-\item isoterma a temperatura $T_H$,
-\item adiabatica da $T_H$ a $T_L$, 
-\item isoterma a temperatura $T_L$,
-\item adiabatica da $T_L$ a $T_H$.
+\item isoterma a temperatura $\theta_H$,
+\item adiabatica da $\theta_H$ a $\theta_L$, 
+\item isoterma a temperatura $\theta_L$,
+\item adiabatica da $\theta_L$ a $\theta_H$.
 \end{enumerate}
-[DIAGRAMMA PV]
 \end{definition}
 
 
@@ -183,9 +143,6 @@ Segue che $\log(f(\theta,\theta))=0$, cio\`e $B(\theta)=-C(\theta)$.
 Possiamo dunque definire la \textbf{temperatura assoluta} come
 \[T=g(\theta).\]
 Tutto ci\`o che abbiamo detto fin'ora in termini della temperatura definita tramite gas continua ad essere valido per la temperatura assoluta.
-
-
-
 
 \section{Entropia}
 \subsection{Teorema di Clausius e definizione}
@@ -262,7 +219,7 @@ Per un \underline{qualsiasi} ciclo (anche irreversibile), $\Delta S=0$, in quant
 \end{remark}
 
 \subsection{Entropia globale aumenta}
-\begin{proposition}[Per un ciclo irreversibile l'entropia aumenta globalmente]\label{EntropiaAumentaGlobalmentePerCicloIrreversibile}
+\begin{proposition}[Disuguaglianza di Clausius]\label{DisuguaglianzaClausius}
 Sia $\Sigma$ un ciclo che acquista una quantit\`a di calore $\delta Q$ da una sorgente a temperatura $T_s$ e che produce una quantit\`a di lavoro $W$, allora \[\oint \frac{\delta Q}T\leq 0,\]
 dove $T$ \`e la temperatura a cui lavora $\Sigma$.
 \end{proposition}
@@ -290,25 +247,31 @@ Sia $\gamma$ un processo che porta lo stato $A$ nello stato $B$, potenzialmente 
 \end{theorem}
 \begin{proof}
 Sia $\al$ un processo reversibile che porta da $A$ a $B$ e sia $\beta$ il suo processo inverso.\\
-Per la proposizione (\ref{EntropiaAumentaGlobalmentePerCicloIrreversibile}) si ha che
+Per la disuguaglianza di Clausius (\ref{DisuguaglianzaClausius}) si ha che
 \[\under{=-\Delta S}{\int_\beta\frac{\delta Q}T}+\int_\gamma\frac{\delta Q}T\leq 0\implies \Delta S\geq \int_A^B\frac{\delta Q}T.\]
 \end{proof}
+
+
 
 
 \begin{proposition}[Secondo principio con entropia]
 L'affermazione ``$\Delta S\geq 0$ per sistemi isolati" \`e equivalente al secondo principio della termodinamica.
 \end{proposition}
 \begin{proof}
-Abbiamo gi\`a visto che il secondo principio implica $\Delta S\geq 0$.\\
-Consideriamo allora per assurdo un processo che trasforma calore in lavoro senza altri effetti. 
+Mostriamo le due implicazioni:
+\setlength{\leftmargini}{0cm}
+\begin{itemize}
+\item[$\boxed{\impliedby}$] Assumendo il secondo principio abbiamo visto che vale il teorema (\ref{VariazioneEntropiaSuperaIntegrale}). Se un sistema \`e isolato, $\delta Q=0$, quindi 
+\[\Delta S\geq \int \frac{\delta Q}T=0.\]
+\item[$\boxed{\implies}$] Consideriamo per assurdo un processo che trasforma calore in lavoro senza altri effetti\footnote{Neghiamo la formulazione di Kelvin.}. 
 La variazione di entropia del sistema sarebbe\footnote{il sistema perde calore per trasformarlo in lavoro, quindi il segno \`e negativo} 
 \[\Delta S=\oint \frac{\delta Q}T=-\frac{\abs{Q}}T<0,\]
 assurdo per ipotesi.
-\end{proof}
+\end{itemize}
+\setlength{\leftmargini}{0.5cm}
 
-\begin{remark}[L'Entropia dell'universo non diminuisce]
-Se un sistema \`e isolato, $\delta Q=0$, quindi \[\Delta S\geq \int \frac{\delta Q}T=0.\]
-\end{remark}
+
+\end{proof}
 
 \subsubsection{Differenziale dell'entropia}
 \begin{remark}[Differenziale dell'entropia]
@@ -368,5 +331,4 @@ Per definizione di sorgente $\Delta S_{sorg}=-Q/T_s$, mentre
 \begin{remark}[Cicli irreversibili]
 Se un sistema fa un ciclo in modo irreversibile allora l'ambiente NON PU\`O aver fatto un ciclo in quanto altrimenti l'entropia non sarebbe aumentata.
 \end{remark}
-
 

@@ -145,7 +145,7 @@ Mostriamo i due punti:
 \setlength{\leftmargini}{0cm}
 \begin{itemize}
 \item[$\boxed{1}$] Ricordiamo la relazione \[\delta Q=\under{=C_V}{\ppb TUV} dT+\pa{{\ppb VUT}+p}dV,\]
-da cui, usando il fatto che $\ppb UVT=0$, troviamo che $\delta Q=C_V dT+pdV$.
+da cui, usando il fatto che $\ppb VUT=0$, troviamo che $\delta Q=C_V dT+pdV$.
 \item[$\boxed{2}$] Osserviamo che il differenziale di $pV=nRT$ \`e
 \[nRdT=pdV+Vdp,\]
 da cui sfruttando la relazione precedente
@@ -242,7 +242,7 @@ Q=0,\quad
 \Delta U=\frac{p_fV_f-p_iV_i}{\gamma-1}.\]
 \end{proposition}
 \begin{proof}
-Poich\'e il processo \`e adiabatico, $Q=0$. Segue per il primo principio che $\Delta Q=W$. Dato che stiamo considerando un gas ideale
+Poich\'e il processo \`e adiabatico, $Q=0$. Segue per il primo principio che $\Delta U=W$. Dato che stiamo considerando un gas ideale
 \[\Delta U=nc_V\Delta T=n\frac R{\gamma-1}\Delta T=\frac 1{\gamma-1}\Delta (pV)=\frac{p_fV_f-p_iV_i}{\gamma-1}.\]
 \end{proof}
 
@@ -265,10 +265,10 @@ dove nell'ultimo conto abbiamo usato le equazioni per le adiabatiche:
 \[\pa{\frac{V_B}{V_C}}^{\gamma-1}=\frac{T_L}{T_H},\quad \pa{\frac{V_D}{V_A}}^{\gamma-1}=\frac{T_H}{T_L}\implies \frac{V_B}{V_A}=\frac{V_C}{V_D}.\]
 \end{proof}
 
-\begin{remark}[Efficienza massima per gas ideale]
+\begin{remark}[Efficienza massima]
 Poich\'e il ciclo di Carnot \`e reversibile, per il teorema di Carnot (\ref{TeoremaDiCarnot}) il valore
 \[1-\frac{T_L}{T_H}\]
-\`e la massima efficienza possibile per un qualsiasi ciclo realizzato da un gas ideale.
+\`e la massima efficienza possibile per un qualsiasi ciclo reversibile che agisce tra due sorgenti alle tempersture indicate.
 \end{remark}
 
 \begin{remark}[Coefficiente di prestazione massimo per gas ideale]
@@ -282,54 +282,7 @@ Per una pompa di calore, la massima efficienza \`e data da
 \end{remark}
 
 
-\section{Tipi di energie nei gas}
-\subsection{Energia interna ed entropia}
-
-\begin{remark}[Differenziali]
-Osserviamo che
-\[TdS=\rbar{\delta Q}_{rev}=dU-\rbar{\delta W}_{rev}=dU+pdV,\]
-dunque
-\[\boxed{dU=TdS-pdV}\]
-\end{remark}
-\begin{remark}
-\underline{\textbf{NOTA BENE:}} Questo sembra un altro modo di scrivere il primo principio $dU=\delta Q+\delta W$, ma se il processo non \`e reversibile allora non \`e detto che $pdV=\delta W$.
-\end{remark}
-
-\begin{proposition}[Equazione di Helmholtz]\label{EquazioneHelmholtz}
-Vale la seguente identit\`a
-\[\boxed{\ppb VUT=T\ppb TpV-p}=T^2\ppb T{(p/T)}V\]
-\end{proposition}
-\begin{proof}
-Sviluppiamo il differenziale dell'entropia
-\[dS=\frac{dU}T+\frac{pdV}T=\frac1T\pa{\ppb TUVdT+\ppb VUTdV}+\frac pTdV.\]
-Poich\'e $dS$ \`e un differenziale esatto, le derivate incrociate devono coincidere:
-\begin{gather*}
-\pp V{}\pa{\frac1T\ppb TUV}=\rbar{\pp T{}\pa{\frac1T\pa{\ppb VUT+p}}}_V\\
-\cancel{\frac1T\pp{V\del T}{^2U}}=-\frac1{T^2}\pa{\ppb VUT+p}+\cancel{\frac1T\pp{V\del T}{^2U}}+\frac1T\ppb TpV\\
-\ppb VUT=T\ppb TpV-p.
-\end{gather*}
-\end{proof}
-\begin{remark}
-Osserviamo che 
-\[dU=\under{=C_V}{\ppb TUV}dT+\ppb VUTdV,\]
-quindi la formula di Helmholtz misura ``quanto un gas non \`e ideale" (ricordiamo (\ref{DerivataEnergiaInternaRispettoAlVolume}))
-\end{remark}
-\begin{remark}
-Se $dU=0$ allora
-\[dT=-\frac{\ppb VUT}{\ppb TUV}dV=\ppb VTUdV\pasgnl={(\ref{EquazioneHelmholtz})}\frac1{C_V}\pa{p-T\ppb TpV}dV.\]
-Questa identit\`a pu\`o essere interpretata come test per Gas ideali, basta capire se $T\ppb pTV$ coincide con $\frac{nRT}V$.
-\end{remark}
-
-\begin{remark}
-Valgono le seguenti identit\`a
-\[C_V=T\ppb TSV,\quad C_p=T\ppb TSp,\qquad \gamma=\frac{\ppb VpS}{\ppb Vpp}=\frac{\beta_T}{\beta_S}\]
-\end{remark}
-\begin{proof}
-ESERCIZIO
-\end{proof}
-
-
-\subsubsection{Per gas ideali}
+\section{Potenziali termodinamici}
 Il calore scambiato per trasformazioni reversibili nei gas ideali si pu\`o sviluppare in
 \[\rbar{\delta Q}_{rev}=dU+pdV=C_VdT+\frac{nRT}VdV,\]
 da cui
@@ -377,47 +330,7 @@ Valgono le seguenti espressioni:
 Basta applicare le espressioni trovate (\ref{EntropiaGasIdeali}).
 \end{proof}
 
-
-
-\subsection{Espansione di Joule-Thompson: Entalpia}
-
-[DESCRIVI L'ESPERIMENTO]
-
-\begin{definition}[Entalpia]
-L'\textbf{entalpia} in un gas \`e definita da\footnote{cio\`e l'energia interna sommata al ``lavoro necessario per portare il volume da $0$ a $V$ a pressione costante".}
-\[H=U+pV.\]
-\end{definition}
-
-\begin{remark}
-L'entalpia \`e ottenuta da $U$ come trasformazione di Legendre:\\
-Consideriamo $U(S,V)$ e cambiamo la coordinata $V$ in $-p=\ppb VUS$, che possiamo fare ponendo $H(S,p)=U-(-pV)=U+pV$.
-\end{remark}
-
-\begin{remark}[Differenziale dell'entalpia]
-Il differenziale di $H$ \`e dato da
-\[dH=dU+pdV+Vdp=TdS+Vdp\pasgnl={se reversibile}\delta Q+Vdp\]
-oppure da
-\[dH=dU+p(\al VdT-\beta_T Vdp)+Vdp=dU+p\al VdT+V(1-\beta_Tp)dp.\]
-\end{remark}
-\begin{corollary}
-Valgono le seguenti identit\`a
-\[\ppb SHp=T,\quad \ppb pHS=V,\quad \ppb THp=C_p.\]
-\end{corollary}
-\begin{proof}
-Le prime due seguono immediatamente da $dH=TdS+Vdp$, mentre l'ultima segue sviluppando la definizione di $C_p$:
-\[C_p=\rbar{\frac{\delta Q}{\delta T}}_p=\ppb TUp+p\ppb TVp=\rbar{\pp T{}(U+pV)}_p=\ppb THp.\]
-\end{proof}
-
-
-
-
-\begin{definition}[Coefficiente di Joule-Thomson]
-Definiamo il \textbf{coefficiente di Joule-Thomson} come
-\[\mu_{JT}=\ppb pTH.\]
-\end{definition}
-\begin{fact}
-Per ogni gas esiste una temperatura, detta \textbf{temperatura di inversione}, tale che sotto questa temperatura $\mu_{JT}>0$
-\end{fact}
+[DESCRIVI L'ESPERIMENTO Espansione di Joule-Thompson]
 
 \subsubsection{Per gas ideali}
 Nel caso dei gas ideali si ha che
@@ -425,144 +338,6 @@ Nel caso dei gas ideali si ha che
 \begin{remark}
 Poich\'e nei gas ideali $U$ dipende solo da $T$ e $pV=nRT$, si ha che anche $H$ dipende solo da $T$ per gas ideali. Segue che possiamo testare se un gas \`e ideale verificando se $\mu_{JT}=0$ o meno.
 \end{remark}
-
-
-\section{Energia libera di Helmholtz e Gibbs}
-\noindent
-Diamo un nome alle rimanenti trasformazioni di Legendre di $U$:
-\begin{definition}[Energia libera di Helmholtz]
-Dall'energia interna cambiamo $S$ in $\ppb SUV=T$, definendo $F=U-TS$, detta \textbf{energia libera di Helmholtz}. Osserviamo che
-\[dF=-SdT-pdV.\]
-\end{definition}
-
-\begin{remark}
-L'energia libera di Helmholtz ci permette di ricavare il ``massimo lavoro estraibile tra due stati".
-\end{remark}
-\begin{proof}
-Per il secondo principio $Q/T\leq \Delta S$, dunque
-\[W=\Delta U-Q\geq \Delta U-T\Delta S=\Delta F,\]
-cio\`e il lavoro che pu\`o fare il sistema ($-W$) \`e al massimo $-\Delta F$.
-\end{proof}
-
-\begin{remark}
-Si ha che
-\[\ppb TFV=-S,\quad \ppb VFT=-p.\]
-\end{remark}
-
-\begin{definition}[Energia libera di Gibbs]
-Dall'entalpia cambiamo $S$ in $\ppb SHp=T$, definendo $G=H-TS=U+pdV-TS=F+pV$, detta \textbf{energia libera di Gibbs}. Osserviamo che
-\[dG=-SdT-Vdp.\]
-\end{definition}
-
-\begin{remark}
-Si ha che
-\[\ppb pGT=V,\quad \ppb TGp=-S.\]
-\end{remark}
-
-\begin{proposition}[Secondo principio per energia libera di Gibbs]\label{GibbsDiminuiscePerPressioneETemperaturaCostanti}
-Se $T$ e $p$ sono costanti l'energia libera di Gibbs tende a diminuire.
-\end{proposition}
-\begin{proof}
-Per il secondo principio $TdS-\delta Q\geq 0$. Sviluppando $\delta Q$ troviamo
-\[TdS-dU-pdV\geq0.\]
-Se $p$ \`e costante allora $dH=dU+pdV$, quindi in tal caso
-\[TdS-dH\geq 0\]
-Se ora $T$ resta costante si ha che $dG=dH-TdS$, cio\`e
-\[dG\leq 0.\]
-Segue dunque che se $T$ e $p$ sono costanti, $G$ tende a diminuire.
-\end{proof}
-
-
-\begin{proposition}[Relazioni di Maxwell]\label{RelazioniMaxwell}
-Valgono anche le equazioni
-\[\ppb VTS=-\ppb SpV,\quad \ppb pTS=\ppb SVp,\quad \ppb VST=\ppb TpV,\quad \ppb pST=-\ppb TVp.\]
-\end{proposition}
-\begin{proof}
-Derivano dall'eguagliare derivate seconde delle energie che abbiamo definito. In ordine le quattro equazioni sono uguali a
-\[\pp[2]{V\del S}U,\quad \pp[2]{p\del S}H,-\quad \pp[2]{V\del T}F,\quad \pp[2]{p\del T}G.\]
-\end{proof}
-
-\begin{remark}[Jacobiano $p,V$ - $T,S$]
-Possiamo derivare le relazioni di Maxwell anche constratando che
-\[\pp{(p,V)}{(T,S)}=1.\]
-\end{remark}
-\begin{proof}
-Mostriamo che l'identit\`a vale e poi ricaviamo le relazioni da essa.
-\setlength{\leftmargini}{0cm}
-\begin{itemize}
-\item[$\boxed{dPdV=dTdS}$] Per il primo principio
-\[dU=TdS-PdV\leadsto 0=d^2U=dTdS-dPdV,\]
-segue dunque per unicit\`a della scrittura in base che lo Jacobiano in esame vale $1$.
-\item[$\boxed{\text{Relazioni}}$] Ricaviamo la prima, le altre seguono in modo analogo
-\[\ppb VTS=\pp{(V,S)}{(T,S)}=\pa{\pp{(p,V)}{(T,S)}}\ii\pp{(V,S)}{(T,S)}=\pp{(V,S)}{(p,V)}=-\pp{(S,V)}{(p,V)}=-\ppb SpV.\]
-\end{itemize}
-\setlength{\leftmargini}{0.5cm}
-\end{proof}
-
-
-
-
-\subsection{Riassunto}
-Riassumiamo il comportamento di queste quantit\`a nella seguente tabella:
-\begin{center}
-\begin{tabular}{|c||c|c|c|}
-\hline
-Energia & Definizione &Differenziale & Rel. Maxwell\\\hline
-Interna & $U=Q+W$ & $+TdS-p\ dV$ & $\ppb VTS=-\ppb SpV$\\
-Entalpia & $H=U+pV$ & $+TdS+Vdp$ & $\ppb pTS=\ppb SVp$\\
-Helmholtz & $F=U-TS$ & $-SdT-p\ dV$ & $\ppb VST=\ppb TpV$\\
-Gibbs & $G=U+pV-TS$ & $-SdT+Vdp$ & $-\ppb pST=\ppb TVp$\\\hline
-\end{tabular}
-\end{center}
-Mettendo a confronto energia interna ed entalpia troviamo ulteriori similitudini:
-\begingroup
-\renewcommand{\arraystretch}{1.5}
-\begin{center}
-\begin{tabular}{|c||c||c|}
-\hline
-Argomento & Energia interna & Entalpia\\\hline\hline
-Espansione & libera di Joule & di Joule-Thompson\\\hline
-Quanto non ideale?& $\mu_J=\ppb VTU$ & $\mu_{JT}=\ppb pTH$\\\hline
-Differenziale reversibile &$dU=\delta Q-pdV$ & $dH =\delta Q+Vdp$\\\hline
-C. di Esp. Termica&$C_V=\ppb TUV$ & $C_p=\ppb THp$\\\hline
-Su isocora & $\Delta U=Q$ & $\Delta H=Q$\\\hline
-Su adiabatica & $\Delta U=-\int pdV$ &  $\Delta H=\int Vdp$\\\hline
-In gas ideale & $\Delta U=\int c_VdT$ & $\Delta H=\int c_pdT$\\\hline
-\end{tabular}
-\end{center}
-\endgroup
-
-\bigskip
-\noindent
-Per ricordare le varie derivate parziali pu\`o essere utile il \textbf{diagramma di Konis-Born}
-% https://q.uiver.app/#q=WzAsNCxbMCwwLCJUIl0sWzEsMCwiViJdLFswLDEsIlAiXSxbMSwxLCJTIl0sWzIsMywiSCIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCwxLCJGIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxLDMsIlUiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzAsMiwiRyIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMiwxLCIiLDMseyJsYWJlbF9wb3NpdGlvbiI6NjAsInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1vbm8ifX19XSxbMywwLCIiLDEseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV1d
-\[\begin{tikzcd}
-	T & V \\
-	p & S
-	\arrow["H"', no head, from=2-1, to=2-2]
-	\arrow["F", no head, from=1-1, to=1-2]
-	\arrow["U", no head, from=1-2, to=2-2]
-	\arrow["G"', no head, from=1-1, to=2-1]
-	\arrow[tail, from=2-1, to=1-2]
-	\arrow[tail, from=2-2, to=1-1]
-\end{tikzcd}\]
-I due vertici di uno stesso lato contengono le variabili che appaiono nei differenziali mentre le diagonali indicano il valore della derivata dell'energia di un dato lato per la variabile del vertice. Il verso delle diagonali indica il segno di queste derivata, quindi per esempio per il lato destro ricaviamo
-\[\ppb SUV=T,\quad \ppb VUS=-p.\]
-Le due coppie di lati opposti corrispondono ognuna a due relazioni di Maxwell. Per capire i segni basta considerare i due triangoli che si formano scegliendo uno degli altri lati e completando con le due diagonali, per esempio la relazione
-\[\ppb VTS=-\ppb SpV\]
-si pu\`o leggere associando al membro di sinistra il triangolo $TVS$ e a quello di destra il triangolo $pSV$.
-
-\section{Sistemi aperti di gas}
-Per sistemi di gas aperto
-\[\Delta U=Q+W+\Delta U_{materia},\]
-o in forma differenziale
-\[dU=TdS-pdV+\mu dn\]
-dove $\mu$ \`e il \textbf{potenziale chimico}.
-\begin{remark}
-Valgono le identit\`a differenziali
-\[\ppb SU{V,n}=T,\qquad \ppb VU{S,n}=-p,\qquad \ppb nU{S,V}=\mu.\]
-\end{remark}
-
 
 
 

@@ -1,4 +1,4 @@
-\chapter{Introduzione e Temperatura empirica}
+\chapter{Equilibrio e Calore}
 \noindent
 La termodinamica \`e lo studio di sistemi dal punto di vista macroscopico.\\
 Le massime fondamentali della termodinamica sono
@@ -96,17 +96,6 @@ Un processo quasi statico va pensato come un processo molto lento; cos\`i lento 
 \end{remark}
 
 
-\begin{definition}[Principali processi quasistatici per gas]
-Un processo si dice\footnote{Per le definizioni di temperatura o calore finite di leggere questo capitolo.}
-\begin{itemize}
-\item \textbf{isotermo} se $T$ resta costante,
-\item \textbf{isobaro} se $p$ resta costante,
-\item \textbf{isocore} se $V$ resta costante o
-\item \textbf{adiabatico} se non avviene scambio di calore.
-\end{itemize}
-\end{definition}
-
-
 
 \subsection{Temperatura empirica}
 
@@ -145,7 +134,7 @@ Questo stato si chiama \textbf{punto triplo} e i valori in questione sono una te
 A bassa pressione i gas si comportano tutti allo stesso modo\footnote{rispettano l'equazione di stato $pV=f(\theta)$}.\\
 Se fissiamo il volume e la quantit\`a di materia del gas possiamo definire $\theta$ in modo tale che $p=p_0(1+\al\theta)$, cio\`e poniamo 
 \[\theta=\frac1\al\frac{p-p_0}{p_0}.\] 
-Se imponiamo che l'acqua congeli per $\theta=0$ e bollisca per $\theta=100$ allora si ricaviamo $1/\al=273.15$. Notiamo inoltre\footnote{l'addizione di $\al\ii$ corrisponde alla traslazione che trasforma gradi Celsius in gradi Kelvin.}
+Se imponiamo che l'acqua congeli per $\theta=0$ e evapori per $\theta=100$ allora ricaviamo $1/\al=273.15$. Notiamo inoltre\footnote{l'addizione di $\al\ii$ corrisponde alla traslazione che trasforma gradi Celsius in gradi Kelvin.}
 \[\frac{p_2}{p_1}=\frac{\al\ii+\theta_2}{\al\ii +\theta_1}=\frac{\theta_2'}{\theta_1'}.\]
 Possiamo dunque definire la temperatura (in Kelvin) come
 \[T=\lim_{p^{(PT)}\to 0}273.16 \frac{p}{p^{(PT)}}\]
@@ -160,3 +149,41 @@ dove $p^{(PT)}$ \`e la pressione del gas nel termometro quando questo sistema \`
 Questa differenza \`e proporzionale alla differenza di pressione e questo ci permette di ricavare la temperatura se la fissiamo per quando \`e nel punto critico.
 
 
+\section{Primo principio e Definizione di calore}
+
+\begin{fact}[Primo principio della termodinamica]
+\textbf{L'energia interna di un sistema di conserva.}
+\end{fact}
+
+\begin{definition}[Calore]
+Il \textbf{calore} \`e la differenza tra la variazione di energia interna e il lavoro compiuto su un sistema termodinamico, esplicitamente
+\[\boxed{\Delta U=Q+W}\]
+\end{definition}
+
+\begin{remark}
+Il calore e il lavoro non sono funzioni di stato, ma la loro somma s\`i.
+\end{remark}
+
+\begin{remark}[Primo principio in forma differenziale]
+Scrivendo il primo principio in termini di infinitesimi troviamo
+\[dU=\delta Q+\delta W,\]
+in particolare per i gas ideali vale
+\[dU=\delta Q-pdV.\]
+\end{remark}
+
+
+\begin{definition}[Caloria]
+Una \textbf{caloria} \`e la quantit\`a di calore necessaria per far variare la temperatura di un grammo di acqua da $14.5^\circ\mathrm{C}$ a $15.5^\circ\mathrm{C}$.\\
+In Joule si ha che
+\[\boxed{1\ \mathrm{cal}=4.186\ \mathrm{J}}\]
+\end{definition}
+
+
+\begin{remark}
+In una trasformazione adiabatica, il lavoro \`e dato dalla differenza di energia interna.
+\end{remark}
+\begin{example}[Coppia di sistemi dentro un contenitore adiabatico]
+Consideriamo due sistemi $A$ e $B$ dentro un contenitore adiabatico. Per il primo principio
+\[0=\Delta U=\Delta U_A+\Delta U_B=Q_A+Q_B+\under{=W}{W_A+W_B}.\]
+I trasferimenti di calore possono avvenire solo tra $A$ e $B$, quindi $Q_A+Q_B=0$ e $W=0$. Quanto scritto \`e una ``legge di conservazione del calore" in questo tipo di sistema.
+\end{example}
