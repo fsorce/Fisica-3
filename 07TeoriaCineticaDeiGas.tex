@@ -1,0 +1,76 @@
+\chapter{Teoria cinetica dei gas}
+Nella realt\`a i gas sono composti da tante particelle. Imponiamo alcune condizioni:
+\setlength{\leftmargini}{0cm}
+\begin{itemize}
+\item[$\boxed{\text{Isotropo}}$] Le velocit\`a delle particelle sono equamente distribuite in ogni direzione.
+\item[$\boxed{\text{Omogeneo}}$] Le particelle sono equamente distribuite.
+\end{itemize}
+\setlength{\leftmargini}{0.5cm}
+Sia $dn(v)$ il numero di particelle con una data velocit\`a.
+\begin{remark}
+Se $N$ \`e il numero totale di particelle
+\[N=\int dn(v)=\int_0^\infty \dd vndv\]
+dove $\dd vn$ \`e in un qualche modo la ``densit\`a delle particelle di una data velocit\`a".
+\end{remark}
+\begin{remark}
+Sia $\vec v$ una qualche velocit\`a.
+\[dn(\vec v)\pasgnl={isotropia}dn(v)\frac{d\Omega}{4\pi},\]
+dove $d\Omega$ \`e l'\textbf{angolo solido}, cio\`e l'area della ambiguit\`a sulla direzione voluta sulla sfera di raggio 1\footnote{$d\Omega=\sin\theta d\theta d\phi$.}.
+\end{remark}
+
+\begin{remark}
+Per omogeneit\`a il numero di particelle in un volumetto \`e
+\[dn=\frac NVdV=\frac NV dAvdt\cos\theta.\]
+\end{remark}
+
+\begin{remark}
+L'impulso trasferito alla parete dall'impatto di una particella \`e $\abs{\Delta \vec p}=2mv\cos \theta$.
+\end{remark}
+\noindent Appurate queste equazioni possiamo scrivere il differenziale della pressione come segue:
+\begin{align*}
+d^2p=&\frac{dF}{dA}=\frac{\abs{d\vec p}/dt}{dA}=\frac1{dA}\frac1{dt}\abs{d\vec p}_{singola}dn dn(\vec v)\\
+=&\frac1{dA}\frac1{dt}{2mv\cos \theta}\quad{\frac{N}V dAvdt\cos \theta}\quad{dn(v)\frac{d\Omega}{4\pi}}=\\
+=&N\frac{2mv^2\cos^2\theta}Vdn(v)\frac{d\Omega}{4\pi}.
+\end{align*}
+Facendo la media su tutte le direzioni troviamo il vero differenziale della pressione:
+\begin{align*}
+dp=&\int_\Omega d^2p=\frac{mv^2}{2\pi}\frac NVdn(v)\int_0^{2\pi}d\phi\int_0^{\pi/2}\cos^2\theta\sin\theta d\theta=\\
+=&\frac13mv^2\frac NVdn(v).
+\end{align*}
+Integrando ora sui possibili moduli delle velocit\`a troviamo la pressione:
+\[p=\frac13m\frac NV\under{\doteqdot \ps{v^2}}{\int_0^\infty v^2dn(v)}.\]
+
+\begin{definition}[Enercia cinetica media]
+Definiamo l'\textbf{energia cinetica media} come \[\ps{E_K}=\frac12mN\ps{v^2}.\]
+\end{definition}
+\begin{remark}
+Vale la relazione
+\[\boxed{\frac12m\ps{v^2}=\frac32 k_b T}\]
+\end{remark}
+\begin{proof}
+Osserviamo che
+\[pV=\frac13 mN\ps{v^2},\]
+dunque
+\[nRT=pV=\frac23\ps{E_K},\]
+cio\`e
+\[T=\frac 23\frac{\ps{E_K}}{nR}=\frac 23N_a\frac{\ps{E_K}}{NR}=\frac 23\frac{\ps{E_K}}{Nk_b}\]
+In conclusione
+\[{\frac12m\ps{v^2}=\frac32 k_b T}.\]
+\end{proof}
+
+\noindent
+Consideriamo ora l'energia interna di questo sistema\footnote{affermare che $U=\ps{E_K}$ corrisponde ad assumere che il gas sia monoatomico.}:
+\[U=\ps{E_K}=\frac32nRT=C_VT.\]
+In generale $U=E_K+E_P$ per una qualche energia potenziale $E_P$. Per piccoli spostamenti $E_P=(E_P)_0+\frac12kx^2$\ \footnote{regime ragionevole per il tipo di forze che agisce all'interno di materiali.}. Nel caso biatomico per esempio $E_P=\frac12I\omega^2$.
+\setlength{\leftmargini}{0cm}
+\begin{itemize}
+\item[$\boxed{\text{Solido}}$] 6 gradi di libert\`a: 3 potenziali (forze elastiche) e 3 cinetiche.
+\item[$\boxed{\text{Gas perf. mono.}}$] 3 gradi di libert\`a, tutti cinetici.
+\item[$\boxed{\text{Gas perf. bi.}}$] 5 gradi di libert\`a: 3 cinetici e 2 dalla rotazione \footnote{la rotazione lungo l'asse che congiunge le particelle \`e irrilevante}.
+\end{itemize}
+\setlength{\leftmargini}{0.5cm}
+
+
+\begin{fact}[Principio di equipartizione]
+Ogni grado di libert\`a contribuisce un addendo $\frac12 RT$ al calore specifico a volume costante.
+\end{fact}

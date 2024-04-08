@@ -3,29 +3,13 @@ Generalmente transizioni di stato avvengono per $p$ e $T$ costanti, quindi la fo
 \[\Delta G=\Delta H-T\Delta S.\]
 Poich\'e $dG=-SdT-Vdp$, si ha che se $p$ e $T$ restano costanti allora $\Delta G=0$, cio\`e \[T\Delta S=\Delta H.\]
 
-\section{Equazione di stato dei gas reali}
-Cosa pu\`o contribuire a negare l'approssimazione di gas ideale?
-\begin{itemize}
-\item \textbf{Interazione attrattiva tra particelle:} Una particella vicino al bordo \`e attratta dalle particelle pi\`u interne, dunque la pressione interna al gas \`e pi\`u grande di quella misurata 
-\[p_{real}=p+a\frac {n^2}{V^2}.\]
-\item \textbf{Volume occupato dalle particelle:} Le particelle in genere occupano un volume
-\[V_{real}=V-bn\]
-\end{itemize}
-\begin{fact}[Legge di Van der Waals]
-In prima approssimazione l'equazione di \textbf{Van del Waals}
-\[\pa{p+a \frac{n^2}{V^2}}(V-bn)=nRT.\]
-\end{fact}
-\begin{remark}
-Di solito $a$ si aggira tra $10^{-2}$ e $10$ $\displaystyle\frac{\ell^2\mathrm{atm}}{\mathrm{mol}^2}$, mentre $b$ si aggira tra $10^{-2}$ e $10^{-1}$ $\ell/\mathrm{mol}$.
-\end{remark}
-
-\noindent
-Sotto una temperatura critica, le isoterme secondo l'equazione di Van der Waals diventano cubiche con un picco e una valle, in realt\`a quello che succederebbe nella realt\`a \`e che raggiungiamo le condizioni per \textit{transizioni di fase}.
 
 
 \section{Transizione tra due fasi}
-Chiamiamo le due fasi ``liquido" e ``vapore".\\
+Chiamiamo le due fasi ``liquido" e ``vapore". 
+\begin{notation}
 Siano $n_L$ le moli di liquido e $n_V$ le moli di vapore.
+\end{notation}
 \begin{remark}[Energia libera di Gibbs molare]
 Si ha che\footnote{nell'ultima uguaglianza abbiamo usato il fatto che l'energia \`e una grandezza estensiva.}
 \[G=G_L(p_L,T_L,n_L)+G_V(p_V,T_V,n_V)\pasgnl={}n_Lg_L(p_L,T_L)+n_Vg_V(p_V,T_V)\]
@@ -33,56 +17,50 @@ dove $g$ \`e l'\textbf{energia libera di Gibbs molare}.
 \end{remark}
 
 \begin{remark}[Proporzione tra le fasi]
-Per conservazione della materia $n_L+n_V=n$ \`e costante. Se $\al$ \`e la proporzione di liquido, cio\`e $n_L=\al n$ e $n_V=(1-\al)n$.
+Per conservazione della materia $n_L+n_V=n$ \`e costante. Chiamiamo $\al$ la proporzione di liquido, cio\`e $n_L=\al n$ e $n_V=(1-\al)n$.
 \end{remark}
+\noindent
 Possiamo riscrivere l'energia libera di Gibbs in termini di $n$ ed $\al$:
 \[G=n\al g_L(p_L,T_L)+n(1-\al)g_V(p_V,T_V).\]
-Poich\'e consideriamo tutto in regime di quasi equilibrio $T_L=T_V$ e $p_L=p_V$\footnote{le pressioni sono le stesse perch\'e c'\`e equilibrio meccanico.}. Abbiamo dunque ricavato che $G$ dipende solo da $p,\ T$ e $\al$.
+Poich\'e consideriamo tutto in regime di quasi-equilibrio, $T_L=T_V$ e $p_L=p_V$\footnote{le pressioni sono le stesse perch\'e c'\`e equilibrio meccanico.}. Abbiamo dunque ricavato che $G$ dipende solo da $p,\ T$ e $\al$.
 
-\begin{remark}[Condizione di equilibrio]
-Per $p$ e $T$ costanti sappiamo che $G$ tende a diminuire (\ref{GibbsDiminuiscePerPressioneETemperaturaCostanti}), quindi siamo all'equilibrio se $G(\al)$ \`e minima, cio\`e
+\begin{proposition}[Condizione di equilibrio tra due fasi]
+All'equilibrio si ha che
+\[g_L=g_V.\]
+\end{proposition}
+\begin{proof}
+Per $p$ e $T$ costanti sappiamo (\ref{GibbsDiminuiscePerPressioneETemperaturaCostanti}) che $\Delta G\leq 0$ , quindi siamo all'equilibrio solo se $G(\al)$ \`e minima, cio\`e\footnote{Per $p$ e $T$ costanti $G$ dipende solo da $\al$.}
 \[0=\pp\al G=ng_L+0-n g_V\implies g_L=g_V.\]
-\end{remark}
+\end{proof}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-*****************************
-
-
-Modelliamo una contenitore chiuso ($U=cost$, $V=cost$). In questo caso
-
+\subsection{Contenitore chiuso}
+Modelliamo una contenitore chiuso ($U=cost$, $V=cost$).
+\begin{notation}[Volume, energia interna ed entropia molari]
+Scriviamo
 \begin{align*}
 V=&n\al v_L+n(1-\al)v_V\\
 U=&n\al u_L+n(1-\al)u_V\\
 S=&n\al s_L+n(1-\al)s_V
 \end{align*}
-
-
-All'equilibrio $0=dV=dU=dS=dn$.
-
+\end{notation}
+\begin{proposition}[Condizione di equilibrio tra due fasi]
+All'equilibrio si ha che
+\[g_L=g_V.\]
+\end{proposition}
+\begin{proof}
+All'equilibrio $0=dV=dU=dS=dn$, quindi (ricordando che $p$ e $T$ sono costanti)
 \begin{align*}
 0=&dU+pdV-TdS=\\
+=&d(n\al u_L+n(1-\al)u_V)+pd(n\al v_L+n(1-\al)v_V)-Td(n\al s_L+n(1-\al)s_V)=\\
 =&n\al (du_L+pdv_L-Tds_L)+n(1-\al)(du_V+pdv_V-Tds_V)+\\
-&+(d\al (u_L+pv_L-Ts_L)-d\al (u_V+pv_V-Ts_V))n
+&+nd\al (u_L+pv_L-Ts_L)-nd\al (u_V+pv_V-Ts_V).
 \end{align*}
-Per essere all'equilibrio le tre parentesi sono nulle, dunque
-\[u_L+pv_L-Ts_L=u_V+pv_V-Ts_V,\]
-cio\`e evidenziando le moli
+All'equilibrio si ha che $du_L+pdv_L-Tds_L=0$ e similmente per il vapore, dunque
+\[u_L+pv_L-Ts_L=u_V+pv_V-Ts_V.\]
+Evidenziando le moli in questa equazione si ha
 \[\under{=\frac{G_L}{n_L}}{\frac{U_L}{n_L}+p\frac{V_L}{n_L}-T\frac{S_L}{n_L}}=\under{=\frac{G_V}{n_V}}{\frac{U_V}{n_V}+p\frac{V_V}{n_V}-T\frac{S_V}{n_V}},\]
-ovvero
-\[g_L=g_V.\]
-
+ovvero $g_L=g_V$ come volevasi dimostrare.
+\end{proof}
 
 
 \section{Caso generale}
@@ -95,7 +73,7 @@ cio\`e a priori $G$ dipende da $NF+2$ variabili.
 
 \begin{proposition}[Regola delle fasi di Gibbs]\label{RegolaFasiGibbs}
 Il numero di gradi di libert\`a \`e
-\[\nu=2+N-F.\]
+\[\boxed{\nu=2+N-F}\]
 Questa \`e la \textbf{regola delle fasi (di Gibbs)}.
 \end{proposition}
 \begin{proof}
@@ -113,7 +91,7 @@ segue dunque che
 Queste sono $F-1$ condizioni indipendenti per ogni componente.
 \bigskip
 
-\noindent Osserviamo inoltre che per ogni fase possiamo eliminare un grado di libert\`a considerando i rapporti tra le moli di componenti in quella fase***********.\bigskip
+\noindent Osserviamo inoltre che per ogni fase possiamo eliminare un grado di libert\`a considerando i rapporti tra le moli di componenti in quella fase.\bigskip
 
 \noindent Tirando le somme si ha che i gradi di libert\`a sono
 \[NF+2-(N(F-1)+F)=2+N-F.\]
@@ -127,24 +105,34 @@ Studiamo i valori di $N$, $F$ e $\nu$ per alcuni sistemi
 \item Fluido omogeneo: $N=1$, $F=1$, $\nu=2$
 \item Fluido omogeneo dato da due gas: $N=2$, $F=1$, $\nu=3$
 \item Acqua e vapore: $N=1$, $F=2$, $\nu=1$
-\item Acqua, vapore e ghiaccio: $N=1$, $F=3$, $\nu=0$\footnote{non stupisce in quanto abbiamo tutte le fasi sono nel punto triplo.}
+\item Acqua, vapore e ghiaccio: $N=1$, $F=3$, $\nu=0$.
 \end{itemize}
 \end{example}
 
+\begin{definition}[Punto triplo]
+Considerando come sistema termodinamico l'acqua, esiste una precisa combinazione di temperatura e pressione tale per cui essa risulta in trasizione tra gli stati solido liquido e gassoso simultaneamente.\\
+Questo stato si chiama \textbf{punto triplo} e i valori in questione sono una temperatura di $0.01 ^\circ \mathrm{C}$ e una pressione di $0.006\ \mathrm{atm}$.
+\end{definition}
 
-[ROBA SUI GRAFICI DEI PUNTI CRITICI]
+\subsection{Grafici delle transizioni di fase}
+\noindent
+[GRAFICO $p,V$]
+
+\noindent
+[GRAFICO $p,V$ ESTESO]
+
+\noindent
+[GRAFICO $p,T$]
+
+
 
 \subsection{Definizione di temperatura tramite gas}
 L'esistenza del punto triplo ci permette di definire la temperatura in termini di una grandezza che possiamo misurare direttamente. 
-\begin{fact}[Punto triplo]
-\emph{Considerando come sistema termodinamico dell'acqua esiste una precisa combinazione di temperatura e pressione tale per cui essa risulta in trasizione tra gli stati solido liquido e gassoso simultaneamente.\\
-Questo stato si chiama \textbf{punto triplo} e i valori in questione sono una temperatura di $0.01 ^\circ \mathrm{C}$ e una pressione di $0.006\ \mathrm{atm}$.}
-\end{fact}
 \medskip
 
 \noindent
-A bassa pressione i gas si comportano tutti allo stesso modo\footnote{rispettano l'equazione di stato $pV=f(\theta)$}.\\
-Se fissiamo il volume e la quantit\`a di materia del gas possiamo definire $\theta$ in modo tale che $p=p_0(1+\al\theta)$, cio\`e poniamo 
+A bassa pressione i gas tendono al regime di Gas ideale.\\
+Se fissiamo il volume e le moli di gas possiamo definire $\theta$ in modo tale che $p=p_0(1+\al\theta)$, cio\`e poniamo 
 \[\theta=\frac1\al\frac{p-p_0}{p_0}.\] 
 Se imponiamo che l'acqua congeli per $\theta=0$ e evapori per $\theta=100$ allora ricaviamo $1/\al=273.15$. Notiamo inoltre\footnote{l'addizione di $\al\ii$ corrisponde alla traslazione che trasforma gradi Celsius in gradi Kelvin.}
 \[\frac{p_2}{p_1}=\frac{\al\ii+\theta_2}{\al\ii +\theta_1}=\frac{\theta_2'}{\theta_1'}.\]
@@ -164,20 +152,19 @@ Questa differenza \`e proporzionale alla differenza di pressione e questo ci per
 
 
 \section{Calore latente}
-Alla transizione di fase
-
-
-\[p_{trans}(T),\quad V(p,T)=V(T)\]
-\begin{align*}
-n=&n_L+n_V\\
-V=&n_Lv_L(T)+n_Vv_V(T)\\
-U=&n_Lu_L(T)+n_Vu_V(T)
-\end{align*}
+Consideriamo nuovamente il caso di due fasi (liquido e vapore). Osserviamo che fissata una temperatura, la pressione alla quale avviene la transizione di fase ne \`e una funzione. Segue che anche $V$ \`e una funzione di $T$.
+\begin{remark}
 Osserviamo che $dn_L=-dn_V$, quindi
 \[\ppb VUT=\frac{u_V-u_L}{v_V-v_L}.\]
-Per il primo principio
-\[\delta Q=dU+pdV=dn_V(u_L-u_L+p(v_V-v_L))\]
+\end{remark}
+\begin{proof}
+Segue ricordando che $V=n_L v_L(T)+n_Vv_V(T)$ (e similmente per $U$) e che per le transizioni di fase $T$ \`e costante.
+\end{proof}
 
+\noindent
+Per il primo principio
+\[\delta Q=dU+pdV=dn_V(u_L-u_L+p(v_V-v_L)),\]
+questo motiva la seguente
 \begin{definition}[Calore latente]
 Definiamo il \textbf{calore latente (molare) di vaporizzazione} come
 \[\la=\frac{\delta Q}{dn_V}=u_V-u_L+p(v_V-v_L).\]
@@ -187,6 +174,19 @@ Definiamo il \textbf{calore latente (molare) di vaporizzazione} come
 Sulla transizione di fase
 \[\dd Tp=\frac\la{T(v_V-v_L)}\]
 \end{proposition}
+\begin{proof}
+Sviluppiamo $TdS$:
+\[TdS=\under{=nc_V}{T\ppb TSVdT}+T\ppb VSTdV.\]
+Applicando la relazione di Maxwell (\ref{RelazioniMaxwell}) data da $\ppb VST=\ppb TpV$ troviamo
+\[TdS=nc_VdT+T\ppb TpVdV.\]
+Combinando questo con $dU=TdS-pdV$ ricaviamo
+\[dU=nc_VdT+\pa{T\ppb TpV-p}dV,\]
+cio\`e
+\[\ppb VUT=T\ppb TpV-p.\]
+Ricordiamo ora che $\ppb VUT=\frac{u_V-u_L}{v_V-v_L}$, da cui
+\[\frac\la{v_V-v_L}=T\ppb TpV,\]
+che \`e la tesi se osserviamo che $\ppb TpV=\dd Tp$.
+\end{proof}
 \begin{remark}[Equazione di Clausius-Clapeyron]
 Se $v_V\gg v_L$ allora per gas ideali
 \[\dd Tp=\frac\la{RT^2}p\leadsto p\propto e^{-\la/RT}.\]
@@ -197,8 +197,3 @@ Se $v_V\gg v_L$ allora per gas ideali
 
 
 
-\begin{definition}[Caloria]
-Una \textbf{caloria} \`e la quantit\`a di calore necessaria per far variare la temperatura di un grammo di acqua da $14.5^\circ\mathrm{C}$ a $15.5^\circ\mathrm{C}$.\\
-In Joule si ha che
-\[\boxed{1\ \mathrm{cal}=4.186\ \mathrm{J}}\]
-\end{definition}
