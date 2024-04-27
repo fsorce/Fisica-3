@@ -1,8 +1,14 @@
-\chapter{Introduzione}
-\section{I principi della relativit\`a}
+\chapter{Trasformazioni di Lorenz}
+In questo e il prossimo capitolo considereremo sempre sistemi di riferimento $S$ e $S'$ in moto relativo a velocit\`a uniforme lungo l'asse $x$ tali che per $t=0$ si abbia $O=O'$.
+\begin{notation}
+Le quantit\`a misurate nel sistema $S'$ sono indicate con degli apici, assenti da quelle misurate in $S$. Per esempio, se $P$ \`e un punto allora le sue coordinate in $S$ sono $(x,y,z)$, mentre quelle in $S'$ sono $(x',y',z')$.
+\end{notation}
 
-\subsection{Principio di relativit\`a}
+\noindent Ricordiamo che la veloci\`a della luce vale circa
+\[c= 3\cdot 10^8\ \frac{\mathrm{m}}{\mathrm{s}}\]
 
+
+\section{Relativit\`a galileiana e parentesi storica}
 \begin{definition}[Sistema di riferimento inerziale]
 Un sistema di riferimento \`e \textbf{inerziale} se valgono le leggi di Newton.
 \end{definition}
@@ -11,46 +17,51 @@ Un sistema di riferimento \`e \textbf{inerziale} se valgono le leggi di Newton.
 \textbf{Le leggi della fisica sono le stesse in qualsiasi sistema di riferimento in moto rettilineo uniforme.}
 \end{fact}
 
-Dati due sistemi di riferimento $S$ e $S'$ come in figura
-
-[DISEGNO]
-
-supponiamo che $S'$ si muova in moto rettilineo uniforme rispetto a $S$. Supponiamo inoltre che per $t=0$ si abbia $O=O'$.
-\medskip
-
-\noindent
-Consideriamo ora un punto $P$. Nel sistema $S$ esso \`e espresso tramite le coordinate $(x,y,z)$, mentre in $S'$ le sue coordinate sono $(x',y',z')$. Osserviamo che al variare di $t$ si ha che la terna $(x',y',z')$ cambia.\\
-Se i sistemi sono come in figura troviamo la forma canonica delle \textbf{trasformazioni di Galileo}:
+\begin{definition}[Trasformazioni di Galileo]
+Le \textbf{trasformazioni di Galileo} sono le trasformazioni tra coordinate spaziali e tempi tra i sistemi $S$ ed $S'$ ritenute valide classicamente, ovvero
 \[\begin{cases}
 x'=x-ut\\
 y'=y\\
 z'=z\\
 t'=t
 \end{cases}\]
+\end{definition}
+\noindent Osserviamo che
+\[\begin{cases}
+\pp t{}=\pp {t}{t'}\pp{t'}{}+\pp t{x'}\pp {x'}{}+\pp t{y'}\pp {y'}{}+\pp t{z'}\pp {z'}{}=\pp{t'}{}-u\pp{x'}{}\\
+\pp x{}=\pp {x}{t'}\pp{t'}{}+\pp x{x'}\pp {x'}{}+\pp x{y'}\pp {y'}{}+\pp x{z'}\pp {z'}{}=\pp {x'}{}\\
+\pp y{}=\pp {y}{t'}\pp{t'}{}+\pp y{x'}\pp {x'}{}+\pp y{y'}\pp {y'}{}+\pp y{z'}\pp {z'}{}=\pp {y'}{}\\
+\pp z{}=\pp {z}{t'}\pp{t'}{}+\pp z{x'}\pp {x'}{}+\pp z{y'}\pp {y'}{}+\pp z{z'}\pp {z'}{}=\pp {z'}{}
+\end{cases}\]
+\begin{remark}[Trasformazioni di Galileo per velocit\`a e accelerazioni]
 Osserviamo che
 \[\dd t{x'}=\dd t{}(x-ut)\pasgnl={moto rett. unif.}\dd tx-u,\]
-dunque
+e derivando di nuovo troviamo $\dd t{x'}=\dd t{x}$, dunque
 \[\begin{cases}
 v_x'=v_x-u\\
 v_y'=v_y\\
 v_z'=v_z
-\end{cases}\]
-e derivando di nuovo troviamo le trasformazioni anche per le accelerazioni:
-\[\begin{cases}
+\end{cases}\qquad \begin{cases}
 a_x'=a_x\\
 a_y'=a_y\\
 a_z'=a_z
 \end{cases}\]
+\end{remark}
+
+
 
 \begin{example}[Le leggi della fisica non cambiano]
 Consideriamo la legge di Hooke
-\[m\dd[2] tx=-k(x-x_0).\]
+\[m\dds[2] tx=-k(x-x_0).\]
 Cambiando sistema di riferimento $x=x'+ut$, $x_0=x_0'+ut$, dunque
-\[m\dd[2]t{x'}=m\dd[2] t{}(x'+ut)=m\dd[2] tx=-k(x-x_0)=-k(x'+ut-(x_0'+ut))=-k(x'-x_0'),\]
+\[m\dds[2]t{x'}=m\dds[2] t{}(x'+ut)=m\dds[2] tx=-k(x-x_0)=-k(x'+ut-(x_0'+ut))=-k(x'-x_0'),\]
 cio\`e la legge continua a valere sostituendo le grandezze di un sistema con le equivalenti nell'altro.
 \end{example}
 
-\subsection{Costanza della velocit\`a della luce}
+
+
+\subsection{Il problema delle equazioni di Maxwell e l'etere}
+Ricordiamo le equazioni di Maxwell
 \begin{fact}[Equazioni di Maxwell]
 Valgono le seguenti equazioni
 \begin{align*}
@@ -60,20 +71,13 @@ Valgono le seguenti equazioni
 &&rot\vec B=\mu_0\pa{\vec J+\e_0\pp t{\vec E}}
 \end{align*}
 \end{fact}
-\noindent
-Osserviamo che
-\begin{align*}
-\pp t{}=&\pp {t}{t'}\dd{t'}{}+\pp t{x'}\pp {x'}{}+\pp t{y'}\pp {y'}{}+\pp t{z'}\pp {z'}{}=\pp{t'}{}-u\pp{x'}{}\\
-\pp x{}=&\pp {x'}{}\\
-\pp y{}=&\pp {y'}{}\\
-\pp z{}=&\pp {z'}{}
-\end{align*}
+\noindent Essendo leggi della fisica dovrebbero essere invarianti al variare di sistema di riferimento inerziale, eppure
 
 \begin{example}
-Le equazioni di Maxwell e la relativit\`a Galileiana non sono compatibili
+Le equazioni di Maxwell e la relativit\`a Galileiana non sono compatibili.
 \end{example}
 \begin{proof}
-Cambiando sistema di riferimento alle equazioni di Maxwell (per esempio una di quelle con rotore) troviamo
+Cambiando sistema di riferimento alla prima entrata di $rot\vec E=-\dot{\vec B}$ troviamo
 \[\pp {y'}{E_{z'}}-\pp {z'}{E_{y'}}=-\pp {t'}{B_{x'}}+u\pp {x'}{B_{x'}}\]
 ovvero, applicando l'equazione con la divergenza
 \[\pp {y'}{E_{z}+uB_y}-\pp {z'}{E_{y}-uB_z}=-\pp {t'}{B_{x}}\]
@@ -86,11 +90,12 @@ E'_x=E_x\\
 \end{cases}\]
 Problema, esiste un'altra equazione di Maxwell
 \[\pp y{B_z}-\pp z{B_y}=\frac1{c^2}\pp t{E_x}\]
-che non coninua a valere con le sostituzioni sopra.
+che non vale con le sostituzioni sopra.
 \end{proof}
 
-\noindent Ricordiamo che dalle equazioni di Maxwell segue la legge
-\[\pp[2]t{\vec E}=c^2\nabla^2\vec E.\]
+\subsubsection{Michelson e Morley}
+Ricordiamo che dalle equazioni di Maxwell segue la legge
+\[\pps[2]t{\vec E}=c^2\nabla^2\vec E.\]
 Questa equazione sembra quella di un'onda, ma allora la relativit\`a magari funziona se teniamo conto degli stessi effetti che subiscono le onde sotto queste trasformazioni.\\
 In particolare ipotizziamo l'esistenza di un mezzo attraverso il quale la luce si propaga: l'etere.
 
@@ -99,9 +104,10 @@ L'etere e la terra non sono indipendenti.
 \end{fact}
 \begin{proof}[Descrizione dell'esperimento]
 Esperimento con interferometro e specchi.
-
-[DISEGNO]
-
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=7cm]{images/Vento_di_Etere.png}
+\end{figure}
 Supponiamo che il vento d'etere sia diretto lungo $BD$, cio\`e la terra si muove in quella direzione rispetto al riferimento dell'etere:
 \begin{align*}
 &t(BD)=t_1\\
@@ -125,33 +131,63 @@ Se ruotiamo l'esperimento, l'effetto \`e scambiare i valori di $L_{BD}$ e $L_{BC
 Cosa potrebbe star succedendo?
 \setlength{\leftmargini}{0cm}
 \begin{enumerate}
-\item[$\boxed{Fizeau}$] Magari la terra trascina l'etere
+\item[$\boxed{Fizeau}$] Magari la terra trascina l'etere e la luce. Se $n$ \`e l'indice di rifrazione tra due mezzi (in questo caso etere ed etere trascinato), la luce va a velocit\`a $c$ nell'etere e ci stiamo muovendo a velocit\`a $u$ rispetto a questo, si ha che la velocit\`a della luce sarebbe
+\[\frac cn+u\pa{1-\frac1{n^2}}.\]
 \item[$\boxed{Fitzgerald}$] Magari le lunghezze parallele parallele alla direzione di modo si contraggono
 \[L_{\parallel}=L_0\sqrt{1-\frac{u^2}{c^2}}.\]
 Con questo cambiamento la differenza dei tempi trovata nell'esperimento di MIchelson-Morley effettivamente si annulla. 
 \end{enumerate}
 \setlength{\leftmargini}{0.5cm}
+\noindent Resta ancora una questione: se osserviamo l'esperimento di Michelson-Morley in movimento, il tempo che la luce sembra impiegare per percorrere il tratto perpendicolare alla direzione del moto aumenta
+\[\frac{2L}c \quad\text{ contro }\quad \frac{2L}c\frac1{\sqrt{1-\frac{u^2}{c^2}}}.\]
+Questo sembra indicare che anche la coordinata temporale cambia cambiando sistema di riferimento. 
 
 \section{Trasformazioni di Lorenz}
-Scriviamo \[\gamma=\frac1{\sqrt{1-\frac{u^2}{c^2}}}\] e notiamo che la correzione di Fitzgerald corrisponde a dire $\gamma L_\parallel=L_0$. Deduciamo per il principio di relativit\`a che
-\[x=\frac{x'}\gamma+ut,\qquad x'=\frac{x}\gamma-ut'\]
+\begin{definition}[Frazione della velocit\`a della luce]
+Data una velocit\`a $u$, essa corrisponde alla \textbf{frazione della velocit\`a della luce} data da
+\[\beta(u)=\frac{u}c.\]
+Se $u$ \`e chiara da contesto scriviamo solo $\beta$.
+\end{definition}
+\begin{definition}[Fattore di Lorenz]
+Definiamo il \textbf{fattore di Lorenz} relativo alla velocit\`a $u$ come
+\[\gamma(u)=\frac1{\sqrt{1-\frac{u^2}{c^2}}}=\frac1{\sqrt{1-\beta(u)^2}}.\]
+Quando $u$ \`e chiara dal contesto scriviamo solo $\gamma$.
+\end{definition}
+\begin{remark}
+$\gamma(u)$ \`e sempre maggiore o uguale a $1$ in quanto $0\leq u\leq c$.
+\end{remark}
+
+\begin{remark}
+La correzione di Fitzgerald corrisponde a dire $\gamma L_\parallel=L_0$. 
+\end{remark}
+\noindent Dato che la correzione di Fitzgerald sulle lunghezze funziona, deduciamo per il principio di relativit\`a che
+\[x=\frac{x'}\gamma+ut,\qquad x'=\frac{x}\gamma-ut',\]
 da cui ricaviamo le \textbf{trasformazioni di Lorenz}
 \[\begin{cases}
+t'=\gamma\pa{t-\frac{ux}{c^2}}\\
 x'=\gamma (x-ut)\\
 y'=y\\
-z'=z\\
-t'=\gamma\pa{t-\frac{ux}{c^2}}
+z'=z
+\end{cases}\]
+\begin{remark}
+Se $\beta\to 0$ allora $\gamma\to 1$ e quindi ritroviamo le trasformazioni di Galileo.
+\end{remark}
+\noindent
+Possiamo scrivere le trasformazioni di Lorenz in modo equivalente nella forma
+\[\begin{cases}
+ct'=\gamma\pa{ct-\beta x}\\
+x'=\gamma (x-\beta ct)\\
+y'=y\\
+z'=z
+\end{cases}\coimplies\mat{ct'\\x'\\y'\\z'}=\mat{\gamma & -\beta\gamma &&\\ -\beta\gamma & \gamma &&\\&&1&\\&&&1}\mat{ct\\x\\y\\z}\]
+\noindent Osserviamo che
+\[\begin{cases}
+\pp t{}=\pp {t}{t'}\pp{t'}{}+\pp t{x'}\pp {x'}{}+\pp t{y'}\pp {y'}{}+\pp t{z'}\pp {z'}{}=\gamma\pp{t'}{}-\gamma u\pp{x'}{}\\
+\pp x{}=\pp {x}{t'}\pp{t'}{}+\pp x{x'}\pp {x'}{}+\pp x{y'}\pp {y'}{}+\pp x{z'}\pp {z'}{}=-\gamma \frac{u}{c^2}\pp{t'}{}+\gamma \pp{x'}{}\\
+\pp y{}=\pp {y}{t'}\pp{t'}{}+\pp y{x'}\pp {x'}{}+\pp y{y'}\pp {y'}{}+\pp y{z'}\pp {z'}{}=\pp {y'}{}\\
+\pp z{}=\pp {z}{t'}\pp{t'}{}+\pp z{x'}\pp {x'}{}+\pp z{y'}\pp {y'}{}+\pp z{z'}\pp {z'}{}=\pp {z'}{}
 \end{cases}\]
 
-\begin{remark}
-$\gamma$ \`e sempre maggiore o uguale a $1$ in quanto $0\leq u\leq c$.
-\end{remark}
-
-\begin{remark}
-Se $\frac uc\to 0$ allora $\gamma\to 1$ e quindi ritroviamo le trasformazioni di Galileo.
-\end{remark}
-
-\noindent 
 \begin{proposition}[Trasformazioni di Lorenz per direzioni arbitrarie]\label{LorenzDirezioneArbitraria}
 Per un moto rettilineo uniforme a velocit\`a $\vec u$ si ha
 \[\begin{cases}
@@ -165,38 +201,45 @@ Basta notare che la componente parallela al moto \`e
 mentre quella perpendicolare \`e $\vec x_\perp=\vec x-\vec x_\parallel$.
 \end{proof}
 
-\begin{remark}[Forma pi\`u simmetrica delle trasformazioni di Lorenz]
-Se definiamo $\beta=\frac uc$ allora osserviamo che
-\[\begin{cases}
-x'=\gamma (x-\beta ct)\\
-y'=y\\
-z'=z\\
-ct'=\gamma\pa{ct-\beta x}
-\end{cases}\]
-\end{remark}
-
-\begin{example}[Equazione delle onde]
-Consideriamo l'equazione
-\[\nabla^2\phi=\frac1{c^2}\pp[2]t\phi.\]
-Si ha che questa equazione \`e invariante per le trasformazioni di Lorenz.
-\end{example}
-\begin{proof}
-ESERCIZIO
-\end{proof}
-
 
 \begin{definition}[Intervallo invariante]
 L'\textbf{intervallo invariante} \`e
 \[(ct)^2-x^2-y^2-z^2.\]
 \end{definition}
-\noindent Questa quantit\`a \`e detta intervallo invariante perch\'e \`e invariante rispetto alle trasformazioni di Lorenz.
+\begin{proposition}
+L'intervallo invariante \`e invariante per trasformazioni di Lorenz.
+\end{proposition}
+\begin{proof}
+A meno di ruotare gli assi supponiamo che il moto avvenga lungo l'asse del moto relativo tra i sistemi (che supponiamo essere l'asse $x$). La tesi segue dal seguente calcolo
+\begin{align*}
+(ct')^2-(x')^2-(y')^2-(z')^2=&\gamma^2(ct)^2+\gamma^2\beta^2x^2-2\gamma^2 utx+\\
+&-\gamma^2x^2-\gamma^2\beta^2(ct)^2+2\gamma^2 u tx-y^2-z^2=\\
+=&\gamma^2(1-\beta^2)(ct)^2+\gamma^2(\beta^2-1)x^2-y^2-z^2=\\
+=&(ct)^2-x^2-y^2-z^2.
+\end{align*}
+\end{proof}
 
 \begin{remark}
 Se stiamo misurando della luce allora l'intervallo invariante vale $0$.
 \end{remark}
 
+\begin{example}[Equazione delle onde]
+Consideriamo l'equazione
+\[\nabla^2\phi=\frac1{c^2}\pps[2]t\phi.\]
+Si ha che questa equazione \`e invariante per le trasformazioni di Lorenz.
+\end{example}
+\begin{proof}
+Segue sfruttando quanto sappiamo sui differenziali per le trasformazioni di Lorenz:
+\begin{align*}
+-\frac1{c^2}\pps[2]t\phi+\pps[2]x\phi+\pps[2]y\phi+\pps[2]z\phi=&-\frac1{c^2}\pa{\gamma^2\pps[2]{t'}{}-2\gamma^2 u\pp[2]{t'\del x'}{}+\gamma^2u^2\pps[2]{x'}{}}\phi+\\
+&+\pa{\gamma^2\frac{u^2}{c^4}\pps[2]{t'}{}-2\gamma^2\frac{u}{c^2}\pp{t'\del x'}{^2}+\gamma^2\pps[2]{x'}{}}\phi+\\
+&+\pps[2]{y'}\phi+\pps[2]{z'}\phi=\\
+=&-\frac1{c^2}\pps[2]{t'}\phi+\pps[2]{x'}\phi+\pps[2]{y'}\phi+\pps[2]{z'}\phi.
+\end{align*}
+\end{proof}
 
-\section{Dilatazione dei tempi e contrazione delle lunghezze}
+
+\subsection{Dilatazione dei tempi e contrazione delle lunghezze}
 \begin{definition}[Intervallo di tempo proprio]
 Consideriamo due eventi che nel sistema di riferimento $S'$ hanno la stessa posizione. L'intervallo di tempo misurato da un orologio fermo rispetto a $S'$ tra questi \`e detto \textbf{intervallo di tempo proprio} tra i due
 \[\Delta t'=\Delta t_0\]
@@ -227,22 +270,22 @@ Se due osservatori sono in moto l'uno rispetto all'altro e uno dei due misura du
 
 
 
-\section{Addizione delle velocit\`a}
-\begin{proposition}[Formula del Boost]\label{FormulaBoost}
+\section{Trasformazioni di velocit\`a}
+\begin{proposition}[Formula di Boost]\label{FormulaBoost}
 Se un oggetto si muove parrallelo al moto tra due sistemi di riferimento inerziali allora
-\[v=\dfrac{v'+u}{\displaystyle 1+\frac{uv'}{c^2}}.\]
+\[v=\dfrac{v'+u}{\displaystyle 1+\frac{uv'}{c^2}}=\pa{\frac{\beta(v')+\beta(u)}{1+\beta(v')\beta(u)}}c.\]
 \end{proposition}
 \begin{proof}
 Consideriamo $x'(t')=v't'$ e portiamo nel sistema $S$
 \[x=\gamma(x'+ut')=\gamma(v'+u)t'=\gamma^2(v'+u)\pa{t-\frac{ux}{c^2}}\]
 dunque
 \[x\pa{1+\frac u{c^2}\gamma^2(v'+u)}=\gamma^2(v'+u)t,\]
-da cui la formula voluta
-\[x=\frac{v'+u}{1+\frac{uv'}{c^2}}t.\]
+da cui 
+\[x=\frac{v'+u}{1-\frac{u^2}{c^2}+\frac u{c^2}(v'+u)}t=\frac{v'+u}{1+\frac{uv'}{c^2}}t.\]
 \end{proof}
 
 \begin{remark}
-Se approssimiamo $\frac{u}{c}\to 0$ e $\frac{v'}{c}\to 0$ allora ritroviamo il Boost Galileiano.
+Considerando i limiti $\beta(u)\to 0$ e $\beta(v')\to 0$ allora ritroviamo il Boost Galileiano.
 \end{remark}
 
 \begin{remark}
@@ -252,9 +295,9 @@ Se $v'=c$ oppure $u=c$ troviamo $v=c$, che \`e l'assioma sulla costanza della ve
 \begin{remark}
 Se il moto non \`e allineato con quello dei sistemi troviamo
 \[\begin{cases}
-v_x=\dfrac{v_x'+u}{1+\frac{v_x' u}{c^2}}\\\\
-v_y=\dfrac{v_y'}{\gamma\pa{1+\frac{v_x' u}{c^2}}}\\\\
-v_z=\dfrac{v_z'}{\gamma\pa{1+\frac{v_x' u}{c^2}}}
+\displaystyle v_x=\frac{v_x'+u}{1+\frac{v_x' u}{c^2}}=\frac{v_x'+u}{1+\beta(v'_x)\beta(u)}\\\\
+\displaystyle v_y=\dfrac{v_y'}{\gamma\pa{1+\frac{v_x' u}{c^2}}}=\frac{v_y'}{\gamma\pa{1+\beta(v_x')\beta(u)}}\\\\
+\displaystyle v_z=\dfrac{v_z'}{\gamma\pa{1+\frac{v_x' u}{c^2}}}=\frac{v_z'}{\gamma\pa{1+\beta(v_x')\beta(u)}}
 \end{cases}\]
 \end{remark}
 
@@ -264,13 +307,7 @@ o equivalentemente
 \[\vec v=\frac1{1+\frac{\vec u\cdot \vec v'}{c^2}}\pa{\vec v'+\vec u+\frac1{c^2}\frac{\gamma}{1+\gamma} \vec u\times (\vec u\times \vec v')}\]
 
 
-\begin{remark}
-Se interpretiamo $\gamma$ come una funzione $\gamma(u)=\pa{1+\frac{u^2}{c^2}}^{-\frac12}$ allora ricaviamo
-\[\gamma(v)=\gamma(u)\gamma(v')\pa{1+\frac{\vec u\cdot \vec v'}{c^2}}\]
-\end{remark}
-
-
-\begin{example}
+\begin{example}[Formula di Fizeau]
 Consideriamo come cambia la velocit\`a della luce entro un mezzo con indice di rifrazione $n$ tra due sistemi in moto relativo a velocit\`a $u$:
 \[v=\frac{c/n+u}{1+\frac{cu}{nc^2}},\]
 da cui la differenza tra le velocit\`a \`e
@@ -278,30 +315,3 @@ da cui la differenza tra le velocit\`a \`e
 che per $u\ll c$ si approssima a $u\pa{1-\frac1{n^2}}$.
 \end{example}
 
-\begin{definition}[Rapidit\`a]
-Definiamo la \textbf{rapidit\`a} di un boost a velocit\`a $u$ come
-\[\xi=\mathrm{arctanh}\pa{-\frac uc}\]
-\end{definition}
-\noindent
-Ricordando la forma simmetrica delle trasformazioni di Lorenz
-\[\begin{cases}
-x'=\gamma (x-\beta ct)\\
-y'=y\\
-z'=z\\
-ct'=\gamma\pa{ct-\beta x}
-\end{cases},\]
-il fatto che $\cosh^2\xi-\sinh^2\xi=1$ e che $(ct')^2-x'^2=(ct)^2-x^2$ si ha che
-\[\begin{cases}
-x'=\cosh\xi x+\sinh\xi ct\\
-ct'=\cosh \xi +\sinh\xi x
-\end{cases}\]
-Segue che
-\[\mat{ct'\\ x'}=\mat{\cosh \xi &\sinh \xi\\\sinh \xi & \cosh \xi}\mat{ct\\ x},\]
-cio\`e il boost corrisponde ad una rotazione iperbolica.
-
-\begin{remark}
-Considerando una composizione di velocit\`a 
-\[u=\dfrac{u_1+u_2}{1+\frac{u_1u_2}{c^2}}\]
-allora le corrispondenti rapidit\`a si sommano, cio\`e
-\[\xi=\xi_1+\xi_2.\]
-\end{remark}

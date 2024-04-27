@@ -1,38 +1,68 @@
 \chapter{Cinematica e dinamica relativistica}
 \section{Cinematica relativistica}
-\subsection{Quadrivettore posizione}
-\begin{definition}[Quadrivettore posizione]
-Defniamo il \textbf{quadrivettore posizione} come
-\[x^\mu=(ct,x,y,z).\]
-In particolare $x^0=ct$, $x^1=x$, $x^2=y$ e $x^3=z$.
-\end{definition}
-
-Cerchiamo le trasformazioni lineari\footnote{Le cerchiamo lineari perch\'e vogliamo indipendenza dall'origine} che trasformano il quadrivettore preservando l'intervallo invariante.
-
-\begin{definition}[Tensore metrico di Minkowski]
-Definiamo il \textbf{Tensore metrico di Minkovski} tramite la matrice
+\begin{definition}[Quadrivettore]
+Consideriamo lo spazio vettoriale $\R^4$ con prodotto scalare indotto dal \textbf{tensore metrico di Minkovsky}
 \[\eta_{\mu\nu}=\mat{1&&&\\
 &-1&&\\
 &&-1&\\
-&&&-1}\]
+&&&-1}.\]
+Un elemento di questo spazio \`e detto \textbf{quadrivettore}.
 \end{definition}
-\noindent
-Osserviamo che $L$ preserva l'intervallo invariante se e solo se
+
+\begin{definition}[Quadrivettore posizione]
+Defniamo il \textbf{quadrivettore posizione} come
+\[x^\mu=(ct,x,y,z).\]
+In particolare $x^0=ct$, $x^1=x$, $x^2=y$ e $x^3=z$.\\
+Come notazione scriviamo anche $\vec x=(x,y,z)$ e $\wt x=(ct,\vec x)$.
+\end{definition}
+
+\begin{notation}
+Come notazione, se $\wt x$ \`e un quadrivettore posizione definiamo
+\[s^2=\wt x\cdot \wt x=x^\mu\eta_{\mu\nu}x^\nu=(ct)^2-x^2-y^2-z^2.\]
+\end{notation}
+
+\begin{definition}[Quadrivettore di tipo tempo/spazio luce]
+Affermiamo che un quadrivettore \`e di tipo 
+\begin{itemize}
+\item \textbf{tempo} se $s^2>0$
+\item \textbf{spazio} se $s^2<0$
+\item \textbf{luce} se $s^2=0$
+\end{itemize}
+Se il quadrivettore \`e di tipo tempo allora esso appartiene al \textbf{futuro} se $t>0$ o al \textbf{passato} se $t<0$.
+\end{definition}
+
+\begin{remark}
+Un quadrivettore ortogonale ad uno di tipo tempo \`e di tipo spazio, ma un quadrivettore ortogonale ad uno di tipo spazio non necessariamente \`e di tipo tempo.
+\end{remark}
+
+\subsubsection{Causalit\`a}
+\begin{proposition}[La causalit\`a viene rispettata]
+Consideriamo due eventi $A$ e $B$. Se $\Delta t>0$ e $\Delta t'<0$ allora i due eventi non possono essere l'uno la causa dell'altro, cio\`e il quadrivettore dato dalla loro differenza \`e di tipo spazio.
+\end{proposition}
+\begin{proof}
+Applicando la trasformazione di Lorenz
+\[\Delta t'=\gamma\pa{\Delta t-\frac u{c^2}\Delta x}\]
+dunque se $\Delta t'<0$ e $\Delta t>0$ allora
+\[-\gamma\Delta t>-\gamma\frac u{c^2}\Delta x\implies \Delta x>\frac{c^2}{u}\Delta t>c\Delta t\]
+cio\`e la distanza tra gli eventi \`e maggiore rispetto alla distanza che la luce potrebbe percorrere in quell'intervallo di tempo, quindi i due eventi non possono essere l'uno la causa dell'altro.
+\end{proof}
+
+\subsection{Derivazione delle trasformazioni di Lorenz}
+Poich\'e le trasformazioni di Lorenz rappresentano un cambio di sistema di riferimento esse devono rispettare combinazioni lineari, cio\`e cerchiamo una trasformazione lineare.\\
+Osserviamo che la norma di un quadrivettore posizione \`e esattamente l'intervallo invariante, quindi vogliamo che le trasformazioni siano isometrie per la metrica di Minkowski, cio\`e
 \[\eta=L^\top\eta L.\]
 \begin{remark}
 Passando ai determinanti segue subito che $\det L=\pm 1$.
 \end{remark}
 
-
 \noindent Consideriamo l'equazione sopra in coordinate:
 \[\sum_\nu\sum_\mu(L^\top)_{\al\mu}\eta_{\mu\nu}L_{\nu\beta}=\eta_{\al\beta}\]
 nella convezione di Einstein possiamo evitare di scrivere i simboli di somma, dunque
-\[L_{\mu\al}\eta_{\mu\nu}L_{\nu\beta}=\eta_{\al\beta}.\]
-Osserviamo che queste equazioni non cambiano scambiando $\al$ e $\beta$.
-
-Come convensione indici con lettere greche possono assumere valori tra $1$ e $4$, mentre indici latini solo tra $1$ e $3$.\\
+\[\boxed{L_{\mu\al}\eta_{\mu\nu}L_{\nu\beta}=\eta_{\al\beta}}\]
+Osserviamo che queste equazioni non cambiano scambiando $\al$ e $\beta$.\\
+Come convenzione indici con lettere greche possono assumere valori tra $1$ e $4$, mentre indici latini solo tra $1$ e $3$.\\
 Supponiamo che il moto avvenga lungo l'asse $x$ ($y'=y$, $z'=z$ e $x'$ non dipende da $y$ o $z$), cio\`e
-\[L_{ij}=0 \quad i,j\in\cpa{1,2,3},\ i\neq j\]
+\[L_{ij}=0 \quad \forall i,j\in\cpa{1,2,3},\ i\neq j\]
 Consideriamo ora vari casi:
 \begin{itemize}
 \item Se $\al=i$ e $\beta=j$ per $i\neq j$ allora
@@ -64,36 +94,40 @@ e $L_{10}=\pm L_{01}=\pm \sqrt{\gamma^2-1}$.
 \[L=\mat{\gamma &\pm\sqrt{\gamma^2-1}&\\\pm\sqrt{\gamma^2-1}&\gamma&\\&&1&\\&&&1}\]
 Queste sono esattamente le trasformazioni di Lorenz, infatti se $\gamma=\pa{1-\frac{u^2}{c^2}}^{-\frac12}$ allora $\sqrt{\gamma^2-1}=\frac uc\gamma$.
 
-\subsection{Diagramma di Minkowski}
-\begin{definition}[Quadrivettore di tipo tempo/spazio luce]
-Dato un quadrivettore $x^\mu$ definiamo la sua norma di Minkowski come \[s^2=x^\mu \eta_{\mu\nu}x^\nu=(x^0)^2-(x^1)^2-(x^2)^2-(x^3)^2.\]
-Affermiamo che il quadrivettore \`e di tipo 
-\begin{itemize}
-\item \textbf{tempo} se $s^2>0$
-\item \textbf{spazio} se $s^2<0$
-\item \textbf{luce} se $s^2=0$
-\end{itemize}
-Se il quadrivettore \`e di tipo tempo allora esso appartiene al \textbf{futuro} se $x^0>0$ o al \textbf{passato} se $x^0<0$.
-\end{definition}
 
+
+\subsection{Rapidit\`a}
+
+\begin{definition}[Rapidit\`a]
+Definiamo la \textbf{rapidit\`a} di un boost a velocit\`a $u$ come
+\[\xi=\mathrm{arctanh}\pa{-\beta(u)}.\]
+Segue che
+\[\gamma(u)=\cosh\xi,\quad -\gamma(u)\beta(u)=\sinh\xi,\quad -\beta(u)=\mathrm{tanh}\, \xi.\]
+\end{definition}
 \begin{remark}
-Un quadrivettore ortogonale ad uno di tipo tempo \`e di tipo spazio, ma un quadrivettore ortogonale ad uno di tipo spazio non necessariamente \`e di tipo tempo.
+Si ha che
+\[\mat{ct'\\ x'}=\mat{\cosh \xi &\sinh \xi\\\sinh \xi & \cosh \xi}\mat{ct\\ x},\]
+cio\`e il boost corrisponde ad una rotazione iperbolica.
+\end{remark}
+\begin{remark}
+L'identit\`a trigonometrica iperbolica
+\[\cosh^2\xi-\sinh^2\xi=1\]
+corrisponde a $\gamma^2(1-\beta^2)=1$, che \`e la definizione di $\gamma$.
 \end{remark}
 
-\begin{proposition}[La causalit\`a viene rispettata]
-Consideriamo due eventi $A$ e $B$. Se $\Delta t>0$ e $\Delta t'<0$ allora i due eventi non possono essere l'uno la causa dell'altro, cio\`e il quadrivettore dato dalla loro differenza \`e di tipo spazio.
-\end{proposition}
-\begin{proof}
-Applicando la trasformazione di Lorenz
-\[\Delta t'=\gamma\pa{\Delta t-\frac u{c^2}\Delta x}\]
-dunque se $\Delta t'<0$ e $\Delta t>0$ allora
-\[-\gamma\Delta t>-\gamma\frac u{c^2}\Delta x\implies \Delta x>\frac{c^2}{u}\Delta t>c\Delta t\]
-cio\`e la distanza tra gli eventi \`e maggiore rispetto alla distanza che la luce potrebbe percorrere in quell'intervallo di tempo, quindi i due eventi non possono essere l'uno la causa dell'altro.
-\end{proof}
 
-\noindent Per semplicit\`a ignoriamo le componenti $y$ e $z$. Definiamo una base ortonormale dello spazio di Minkowski:
+\begin{remark}
+Considerando una composizione di velocit\`a 
+\[u=\dfrac{u_1+u_2}{1+\frac{u_1u_2}{c^2}}\]
+notiamo che le corrispondenti rapidit\`a si sommano\footnote{vedi le formule di prostaferesi per la tangente iperbolica (\ref{SommaTangenteIperbolica})}, cio\`e
+\[\xi=\xi_1+\xi_2.\]
+\end{remark}
+
+
+\subsubsection{Diagramma di Minkowski}
+Per semplicit\`a ignoriamo le componenti $y$ e $z$. Definiamo una base ortonormale dello spazio di Minkowski:
 \[\wt e_0=\mat{\cosh \xi\\\sinh\xi},\quad \wt e_1=\pm \mat{\sinh \xi\\\cosh\xi}.\]
-Poich\'e $\cosh^2\xi-\sinh^2\xi=1$ per ogni $\xi$ effettivamente sono vettori di norma di Minkowski $1$, inoltre sono evidentemente ortogonali.
+Poich\'e $\cosh^2\xi-\sinh^2\xi=1$, per ogni $\xi$ questi sono vettori di norma di Minkowski $1$, inoltre sono evidentemente ortogonali.
 \bigskip
 
 \noindent
@@ -120,42 +154,39 @@ x_1'=x_0\sinh(\xi-\xi')+x_1\cosh(\xi-\xi')
 \end{cases}\]
 
 \subsection{Tempo proprio e quadrivelocit\`a}
-Abbiamo definito l'intervallo invariante
-\[s^2=c^2t^2-x^2-y^2-z^2,\]
-quindi una sua versione infinitesimale \`e
-\[d\tau^2=\frac{ds^2}{c^2}=dt^2-\frac1{c^2}\pa{dx^2+dy^2+dz^2}\]
-Definiamo $\tau$ il \textbf{tempo proprio}.
-\bigskip
+Poich\'e il tempo non \`e invariante per trasformazioni di Lorenz, non avrebbe senso definire una velocit\`a relativistica in termini solo del tempo. La generalizzazione giusta \`e la seguente
 
-\noindent Osservando che $v=\sqrt{\pa{\dd tx}^2+\pa{\dd ty}^2+\pa{\dd tz}^2}$ possiamo scrivere
+\begin{definition}[Tempo proprio]
+Definiamo il \textbf{tempo proprio} come
+\[\tau=\frac{\sqrt{s^2}}c.\]
+Equivalentemente chiediamo che
+\[d\tau^2=\frac{ds^2}{c^2}=dt^2-\frac1{c^2}\pa{dx^2+dy^2+dz^2}\]
+\end{definition}
+
+\begin{proposition}[Derivata del tempo rispetto al tempo proprio]\label{DerivataTempoPerTempoProprio}
+Si ha che
+\[\dd \tau t=\gamma(v),\]
+dove $v=\sqrt{\pa{\dd tx}^2+\pa{\dd ty}^2+\pa{\dd tz}^2}$.
+\end{proposition}
+\begin{proof}
+Sapendo che $d\tau^2=dt^2-\frac1{c^2}\pa{dx^2+dy^2+dz^2}$, ricaviamo che
 \[d\tau^2=dt^2\pa{1-\frac{v^2}{c^2}}=\frac{dt^2}{\gamma(v)^2},\]
 cio\`e
 \[\dd \tau t=\gamma(v).\]
+\end{proof}
 
-\begin{notation}
-Se $\wt x=(ct,x,y,z)$ \`e un quadrivettore e $\vec x=(x,y,z)$ allora scriviamo $\wt x=(ct,\vec x)$.
-\end{notation}
+\noindent Grazie al tempo proprio possiamo definire l'analogo relativistico della velocit\`a
 
 \begin{definition}[Quadrivelocit\`a]
 Definiamo la \textbf{quadrivelocit\`a} come
-\[\wt v=\dd \tau{\wt x}=(\wt v_0,\wt{\vec v})=\pa{c\dd \tau t,\dd \tau{\vec x}}=(c\gamma(v),\gamma(v)\vec v)=\gamma(v)(c,\vec v),\]
+\[\wt v=\dd \tau{\wt x}=\dd \tau t\dd t{\wt x}=\gamma(v)\pa{c\dd tt,\dd t{\vec x}}=(c\gamma(v),\gamma(v)\vec v)=\gamma(v)(c,\vec v),\]
 dove $\tau$ \`e il tempo proprio e $\vec v$ \`e la velocit\`a in senso non relativistico, cio\`e $\vec v=\dd t{\vec x}$.\\
-La quantit\`a $\dd \tau{\vec x}=\gamma(v)\vec v$ \`e detta \textbf{velocit\`a propria} o \textbf{celerit\`a}.
+La quantit\`a $\dd \tau{\vec x}=\gamma(v)\vec v$ \`e detta \textbf{velocit\`a propria}, \textbf{celerit\`a} o \textbf{velocit\`a relativistica}.
 \end{definition}
-\begin{remark}
-Abbiamo derivato per il tempo proprio e non il tempo perch\'e cambiando sistema di riferimento $\tau$ non cambia ma $t$ s\`i.
-\end{remark}
-\begin{remark}
-La $4$-upla $(c,\vec v)$ NON \`e un quadrivettore perch\'e non \`e invariante cambiando sistema di riferimento, il fattore $\gamma(v)$ \`e necessario per questo.
-\end{remark}
 
-\noindent Se consideriamo un boost di velocit\`a $u$ parallela all'asse $x$ allora\footnote{poniamo $\beta(u)=u/c$}
-\[\begin{cases}
-\wt v_0'=\gamma(u)(\wt v_0-\beta(u)\wt v_1)\\
-\wt v_1'=\gamma(u)(\wt v_1-\beta(u)\wt v_0)\\
-\wt v_2'=\wt v_2\\
-\wt v_3'=\wt v_3
-\end{cases}\]
+\begin{remark}
+La $4$-upla $(c,\vec v)$ NON \`e un quadrivettore perch\'e non \`e invariante cambiando sistema di riferimento, il fattore $\gamma(v)$ \`e dunque necessario per questo.
+\end{remark}
 
 \begin{remark}
 Il modulo di Minkovski di una quadrivelocit\`a \`e
@@ -163,30 +194,56 @@ Il modulo di Minkovski di una quadrivelocit\`a \`e
 Segue in particolare che ogni quadrivelocit\`a \`e di tipo tempo.
 \end{remark}
 
-\begin{remark}
+\noindent Se consideriamo un boost di velocit\`a $u$ parallela all'asse $x$ allora\footnote{$\gamma(u)$ e $\beta(u)$ non dipendono da $\tau$.}
+\[\begin{cases}
+\wt v_0'=\gamma(u)(\wt v_0-\beta(u)\wt v_1)\\
+\wt v_1'=\gamma(u)(\wt v_1-\beta(u)\wt v_0)\\
+\wt v_2'=\wt v_2\\
+\wt v_3'=\wt v_3
+\end{cases}\]
+
+\begin{proposition}[Identit\`a tra i fattori $\gamma$]
+Vale la seguente identit\`a
+\[\gamma(v')=\gamma(u)\gamma(v)\pa{1+\frac{\vec u\cdot \vec v}{c^2}}\]
+\end{proposition}
+\begin{proof}
 Osserviamo che
 \[c\gamma(v')=\wt v_0'=\gamma(u)(\wt v_0-\beta(u)\wt v_1)=\gamma(u)(c\gamma(v)-\beta(u)\gamma(v)v_1),\]
 dunque
 \[\gamma(v')=\gamma(u)\gamma(v)\pa{1-\frac{v_1 u}{c^2}},\]
-come avevamo gi\`a mostrato.
-\end{remark}
+che \`e la tesi perch\'e supponiamo che $\vec u$ abbia la stessa direzione dell'asse $x$.
+\end{proof}
 
 \subsection{Quadriaccelerazione}
 \begin{definition}[Quadriaccelerazione]
 Definiamo la \textbf{quadriaccelerazione} come
 \[\wt a=\dd\tau{\wt v}=\dd t{\wt v}\dd\tau t=\gamma(v)\dd t{}(c\gamma(v),\vec v\gamma(v))\]
 \end{definition}
-Calcoliamo $\dd t\gamma$
+\begin{lemma}
+Vale la seguente identit\`a
+\[\boxed{\dd t{\gamma(v)}=\gamma(v)^3\frac{\vec v\cdot \vec a}{c^2}}\]
+\end{lemma}
+\begin{proof}
+Calcoliamo:
 \[\dd t\gamma=\dd t{}\pa{1-\frac{\vec v\cdot \vec v}{c^2}}^{-\frac12}=-\frac12\pa{1-\frac{\vec v\cdot \vec v}{c^2}}^{-\frac32}\pa{-\frac1{c^2}2\vec v\cdot \dd t{\vec v}}=\gamma(v)^3\frac{\vec v\cdot \vec a}{c^2},\]
 in definitiva
-\[\boxed{\dd t{\gamma(v)}=\gamma(v)^3\frac{\vec v\cdot \vec a}{c^2}}\]
-Segue che $\dd t{}(\gamma(v)\vec v)=\gamma(v)^3\frac{\vec v\cdot \vec a}{c^2}\vec v+\gamma(v)\vec a$ e quindi
+\[{\dd t{\gamma(v)}=\gamma(v)^3\frac{\vec v\cdot \vec a}{c^2}}.\]
+\end{proof}
+\begin{corollary}
+Segue dal lemma che
+\[\dd t{}(\gamma(v)\vec v)=\gamma(v)^3\frac{\vec v\cdot \vec a}{c^2}\vec v+\gamma(v)\vec a.\]
+\end{corollary}
+
+\begin{remark}
+Per quanto appena detto
 \[\wt a=\pa{\gamma(v)^4\frac{\vec v\cdot \vec a}{c},\gamma(v)^4\frac{\vec v\cdot \vec a}{c^2}\vec v+\gamma(v)^2\vec a}=\gamma(v)^4\pa{\frac{\vec v\cdot \vec a}{c},\vec a+\frac{\vec v\times(\vec v\times \vec a)}{c^2}}\]
+\end{remark}
+
 \begin{remark}
 Se $\vec a=0$ allora $\wt a=0$.
 \end{remark}
 
-\begin{remark}
+\begin{remark}[Accelerazione propria]
 Se ci troviamo un un sistema di riferimento a riposo ($\vec v=0$) allora $\gamma(v)=1$ e
 \[\wt a=(0,\vec a).\]
 In analogia a quanto detto possiamo definire $(0,\vec a)$ come l'\textbf{accelerazione propria}.
@@ -219,14 +276,13 @@ che possiamo trovare dall'osservazione precedente o sfruttando l'equazione \[\wt
 
 
 \section{Dinamica relativistica}
-Cerchiamo di capire come leggere le leggi di Newton:\\
-La prima legge \`e il primo postulato della relativit\`a.
-\medskip
+Cerchiamo di capire come leggere le leggi di Newton in chiave relativistica.\\
+La prima legge \`e il primo postulato della relativit\`a ma con la seconda legge ($F=ma$) cominciamo ad avere qualche problema.\medskip
 
-\noindent Per la seconda legge ($F=ma$) cominciamo ad avere qualche problema. Consideriamo il seguente problema
+\noindent Per capire come procedere consideriamo il seguente esperimento
+
 \begin{example}[Urto elastico di due palline identiche]
-Fissiamo un sistema $S$ e cosideriamo un sistema $S'$ in moto relativo lungo l'asse $x$ a velocit\`a $u$. Due osservatori laciano delle palline ($1$ e $2$) lungo la direzione $y$ con la stessa velocit\`a in modo che queste si scontrino.
-\medskip
+Fissiamo un sistema $S$ e cosideriamo un sistema $S'$ in moto relativo lungo l'asse $x$ a velocit\`a $u$. Due osservatori laciano delle palline ($1$ e $2$) lungo la direzione $y$ con la stessa velocit\`a in modo che queste si scontrino.\smallskip
 
 \noindent Formalmente imponiamo
 \[\begin{cases}
@@ -235,6 +291,12 @@ Fissiamo un sistema $S$ e cosideriamo un sistema $S'$ in moto relativo lungo l'a
 (v_2)_y'=-v_0\\
 (v_2)_x'=0
 \end{cases}\]
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=9cm]{images/Palline_relativistiche_def_massa.png}
+\end{figure}
+
+\noindent
 Considerando le formule di boost troviamo
 \[\begin{cases}
 (v_2)_x=\frac{0+u}{1+0}=u\\
@@ -244,8 +306,9 @@ Imponiamo la conservazione degli impulsi (potenzialmente ammettendo che la massa
 \[2M(v_1)v_0=2M(v_2)\frac{v_0}{\gamma(u)},\]
 da cui $\gamma(u)M(v_1)=M(v_2)$.\medskip
 
-\noindent Ricordando che $\gamma(v_2)=\gamma(v_1)\gamma(u)$ osserviamo che
+\noindent Ricordando\footnote{nota che $\vec u$ e $\vec v_1$ sono ortogonali} che $\gamma(v_2)=\gamma(v_1)\gamma(u)$ osserviamo che
 \[\frac{M(v_2)}{\gamma(v_2)}=\frac{M(v_1)}{\gamma(v_1)}=\frac{M(0)}{\gamma(0)}=M(0)=m.\]
+
 \end{example}
 
 \begin{definition}[Massa a riposo]
@@ -272,8 +335,7 @@ Il modulo del quadriimpulso \`e
 In particolare il quadriimpulso \`e di tipo tempo (o di tipo luce se $m=0$).
 \end{remark}
 
-\noindent
-Studiamo la quantit\`a $\wt p_0$:
+\noindent Abbiamo capito chi \`e la componente spaziale del quadriimpulso, ma la componente temporale?
 \[\wt p_0c=m\gamma(v)c^2=m\gamma(v)c^2=\frac{mc^2}{\sqrt{1-\frac{v^2}{c^2}}}\]
 per $v\to 0$ possiamo approssimare questa quantit\`a al primo ordine in $v^2$ come
 \[mc^2-\under{\text{energia cinetica}}{\frac12 mv^2}\]
