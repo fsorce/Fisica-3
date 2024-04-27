@@ -1,9 +1,8 @@
 \chapter{Teoria cinetica dei gas}
 
-[QUESTO CAPITOLO DEVE ANCORA ESSERE SISTEMATO!!!!]
 
 \section{Modello dei gas ideali}
-Nella realt\`a i gas sono composti da tante particelle. Imponiamo alcune condizioni:
+Nella realt\`a i gas sono composti da tante particelle. Imponiamo alcune condizioni che ci aspettiamo dai gas:
 \setlength{\leftmargini}{0cm}
 \begin{itemize}
 \item[$\boxed{\text{Isotropo}}$] Le velocit\`a delle particelle sono equamente distribuite in ogni direzione.
@@ -16,20 +15,39 @@ Se $N$ \`e il numero totale di particelle
 \[N=\int dn(v)=\int_0^\infty \dd vndv\]
 dove $\dd vn$ \`e in un qualche modo la ``densit\`a delle particelle di una data velocit\`a".
 \end{remark}
-\begin{remark}
-Sia $\vec v$ una qualche velocit\`a.
+
+\begin{definition}[Angolo solido]
+Definiamo l'\textbf{angolo solido} relativo ad un isieme di vettori $\cpa{\vec u}$ come l'area di $S^2$ occupata da $\cpa{\frac{\vec u}{\abs{\vec u}}}$.\\
+Il differenziale dell'angolo solido \`e 
+\[d\Omega=\sin\theta d\theta d\phi\]
+\end{definition}
+
+\begin{definition}[Velocit\`a quadratica media]
+Definiamo la \textbf{velocit\`a quadratica media delle particelle} come
+\[\ps{v^2}=\int_0^\infty v^2dn(v)\] 
+\end{definition}
+
+\begin{definition}[Energia cinetica media]
+Definiamo l'\textbf{energia cinetica media} come \[\ps{E_K}=\frac12mN\ps{v^2}.\]
+\end{definition}
+
+\begin{proposition}[Calcolo della pressione]\label{CalcoloDellaPressioneTeoriaCineticaDeiGas}
+Sia $m$ la massa di una particella, $N$ il numero di particelle e $V$ il volume che occupano. La pressione collettiva che queste particelle esercitano \`e
+\[p=\frac13m\frac NV\ps{v^2}.\]
+\end{proposition}
+\begin{proof}
+Calcoliamo qualche differenziale utile
+\setlength{\leftmargini}{0cm}
+\begin{itemize}
+\item[$\boxed{dn(\vec v)}$] Sia $\vec v$ una qualche velocit\`a.
 \[dn(\vec v)\pasgnl={isotropia}dn(v)\frac{d\Omega}{4\pi},\]
-dove $d\Omega$ \`e l'\textbf{angolo solido}, cio\`e l'area della ambiguit\`a sulla direzione voluta sulla sfera di raggio 1\footnote{$d\Omega=\sin\theta d\theta d\phi$.}.
-\end{remark}
-
-\begin{remark}
-Per omogeneit\`a il numero di particelle in un volumetto \`e
+dove $d\Omega$ \`e il differenziale dell'angolo solido occupato dalle possibili velocit\`a. 
+\item[$\boxed{dn}$] Per omogeneit\`a il numero di particelle in un volumetto \`e
 \[dn=\frac NVdV=\frac NV dAvdt\cos\theta.\]
-\end{remark}
+\end{itemize}
+\setlength{\leftmargini}{0.5cm}
+Assumendo impatti elatici, l'impulso trasferito alla parete dall'impatto di una particella \`e $\abs{\Delta \vec p}=2mv\cos \theta$.\medskip
 
-\begin{remark}
-L'impulso trasferito alla parete dall'impatto di una particella \`e $\abs{\Delta \vec p}=2mv\cos \theta$.
-\end{remark}
 \noindent Appurate queste equazioni possiamo scrivere il differenziale della pressione come segue:
 \begin{align*}
 d^2p=&\frac{dF}{dA}=\frac{\abs{d\vec p}/dt}{dA}=\frac1{dA}\frac1{dt}\abs{d\vec p}_{singola}dn dn(\vec v)\\
@@ -42,24 +60,23 @@ dp=&\int_\Omega d^2p=\frac{mv^2}{2\pi}\frac NVdn(v)\int_0^{2\pi}d\phi\int_0^{\pi
 =&\frac13mv^2\frac NVdn(v).
 \end{align*}
 Integrando ora sui possibili moduli delle velocit\`a troviamo la pressione:
-\[p=\frac13m\frac NV\under{\doteqdot \ps{v^2}}{\int_0^\infty v^2dn(v)}.\]
+\[p=\frac13m\frac NV\ps{v^2}\int_0^\infty v^2dn(v)=\frac13m\frac NV\ps{v^2}.\]
+\end{proof}
 
-\begin{definition}[Energia cinetica media]
-Definiamo l'\textbf{energia cinetica media} come \[\ps{E_K}=\frac12mN\ps{v^2}.\]
-\end{definition}
-\begin{remark}
-Vale la relazione
-\[\boxed{\frac12m\ps{v^2}=\frac32 k_b T}\]
-\end{remark}
+
+\begin{proposition}
+Per gas ideali vale la relazione
+\[\boxed{\ps{E_K}=\frac32 k_b T}\]
+\end{proposition}
 \begin{proof}
 Osserviamo che
 \[pV=\frac13 mN\ps{v^2},\]
 dunque
-\[nRT=pV=\frac23\ps{E_K},\]
+\[nRT=pV=\frac13 mN\ps{v^2}=\frac23\ps{E_K},\]
 cio\`e
 \[T=\frac 23\frac{\ps{E_K}}{nR}=\frac 23N_a\frac{\ps{E_K}}{NR}=\frac 23\frac{\ps{E_K}}{Nk_b}\]
 In conclusione
-\[{\frac12m\ps{v^2}=\frac32 k_b T}.\]
+\[\ps{E_K}=\frac32 k_b T.\]
 \end{proof}
 
 \noindent
@@ -79,7 +96,16 @@ In generale $U=E_K+E_P$ per una qualche energia potenziale $E_P$. Per piccoli sp
 Ogni grado di libert\`a contribuisce un addendo $\frac12 RT$ al calore specifico a volume costante.
 \end{fact}
 
+\begin{remark}
+Abbiamo ricavato nuovamente l'espressione per $c_V$ che avevamo assunto per gas ideali:\\
+Se le particelle hanno $\nu$ gradi di libert\`a allora
+\[c_V=\frac\nu2RT.\]
+\end{remark}
+
 \section{Distribuzione delle velocit\`a}
+[SEZIONE DA RIVEDERE PERCH\'E MANCA FILE DELLA LEZIONE]
+
+
 Consideriamo ora un sistema isolato con temperatura costante. Cerchiamo di capire come \`e fatta la distribuzione delle velocit\`a.
 
 Decomponiamo le velocit\`a $\vec v$ in $(v_x,v_y,v_z)$. Notiamo che
@@ -137,100 +163,113 @@ Dato un sistema statistico come quello trattato in questo capitolo, un \textbf{m
 \end{fact}
 
 \begin{remark}
-Consideriamo due sistemi. Uno in un macrostato con probabilit\`a $P_1$ di verificarsi ed entropia $S_1$, il secondo con dati analoghi $P_2$ e $S_2$. Notiamo che l'insieme dei due sistemi ha entropia $S_1+S_2$ e la probabilit\`a del macrostato di questo insieme \`e $P_1P_2$. Intuitivamente
+Consideriamo due sistemi. Uno in un macrostato con probabilit\`a $P_1$ di verificarsi ed entropia $S_1$, il secondo con dati analoghi $P_2$ e $S_2$. Notiamo che l'insieme dei due sistemi ha entropia $S_1+S_2$ e la probabilit\`a del macrostato di questo insieme \`e $P_1P_2$. Intuitivamente abbiamo notato che
 \[S\propto \log P\propto \log\Omega,\]
-dove $\Omega$ \`e il numero di microstati con lo stesso macrostato.\\
-Supponiamo dunque $S=C\log\Omega$.
+dove $\Omega$ \`e il numero di microstati con lo stesso macrostato.
 \end{remark}
 
+\begin{definition}[Entropia di Boltzmann]
+Per una qualche costante\footnote{che troveremo in seguito} $C$ definiamo l'\textbf{entropia di Boltzmann} di un sistema come
+\[S=C\log\Omega\]
+\end{definition}
 
+\noindent Proviamo a confrontare l'entropia di Boltzmann con quella che abbiamo gi\`a definito per alcune trasformazioni di gas ideali.
 
+\subsection{Mescolamento dello stesso gas}
 
+Consideriamo una scatola adiabatica con due compartimenti di volume $V/2$. Dentro il primo compartimento si trovano $r$ moli di gas e nel secondo $1-r$ moli, entrambi alla stessa temperatura. Rimuoviamo successivamente la parete e attendiamo l'equilibrio termodinamico.
+\bigskip
 
-Consideriamo la seguente situazione: Una scatola adiabatica con due compartimenti di volume $V/2$. Dentro il primo compartimento si trovano $r$ moli di gas e nel secondo $1-r$ moli, entrambi alla stessa temperatura. Ora rimuoviamo la parete
-\[\Delta S=(S_{f_1}-S_{i_1})+(S_{f_2}-S_{i_2})=rR\log\pa{\frac{rV}{V/2}}+(1-r)R\log\pa{\frac{(1-r)V}{V/2}}=\]
-\[=R\pa{r\log r+(1-r)\log(1-r)+\log 2}.\]
-
-
-Consideriamo ora una situazione analoga ma con delle particelle: Nel primo compartimento abbiamo $N/2 -x$ particelle e nel secondo $N/2 +x$.
+\noindent La variazione di entropia termodinamica \`e
+\begin{align*}
+\Delta S=&(S_{f_1}-S_{i_1})+(S_{f_2}-S_{i_2})=\\
+=&rR\log\pa{\frac{rV}{V/2}}+(1-r)R\log\pa{\frac{(1-r)V}{V/2}}=\\
+=&R\pa{r\log r+(1-r)\log(1-r)+\log 2}.
+\end{align*}
+\noindent
+Consideriamo ora l'entropia di Boltzmann:\\
+Nel primo compartimento abbiamo $N/2 -x$ particelle e nel secondo $N/2 +x$.
 \[\Omega(N,x)=\binom{N}{x+N/2},\]
 da cui
-\[S_i=C\log(N!)-\log((N/2-x)!)-\log((N/2+x)!).\]
+\[S_i=C(\log(N!)-\log((N/2-x)!)-\log((N/2+x)!)).\]
 Applicando l'approssimazione di Stirling $\log(N!)\simeq N\log N$ si ha
 \[S_i\simeq -NC\pa{\pa{\frac12-\frac xN}\log\pa{\frac12-\frac xN}+\pa{\frac12+\frac xN}\log\pa{\frac12+\frac xN}}.\]
-(Nel caso di prima avremmo $r=\frac1{N_a}\pa{\frac{N_a}2-x}=\frac12-\frac x{N_a}$, da cui
-\[S_i\simeq -N_a C\pa{r\log r+(1-r)\log (1-r)}\])
-
+Riscrivendo questo risultato in termini di moli $r=\frac1{N_a}\pa{\frac{N_a}2-x}=\frac12-\frac x{N_a}$, si ha
+\[S_i\simeq -N_a C\pa{r\log r+(1-r)\log (1-r)}\]
 Per quanto riguarda lo stato finale il numero di microstati possibili ora \`e ogni combinazione di particelle nei due contenitori, $2^{N_a}$ possibilit\`a in totale, dunque
 \[S_f=CN_a\log 2,\]
 dunque
-\[\Delta S=S_f-S_i=N_AC\pa{r\log r+(1-r)\log(1-r)+\log 2}\]
-Se la costante $C$ la chiamiamo ``costante di Boltzmann" ricaviamo di nuovo effettivamente $S=k\log \Omega$.
+\[\Delta S=S_f-S_i=N_aC\pa{r\log r+(1-r)\log(1-r)+\log 2}.\]
+\bigskip
 
+\noindent Notiamo che le due espressioni sono la stessa se $C=k_b$, dunque troviamo la definizione di entropia di Boltzmann pi\`u conosciuta
+\[\boxed{S=k\log \Omega}\]
 
-
-
-
-
-Fissiamo la temperatura e consideriamo una espansione $V\to V+dV$. Come varia $\Omega$?\\
-Mi aspetto qualcosa del tipo
+\subsection{Espansione isoterma}
+Fissiamo la temperatura e consideriamo una espansione da $V$ a $V+dV$. Ci aspettiamo che $\Omega$ cambi come segue
 \[\frac{\Omega_f}{\Omega_i}=\frac{(V+dV)^N}{V^N}=\pa{1+\frac{dV}V}^N\]
-Stiamo considerando il modello di gas perfetto, quindi $dT=0\implies dU=0$, dunque
+Poich\'e stiamo considerando il modello di gas perfetto si ha che $dT=0\implies dU=0$, dunque
 \[dV=\frac{\delta Q}p,\]
 da cui
 \[\frac{dV}V=\frac{\delta Q}{pV}=\frac{\delta Q}{nRT}=\frac{\delta Q}{Nk_b T}\]
+Quindi l'entropia di Boltzmann verifica la definizione di entropia che avevamo dato per trasformazioni reversibili:
+\[\Delta S=k_b\log\pa{\frac{\Omega_f}{\Omega_i}}=k_b N\log\pa{1+\frac{\delta Q}{Nk_b T}}\approx k_bN\frac{\delta Q}{Nk_bT}=\frac{\delta Q}T.\]
 
-Quindi verifichiamo che l'entropia di Boltzmann verifica la definizione di entropia che avevamo dato:
-\[\Delta S=k_b\log\pa{\frac{\Omega_f}{\Omega_i}}=k_b N\log\pa{1+\frac{\delta Q}{Nk_b T}}\approx k_bN\frac{\delta Q}{Nk_bT}=\frac{\delta Q}T\]
-
-
-Consideriamo ora una isocora e cambiamo la temperatura:
+\subsection{Isocora}
+Consideriamo ora una isocora e cambiamo la temperatura. Poich\'e
 \[\ps{E_K}=\frac32k_bT\]
-
-\[\frac12m\ps{v_x^2}=\frac12 kT\implies \ps{v_x^2}=\frac{k_bT}m,\]
+si ha che in ogni direzione 
+\[\frac12m\ps{v_x^2}=\frac12 k_bT\implies \ps{v_x^2}=\frac{k_bT}m,\]
 inoltre per isotropia $\ps{v_x}$, quindi $\sqrt{\frac{k_bT}m}$ \`e la deviazione standard di $v_x$.
 Quindi $v$ per una particella ha una deviazione standard nell'ordine di $\pa{\frac{k_bT}m}^{3/2}$ quindi nell'insieme si ha che $\ps{v}\propto T^{3N/2}$.
+\medskip
 
-Quindi per questa trasformazione
+\noindent
+Tornando alla trasformazione isocora abbiamo trovato che 
 \[\frac{\Omega_f}{\Omega_i}=\pa{1+\frac{dT}T}^{3N/2},\]
-da cui
-\[\Delta S=\frac{3N}2k_b\log\pa{1+\frac{dT}T}\approx \frac{3Nk_b}2\frac{dT}T=\frac{C_VdT}T=\frac{dU}T\pasgnl={isocora}\frac{\delta Q}T\]
+da cui nuovamente
+\[\Delta S=\frac{3N}2k_b\log\pa{1+\frac{dT}T}\approx \frac{3Nk_b}2\frac{dT}T=\frac{C_VdT}T=\frac{dU}T\pasgnl={isocora}\frac{\delta Q}T.\]
 
 
 
 \section{Informazione}
 \begin{definition}[Informazione]
-Sia $X$ variabile aleatoria discreta che pu\`o assumere $N$ valori $x_1,\cdots, x_N$ con densit\`a di probabilit\`a $P_i$.\\
+Sia $X$ una variabile aleatoria discreta che pu\`o assumere $N$ valori $x_1,\cdots, x_N$ con densit\`a di probabilit\`a $P_i$. 
 Definiamo l'\textbf{informazione} derivante dal fatto che l'evento $x_i$ sia accaduto come
 \[I_i=-\log P_i\]
 \end{definition}
-Vogliamo definire $\Hc(\cpa{P_i})$ come ``l'informazione che mi manca per capire l'esito data una distribuzione di probabilit\`a". Imponiamo alcune propriet\`a:
+
+\noindent
+Vogliamo definire una funzione $\Hc(\cpa{P_i})$ che rappresenta ``l'informazione che manca per capire l'esito data una distribuzione di probabilit\`a". Imponiamo alcune propriet\`a:
 \begin{itemize}
 \item $\Hc$ deve essere continua nelle $P_i$
-\item Se per ogni $P_i=\frac1N$, $\Hc$ deve essere monotona e crescente in $N$.
-\item [(Consistenza)\ $\bullet$] Sia $\pi$ una partizione di $N$ e per ogni elemento $g\in \pi$ sia $P_g=\sum_{i\in g}P_i$. Allora
+\item Se per ogni $P_i=\frac1N$, $\Hc$ deve essere monotona e crescente\footnote{Pi\`u esiti possibili corrisponde a pi\`u informazione necessaria per identificare l'evento accaduto} in $N$.
+\item [(Consistenza)\ $\bullet$] Sia $\pi$ una partizione di $N$ e per ogni elemento $g\in \pi$ sia $P_g=\sum_{i\in g}P_i$, allora\footnote{$P(a\mid b)$ indica la probabilit\`a che accada $a$ dato che accade $b$, equivalentemente \[P(a\mid b)=P(a\wedge b)/P(b)\]}
 \[\Hc(\cpa{P_i})=\Hc(\cpa{P_g}_{g\in \pi})+\sum_{g\in \pi} P_g\Hc(\cpa{P(x_i\mid g)})\]
 \end{itemize}
-\begin{theorem}
+
+\begin{theorem}[Entropia di Shannon]
 La funzione $\Hc$ deve assumere la forma
 \[\Hc(\cpa{P_i})=-C\sum_i P_i\log(P_i).\]
 Questa funzione di dice \textbf{entropia di Shannon/Gibbs}.
 \end{theorem}
 \begin{proof}
-Consideriamo due casi
+Consideriamo due casi possibili per la distribuzione di probabilit\`a:
 \setlength{\leftmargini}{0cm}
 \begin{itemize}
-\item[$\boxed{P_i=1/N}$] Sia $\Hc(\cpa{N\ii,\cdots, N\ii})=F(N)$. Consideriamo ora $n$ gruppi equiprobabili. Ogni gruppo $g$ contiene $N/n$ eventi, quindi $P_g=\frac1n$ e $P(x_i\mid g)=\frac nN$. Osserviamo dunque che $\Hc(\cpa{P(x_i\mid g)})=F(M/n)$. Per consistenza
+\item[$\boxed{\text{uniforme}}$] Sia $\Hc(\cpa{N\ii,\cdots, N\ii})=F(N)$. Consideriamo ora $n$ collezioni di eventi equiprobabili. Ogni collezione $g$ contiene $N/n$ eventi, quindi $P_g=\frac1n$ e $P(x_i\mid g)=\frac nN$. Osserviamo dunque che $\Hc(\cpa{P(x_i\mid g)})=F(N/n)$. Per consistenza
 \[F(N)=F(n)+\sum_n\frac1nF(N/n)=F(n)+F(N/n).\] 
-\item Siano $s,t>1$ interi positivi e notiamo che esistono $\al,\beta$ interi tali che
+Siano ora $s,t>1$ interi positivi e notiamo che esistono $\al,\beta$ interi con $\beta$ arbitrariamente grande tali che
 \[\frac\al\beta\leq\frac{\log s}{\log t}<\frac{\al+1}\beta\implies t^\al\leq s^\beta<t^{\al+1}.\]
-Per monotonia
+Per monotonia di $F$
 \[F(t^\al)\leq F(s^\beta)<F(t^{\al+1}).\]
-Per la propriet\`a mostrata nel caso particolare
-\[\frac\al\beta\leq\frac{F(s)}{F(t)}<\frac{\al+1}\beta\implies t^\al\leq s^\beta<t^{\al+1},\]
-dunque
+Per la propriet\`a di $F$ mostrata sopra si ha che
+\[F(t^\al)=F(t)+F(t^{\al-1})=\cdots=\al F(t)\]
+e similmente per gli altri termini, dunque
+\[\frac\al\beta\leq\frac{F(s)}{F(t)}<\frac{\al+1}\beta.\]
+Questo mostra che
 \[\abs{\frac{F(s)}{F(t)}-\frac{\log s}{\log t}}\leq \frac1\beta,\]
-quindi $F(s)=C\log s$ per una qualche costante $C$.
+e poich\'e $\beta$ pu\`o essere scelto grande a piacere questo mostra che $F(s)=C\log s$ per una qualche costante $C$.
 \item[$\boxed{\text{generale}}$] Sia $N_g=\#g$. Notiamo che $P_g=\frac{N_g}N$ e che $P(x_i\mid g)=\frac1{N_g}$. Osserviamo che
 \[\Hc(\cpa{P_i})=F(N)=\Hc(\cpa{P_g})+\sum_g P_g F(N_g),\]
 da cui
@@ -254,37 +293,57 @@ che a meno della notazione \`e l'equivalente di $S=k_b\log \Omega$.
 
 
 \subsection{Principio di massima entropia}
-Consideriamo un sistema con $N$ stati e nessun vincolo. Sia $P_i$ la probabilit\`a dello stato $i$. Vogliamo trovare i $P_i$ che massimizzano $S$ sapendo che $\sum_i P_i=1$:\\
-$S=-k_b\sum_i P_i\log P_i$. Per moltiplicatori di lagrange vogliamo massimizzare $S+\al \sum_i P_i$, cio\`e
-\[0=\pp{P_i}{}(S+\al \sum_i P_i)=-k_b............\]
-
-
-Consideriamo ora un vincolo $\ps{f(x_i)}=\sum_i P_i f(x_i)=cost.$
-
-********************************
-
-
-$U=\ps{E}$, $S=k\log Z-\frac UT$
-
-\[P_i=\frac12 e^{\frac{E(x_i)}{k_bT}}\]
-
-
-
-
-
-
-\section{Terzo principio}
-\begin{fact}[Terzo principio della termodinamica]
-\textbf{In un processo reversibile isotermo $\lim_{T\to 0}\Delta S=0$.}
+\begin{fact}[Principio di massima entropia]
+I sistemi tendono alla distribuzione che massimizza l'entropia compatibile con i vincoli.
 \end{fact}
-\begin{remark}
-Stiamo dicendo che le isoterme per $T$ vicino a $0$ si avvicinano ad essere adiabatiche.
-\end{remark}
 
-\begin{remark}
-Moralmente il principio dice che \`e difficile raffreddare verso temperature vicine allo 0 assoluto.
-\end{remark}
+\subsubsection{Nessun vincolo}
+Consideriamo un sistema con $N$ stati e nessun vincolo. Sia $P_i$ la probabilit\`a dello stato $i$. Vogliamo trovare i $P_i$ che massimizzano $S$ sapendo che $\sum_i P_i=1$:\\
+Cerchiamo le soluzioni del sistema di moltiplicatori di Lagrange
+\[\begin{cases}
+\sum_i P_i=1\\
+\pp{P_i}{}(-k_b\sum_j P_j\log P_j)=\la \pp{P_i}{}(-1+\sum_j P_j)
+\end{cases}\]
+\[\begin{cases}
+\sum_i P_i=1\\
+-k_b (\log P_i+1)=\la
+\end{cases}\coimplies\begin{cases}
+\sum_i P_i=1\\
+P_i=e^{-\pa{\frac \la{k_b}+1}}
+\end{cases}\]
+Poich\'e $e^{-\pa{\frac \la{k_b}+1}}$ non dipende da $i$, il sistema ha come soluzione $P_i=N\ii$ per ogni $i$, dunque in assenza di vincoli
+\[S=-k_b\sum_i\frac1N\log\pa{\frac1N}=k\log N.\]
 
-\begin{remark}
-Possiamo riformulare il principio affermando che ogni sistema ha la stessa entropia allo zero assoluto.
-\end{remark}
+\subsubsection{Un vincolo}
+Consideriamo un vincolo della forma 
+\[\ps{f(x_i)}\doteqdot\sum_i P_i f(x_i)=c.\]
+Applicando nuovamente il sistema dei moltiplicatori di Lagrange ricaviamo\footnote{$f$ non dipende dalle probabilit\`a, quindi $\pp{P_i}f(x_i)=0$}
+\[\begin{cases}
+\sum_j P_j=1\\
+\sum_j P_j f(x_j)=c\\
+-k_b (\log P_i+1)=\al+\beta f(x_i)
+\end{cases}\coimplies \begin{cases}
+\sum_j P_j=1\\
+\sum_j P_j f(x_j)=c\\
+P_i=e^{-1-\al/k_b}e^{-(\beta/k_b) f(x_i)}
+\end{cases}\]
+Applicando la prima equazione troviamo
+\[e^{-1-\al/k_b}\under{\doteqdot Z}{\pa{\sum_j e^{-(\beta/k_b)f(x_j)}}}=1,\]
+da cui
+\[P_i=\frac1Ze^{-\frac\beta{k_b}f(x_i)}.\]
+Inserendo questa scrittura nella formula per l'entropia di Shannon troviamo
+\begin{align*}
+S=&-k_b\sum_i \frac1Ze^{-\frac\beta{k_b}f(x_i)}\log\pa{\frac1Ze^{-\frac\beta{k_b}f(x_i)}}=\\
+=&k_b\log Z-k_b\sum_i P_i\log\pa{e^{-\frac\beta{k_b}f(x_i)}}=\\
+=&k_b\log Z+\beta\ps{f(x_i)} 
+\end{align*}
+
+\begin{example}[Energia interna costante]
+Sia $f(x_i)=E(x_i)$ e supponiamo che $U=\ps{E}$ sia costante. L'entropia \`e della forma
+\[S=k_b\log Z+\beta U\]
+Poich\'e $Z$ \`e costante, $\beta=\pp US=\frac1T$, dunque
+\[S=k_b\log Z+\frac UT.\]
+Osserviamo inoltre che per quanto detto
+\[P_i=\frac1Z \exp\pa{-\dfrac{E(x_i)}{k_bT}},\]
+che a meno della costante di normalizzazione $Z$ corrisponde ad un termine che appare nella distribuzione di Maxwell-Boltzmann.
+\end{example}
