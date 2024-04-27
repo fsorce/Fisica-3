@@ -17,13 +17,17 @@ Mostrimo che le loro negazioni sono equivalenti:
 \setlength{\leftmargini}{0cm}
 \begin{itemize}
 \item[$\boxed{\neg K\implies \neg C}$] Consideriamo il diagramma
-
-[DIAGRAMMA]
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=5cm]{images/NonKelvin_Implica_NonClausius.png}
+\end{figure}
 
 Notiamo che $\abs{Q'}+\abs{W}>\max{\cpa{\abs{Q'},\abs{W}}}=\max{\cpa{\abs{Q'},\abs{Q}}}$. Considerando ora il sistema di due macchine come un insieme troviamo una macchina che trasferisce un calore $\abs{Q'}$ dala sorgente fredda alla sorgente calda, negando Clausius.
 \item[$\boxed{\neg C\implies \neg K}$] Procediamo analogamente a prima
-
-[DIAGRAMMA]
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=7cm]{images/NonClausius_Implica_NonKelvin.png}
+\end{figure}
 
 e leggendo questo diagramma come un insieme la macchina avrebbe preso del calore $\abs Q-\abs{Q'}$ dalla sorgente $\theta_L$ e lo ha trasformato interamente in lavoro, negando Kelvin.
 \end{itemize}
@@ -40,8 +44,11 @@ Un processo \`e \textbf{ciclico} se lo stato iniziale e finale sono lo stesso. S
 
 \begin{remark}[Diagramma di una macchina a due sorgenti]
 Spesso torna comodo fare diagrammi come in figura
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=4cm]{images/Diagramma_Ciclo.png}
+\end{figure}
 
-[DIAGRAMMA]
 \end{remark}
 
 \begin{remark}
@@ -162,8 +169,11 @@ Due curve adiabatiche non si incrociano.
 \begin{proof}
 Per assurdo supponiamo che due adiabatiche si incrocino. Trasformandole in un ciclo tramite una isoterma avremmo costruito una macchina che trasforma calore in lavoro senza effetti secondari, contraddicendo il secondo principio.
 
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=5cm]{images/Adiabatiche_fibrano.png}
+\end{figure}
 
-[DISEGNO]
 \end{proof}
 
 
@@ -185,7 +195,19 @@ Per un qualsiasi ciclo reversibile si ha che
 \begin{proof}
 Approssimiamo il ciclo con tanti cicli di Carnot: per i lemma (\ref{IsotermeFibrano}) e (\ref{AdiabaticheFibrano}) evitiamo problemi di double counting, per costruire l'approssimazione basta scegliere due punti sul ciclo e sostituire il tratto del ciclo che li collega con la giunzione di una adiabatica, una isoterma e poi nuovamente una adiabatica, dove le adiabatiche sono determinate dagli stati in esame e l'isoterma \`e scelta in modo che il lavoro compiuto non cambi\footnote{poich\'e l'energia interna \`e una funzione di stato, garantire lo stesso lavoro automaticamente fornisce anche uguaglianze tra i calori}.
 
-[DISEGNO]
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=4cm]{images/Come_Approssimare.png}
+    \caption{Come viene sostituito un singolo tratto in modo da non cambiare il lavoro}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=5cm]{images/Dimostrazione_Teorema_Carnot.png}
+    \caption{L'approssimazione del ciclo con tanti cicli di Carnot}
+\end{figure}
+
+
 \end{proof}
 
 \begin{corollary}
@@ -230,9 +252,7 @@ dove $T$ \`e la temperatura a cui lavora $\Sigma$.
 Studiamo gli effetti secondari di $\Sigma$ \footnote{che necessariamente ci sono per il secondo principio.}.
 Consideriamo il sistema composto da $\Sigma$ e una macchina di Carnot $\Sigma'$ definito come segue:\\
 $\Sigma'$ assorbe un calore $\delta Q_s$ dalla sorgente $T_s$, produce del lavoro $W'$ e rilascia ad una temperatura $T$ il calore $\delta Q$ che riceve $\Sigma$.
-
-
-[DIAGRAMMA]
+\medskip
 
 \noindent Calcolando la variazione di entropia per $\Sigma'$ ricaviamo che
 \[0=\Delta S=\oint \frac{\delta Q_s}{T_s}+\oint -\frac{\delta Q}T\coimplies \frac1{T_s}\oint \delta Q_s=\oint \frac{\delta Q}T.\]
