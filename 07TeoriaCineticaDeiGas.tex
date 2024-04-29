@@ -102,12 +102,10 @@ Se le particelle hanno $\nu$ gradi di libert\`a allora
 \[c_V=\frac\nu2RT.\]
 \end{remark}
 
-\section{Distribuzione delle velocit\`a}
-[SEZIONE DA RIVEDERE PERCH\'E MANCA FILE DELLA LEZIONE]
+\section{Distribuzione di Maxwell-Boltzmann}
+Consideriamo ora un sistema isolato con temperatura costante. Cerchiamo di capire come \`e fatta la distribuzione delle velocit\`a.\medskip
 
-
-Consideriamo ora un sistema isolato con temperatura costante. Cerchiamo di capire come \`e fatta la distribuzione delle velocit\`a.
-
+\noindent
 Decomponiamo le velocit\`a $\vec v$ in $(v_x,v_y,v_z)$. Notiamo che
 \[dn(v_x)=Nf(v_x)dv_x,\]
 dove $f$ \`e la densit\`a di probabilit\`a che la componente $x$ sia $v_x$.\\
@@ -115,44 +113,66 @@ Per isotropia si ha che
 \[dn(v_y)=Nf(v_y)dv_y,\quad dn(v_z)=Nf(v_z)dv_z,\]
 dunque
 \[dn(\vec v)=N f(v_x)f(v_y)f(v_z)dv_xdv_ydv_z.\]
-Sempre per isotropia, in realt\`a $f(v_x)f(v_y)f(v_z)$ \`e una funzione del modulo $v=\sqrt{v_x^2+v_y^2+v_z^2}$, non delle singole componenti.
+Sempre per isotropia, in realt\`a $f(v_x)f(v_y)f(v_z)$ \`e una funzione $\phi(v)$ del modulo $v=\sqrt{v_x^2+v_y^2+v_z^2}$, non delle singole componenti.\bigskip
 
+\noindent
 Segue dunque che
-\[f(v)f(0)f(0)=\phi(v)=f(v_x)f(v_y)f(v_z).\]
+\[\phi(v)=f(v_x)f(v_y)f(v_z)=f(v)f(0)f(0).\]
 Dividendo per $f(0)^3$ troviamo
-\[\frac{f(v)}{f(0)}=\frac{f(v_x)}{f(0)}\frac{f(v_y)}{f(0)}\frac{f(v_z)}{f(0)}\]
-\[\log\frac{f(v)}{f(0)}=\log \frac{f(v_x)}{f(0)}+\log\frac{f(v_y)}{f(0)}+\log\frac{f(v_z)}{f(0)}\]
-
-
-Per brevit\`a sia $G(v)=\log\frac{f(v)}{f(0)}$, da cui
+\[\frac{f(v)}{f(0)}=\frac{f(v_x)}{f(0)}\frac{f(v_y)}{f(0)}\frac{f(v_z)}{f(0)},\]
+da cui passando ai logaritmi
+\[\log\frac{f(v)}{f(0)}=\log \frac{f(v_x)}{f(0)}+\log\frac{f(v_y)}{f(0)}+\log\frac{f(v_z)}{f(0)}.\]
+Per semplicit\`a notazionale sia $G(v)=\log\frac{f(v)}{f(0)}$, da cui
 \[G(v)=G(v_x)+G(v_y)+G(v_z).\]
-Derivando per $v_i$ con $i\in\cpa{x,y,z}$ troviamo
+Derivando ora per $v_i$ con $i\in\cpa{x,y,z}$ troviamo
 \[\frac{G'(v)v_i}v=G'(v_i),\]
-si ha dunque che
+da cui
 \[\frac{G'(v)}{v}=\frac{G'(v_x)}{v_x}=\frac{G'(v_y)}{v_y}=\frac{G'(v_z)}{v_z}\doteqdot -2\al\]
-Troviamo dunque che
-\[G(v_i)=-\al v_i^2+C\leadsto f(v_i)=ae^{-\al v_i^2},\]
-dunque
+Poich\'e $\al$ non dipende da $v_i$ possiamo integrare l'equazione sopra per trovare
+\[G(v_i)=-\al v_i^2+C\]
+che ricordando la definizione di $G$ significa che esiste $a>0$ tale che
+\[f(v_i)=ae^{-\al v_i^2}.\]
+Sostituendo questo nella definizione di $\phi$ si ha
 \[\phi(v)=Ae^{-\al (v_x^2+v_y^2+v_z^2)}=Ae^{-\al v^2}.\]
 Poich\'e $\phi$ \`e una densit\`a di probabilit\`a\footnote{abbiamo usato il fatto che $\int_{-\infty}^{+\infty}e^{-\al x^2}dx=\sqrt{\frac{\pi}\al}$} si ha che $A=\pa{\frac{\al}\pi}^{3/2}$, cio\`e
-\[dn(\vec v)=N\pa{\frac{\al}\pi}^{3/2}e^{-\al v^2} dv_xdv_ydv_z\]
+\[dn(\vec v)=N\pa{\frac{\al}\pi}^{3/2}e^{-\al v^2} dv_xdv_ydv_z.\]
+Se ora integriamo sull'angolo solido troviamo il numero di particelle con una data velocit\`a:
+\begin{align*}
+dn(v)=&\int_\Omega dn(\vec v)=N\int_\Omega \phi(v)dv_xdv_ydv_z=\\
+=&N\int_\Omega \phi(v)v^2dvd\Omega=\\
+=&4\pi N\phi(v)v^2dv=\\
+=&4N\sqrt{\frac{\al^3}\pi}v^2e^{-\al v^2}dv.
+\end{align*}
+Cerchiamo ora di capire chi \`e $\al$. Ricordiamo che 
+\[\frac{3k_bT}m=\ps{v^2}=\frac{\int_0^\infty v^2dn(v)}{\int_0^\infty dn(v)}.\]
+Sviluppando il termine di destra tramite identit\`a note sulla funzione Gamma\footnote{$\int_0^\infty x^ne^{-\al x^2}=\frac{\Gamma((n+1)/2)}{2a^{(n+1)/2}}$} ricaviamo
+\[\int_0^\infty 4N\sqrt{\frac{\al^3}\pi} v^4e^{-\al v^2}dv=4N\sqrt{\frac{\al^3}\pi}\frac{\Gamma(5/2)}{2\al^{5/2}}=\frac12\frac{4N}{\sqrt\pi}\frac{3\sqrt \pi}4 \al^{\frac32-\frac52}=N\frac32\frac1\al,\]
+che insieme all'equazione di prima restituisce
+\[\frac{3k_b T}m=\frac32\frac1\al\coimplies\al=\frac m{2k_bT}.\]
+\medskip
 
-\[dn(v)=\int_\Omega dn(\vec v)=N\int_\Omega \phi(v)dv_xdv_ydv_z=N\int_\Omega \phi(v)v^2dvd\Omega=4\pi N\phi(v)v^2dv\]
-
-\[dn(v)=4N\sqrt{\frac{\al^3}\pi}v^2e^{-\al v^2}dv\]
-
-Cerchiamo di capire chi \`e $\al$. \footnote{$\int_0^\infty x^ne^{-\al x^2}=\frac{\Gamma((n+1)/2)}{2a^{(n+1)/2}}$}
-\[\frac{3k_bT}m=\ps{v^2}=\frac{\int_0^\infty v^2dn(v)}{\int_0^\infty dn(v)}=\frac 3{2\al}\leadsto \al=\frac m{2k_b T}.\]
+\noindent
 Abbiamo dunque ricavato che
 \[dn(v)=N 4\pi\pa{\frac{m}{2\pi k_b T}}^{3/2}v^2\exp\pa{-\frac m{2k_bT}v^2}dv\]
-\textbf{Distribuzione di Maxwell-Boltzmann}.
 
-La distribuzione ha un massimo pi\`u o meno quando $\frac {mv^2}{2k_bT}=0$ (non esattamente perch\'e c'\`e il termine $v^2$)
+\begin{definition}[Distribuzione di Maxwell-Boltzmann]
+Definiamo \textbf{Distribuzione di Maxwell-Boltzmann} quella data da
+\[\boxed{\dd vn=N 4\pi\pa{\frac{m}{2\pi k_b T}}^{3/2}v^2\exp\pa{-\frac m{2k_bT}v^2}}\]
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=9cm]{images/Distribuzione_Maxwell_Boltzmann.png}
+    \caption{Distribuzione di Maxwell-Boltzmann. La curva verde corrisponde alla distribuzione per una temperatura maggiore rispetto a quella per la curva azzurra.}
+\end{figure}
+\end{definition}
+\noindent
+\`E possibile misurare se effettivamente la distribuzione \`e questa:
+si fa girare una ruota velocemente con un buchino e poi si mettono a contatto la ruota con un tubo da cui esce il gas. Vedendo quante particelle sono arrivate sulle varie parti interne della ruota uno pu\`o capire la distribuzione.
 
-[GRAFICO DI $\dd vn$]
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=7cm]{images/Misura_distribuzione_Maxwell_Boltzmann.png}
+\end{figure}
 
-Qualcuno ha provato a misurare se effettivamente la distribuzione \`e questa:
-fai girare una ruota velocemente con un buchino e poi metto a contatto la ruota con un tubo da cui viene il gas. Vedendo quante sono arrivate sulle varie parti interne della ruota uno pu\`o capire la distribuzione.
 
 \section{Entropia nel modello statistico}
 \begin{definition}[Macro- e Microstati]
