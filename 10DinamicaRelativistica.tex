@@ -1,0 +1,195 @@
+\chapter{Dinamica relativistica}
+\section{Leggi di Newton relativistiche}
+Cerchiamo di capire come leggere le leggi di Newton in chiave relativistica.\\
+La prima legge \`e il primo postulato della relativit\`a ma con la seconda legge ($F=ma$) cominciamo ad avere qualche problema.
+
+\subsection{Secondo principio della dinamica}
+Per capire come procedere consideriamo il seguente esperimento
+
+\begin{example}[Urto elastico di due palline identiche]
+Fissiamo un sistema $S$ e cosideriamo un sistema $S'$ in moto relativo lungo l'asse $x$ a velocit\`a $u$. Due osservatori laciano delle palline ($1$ e $2$) lungo la direzione $y$ con la stessa velocit\`a in modo che queste si scontrino.\smallskip
+
+\noindent Formalmente imponiamo
+\[\begin{cases}
+(v_1)_y=v_0\\
+(v_1)_x=0\\
+(v_2)_y'=-v_0\\
+(v_2)_x'=0
+\end{cases}\]
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=9cm]{images/Palline_relativistiche_def_massa.png}
+\end{figure}
+
+\noindent
+Considerando le formule di boost troviamo
+\[\begin{cases}
+(v_2)_x=\frac{0+u}{1+0}=u\\
+(v_2)_y=\frac{-v_0}{\gamma(u)(1+0)}=-\frac{v_0}{\gamma(u)}.
+\end{cases}\]
+Imponiamo la conservazione degli impulsi (potenzialmente ammettendo che la massa dipenda dalla velocit\`a) lungo l'asse $y$:
+\[2M(v_1)v_0=2M(v_2)\frac{v_0}{\gamma(u)},\]
+da cui $\gamma(u)M(v_1)=M(v_2)$.\medskip
+
+\noindent Ricordando\footnote{nota che $\vec u$ e $\vec v_1$ sono ortogonali} che $\gamma(v_2)=\gamma(v_1)\gamma(u)$ osserviamo che
+\[\frac{M(v_2)}{\gamma(v_2)}=\frac{M(v_1)}{\gamma(v_1)}=\frac{M(0)}{\gamma(0)}=M(0)=m.\]
+
+\end{example}
+
+\begin{definition}[Massa a riposo]
+Definiamo la \textbf{massa a riposo} $m$ come la massa misurata in un sistema dove il corpo \`e a riposo.
+\end{definition}
+
+\begin{definition}[Impulso relativistico]
+Definiamo l'\textbf{impulso relativistico} come
+\[\vec p=M(v)\vec v=m\gamma(v)\vec v.\]
+\end{definition}
+\begin{remark}
+Con l'aumentare della velocit\`a, la ``massa effettiva" cresce molto fino a diventare ``infinita" per una velocit\`a che tende verso la velocit\`a della luce.
+\end{remark}
+
+\begin{definition}[Quadriimpulso]
+Definiamo il \textbf{quadriimpulso} come
+\[\wt p=m\wt v=(M(v)c,\vec p)=m\gamma(v)(c,\vec v).\]
+L'impulso relativistico \`e la componente spaziale del quadriimpulso.
+\end{definition}
+
+\begin{remark}
+Il modulo del quadriimpulso \`e
+\[\wt p^2=m^2\wt v^2=m^2c^2.\]
+In particolare il quadriimpulso \`e di tipo tempo (o di tipo luce se $m=0$).
+\end{remark}
+
+\noindent Abbiamo capito chi \`e la componente spaziale del quadriimpulso, ma la componente temporale?
+\[\wt p_0c=m\gamma(v)c^2=m\gamma(v)c^2=\frac{mc^2}{\sqrt{1-\frac{v^2}{c^2}}}\]
+per $v\to 0$ possiamo approssimare questa quantit\`a al primo ordine in $v^2$ come
+\[mc^2-\under{\text{energia cinetica}}{\frac12 mv^2}\]
+
+\begin{definition}[Energia]
+Definiamo l'\textbf{energia} come $E=\wt p_0c$. In particolare se $v=0$ allora l'energia vale $mc^2$, che chiamiamo \textbf{energia di riposo}.
+\end{definition}
+
+\begin{remark}
+L'esistenza dell'energia di riposo significa che se esiste un processo che fa diminuire la massa di un oggetto allora per conservazione dell'energia viene liberata dell'energia.\\
+Questi processi esistono e vengono impiegati per l'estrazione di energia atomica.\\
+Esistono processi che distruggono interamente la massa, per esempio lo scontro tra una particella e la sua antiparticella.
+\end{remark}
+
+\begin{remark}
+Una volta definita l'energia possiamo riscrivere il quadriimpulso come
+\[\wt p=m\wt v=(E/c,\vec p).\]
+\end{remark}
+
+
+\begin{remark}
+Se cambiamo sistema di riferimento, l'energia cambia come segue:
+\[E'=m\gamma(v')c^2=m\gamma(v)\gamma(u)(c^2-uv)=\gamma(u)(E-up_x),\]
+che \`e quello che ci aspettiamo visto che
+\[\frac{E' v'}{c^2}=p'_x=\gamma(u)\pa{p_x-\frac{u}{c^2}E}\]
+in quanto $\wt p$ quadrivettore.
+\end{remark}
+
+\begin{remark}
+Calcoliamo il modulo del quadriimpulso
+\[m^2c^2=\wt p^2=\pa{\frac Ec}^2-(\vec p)^2,\]
+cio\`e
+\[\boxed{E^2=(\vec p)^2c^2+m^2c^4}\]
+\end{remark}
+
+\begin{remark}
+Poich\'e $v=\frac{\abs{\vec p}c^2}E$ si ha che $\beta(v)=\frac{\abs{\vec p}c}E$ e quindi
+\[\boxed{\gamma=\frac{E}{mc^2}}\]
+ovvero $E=\gamma(v)mc^2$.
+\end{remark}
+
+\noindent Consideriamo ora questa domanda: \`e possibile che la luce sia composta da particelle?\medskip
+
+\noindent In questo caso $\gamma(v)=\gamma(c)=\infty$, quindi affinch\'e l'energia di questa ipotetica particella abbia senso, $m=0$. In questo caso avremmo
+\[E=\abs{\vec p}c.\]
+Queste particelle sono dette \textbf{fotoni}.
+
+\subsection{Terzo principio della dinamica}
+Consideriamo adesso la questione delle forze uguali e contrarie. Se queste forze opposte vengono applicate allo stesso punto e allo stesso istante non abbiamo problemi.\medskip
+
+\noindent Se le forze uguali e contrarie agiscono su punti diversi, la relativit\`a della simultaneit\`a comincia a creare problemi su \textit{quando} le due forze sono uguali e contrarie.\medskip
+
+\noindent La soluzione \`e osservare che quello che vogliamo \`e che la variazione totale dell'impulso sia nulla. La forza deriva da variazioni di impulsi
+\[\vec F_A=\dd t{\vec p_A},\quad \vec F_B=\dd t{\vec p_B},\quad \dd t{}(\vec p_A+\vec p_B)=0.\]
+\bigskip
+
+\noindent Un altro modo di interpretare la questione della simultaneit\`a \`e pensare a campi di forze piuttosto che forze generate direttamente da oggetti.
+
+\begin{definition}[Quadriforza]
+Definiamo la \textbf{quadriforza} come
+\[\wt F=\dd \tau{\wt p}=m\dd\tau{\wt v}=m\wt a.\]
+Una forma equivalente \`e 
+\[\wt F=\dd \tau{\wt p}=\gamma(v)\pa{\frac1c\dd tE,\vec F},\]
+dove $\vec F=\dd t{\vec p}$.
+\end{definition}
+
+\begin{remark}
+Poich\'e $\wt v\cdot \wt a=0$ si ha che $\wt v\cdot\wt F=0$. Scrivendo esplicitamente la seconda equazione
+\[\vec F\cdot \vec v=\dd tE=mc^2\dd t\gamma=m\gamma^3 \vec v\cdot \vec a.\]
+\end{remark}
+
+\begin{remark}
+Troviamo le seguenti identit\`a
+\[\wt F=\gamma(v)\pa{\frac{\vec F\cdot \vec v}c,\vec F}\]
+\[\vec F=\dd t{\vec p}=\dd t{}(m\vec v\gamma)=m\gamma\vec a+\frac{\vec F\cdot \vec v}{c^2}\vec v,\]
+in particolare \underline{$\vec F$ non \`e allineata con $\vec a$ in generale}.
+\end{remark}
+
+\begin{remark}
+Osserviamo che
+\[\wt F\cdot \wt v=\dd\tau{}(m\wt v)\cdot \wt v=\dd\tau m\wt v^2+m\ \under{=0}{\wt a\cdot \wt v}=c^2\dd\tau m.\]
+\end{remark}
+
+\section{Effetto Doppler}
+Supponiamo che un sistema $S'$ emetta delle onde con frequenza $\nu'$ e lunghezza d'onda $\la'$ constanti (quindi i fronti d'onda hanno velocit\`a $v'=\la'\nu'$ rispetto a $S'$).
+
+\subsection{Versione classica}
+Se $S'$ si muove con velocit\`a $u$ osserviamo che
+\[\la=v\Delta t'-u\Delta t'=(v-u)\Delta t'=\frac{v-u}{\nu'},\]
+da cui
+\[\nu=\frac v\la=\frac1{1-u/v}\nu',\]
+quindi la frequenza dell'onda misurata da $S$ \`e cambiata di un fattore che dipende dalla velocit\`a relativa tra i sistemi.\medskip
+
+\noindent Supponendo ora che sia $S$ ad emettere l'onda notiamo con calcoli analoghi che
+\[\nu'=\pa{1-\frac uv}\nu,\]
+che come notazione \`e la stessa di prima ma la frequenza ricevuta e quella emessa hanno scambiato i ruoli.
+
+\subsection{Versione relativistica}
+Consideriamo il caso di una sorgente in movimento $S'$ che emette l'onda (a velocit\`a $v$ in $S'$) e che si muove verso $S$.\\
+Fissiamo degli eventi:
+\begin{enumerate}
+\item \ul{Emissione di un fronte d'onda}: In $S'$ questo evento ha coordinate $(t_e',0)$.
+\item \ul{Ricezione del fronte d'onda}: In $S'$ questo evento ha coordinate $(t'_r,x'_r)$ dove $t'_r=t_e'+\delta t'$ e $x'_r=v\delta t'$. Osserviamo per\`o che $x'_r$ \`e anche l'origine di $S$ vista in $S'$. Se $x'_0$ \`e la coordinata dell'origine di $S$ al tempo $t'=0$ si ha che $x'_r=x_0'-ut_r'$.
+\end{enumerate}
+Mettendo tutto insieme
+\[\delta t'=\frac{x'_0-ut'_e}{u+v}.\]
+Consideriamo adesso due emissioni (1 e 2), una a $t_e'=0$ e $t'_e=T$. Chiaramente $\Delta t_e'=T$, mentre
+\begin{align*}
+\Delta t'_r=&(T+\delta t'(T)) - (0+\delta t'(0))=\\
+=&T+\frac{x'_0-uT}{u+v}-\frac{x'_0}{u+v}=\\
+=&T\pa{1-\frac u{u+v}}=\\
+=&T\frac v{u+v}.
+\end{align*}
+Applichiamo adesso una trasformazione di Lorenz per passare al sistema $S$:
+\[\Delta t'_r=\gamma(\Delta t_r-u\under{=0}{\Delta x_r})=\gamma \Delta t_r,\]
+quindi
+\[\Delta t_r=\frac T\gamma\frac v{u+v}.\]
+Consideriamo ora il caso di onde luminose ($v=c$)
+\[\frac1{\Delta t_r}=\nu=\nu'\gamma\frac{u+c}c=\sqrt{\frac{1+\beta(u)}{1-\beta(u)}}\nu'.\]
+\bigskip
+
+\noindent Per il principio di relativit\`a, se $S'$ si stesse allontanando e $S$ fosse la sorgente troviamo 
+\[\nu'=\sqrt{\frac{1-\beta(u)}{1+\beta(u)}}\nu.\]
+
+\bigskip
+
+\noindent Possiamo riassumere entrambe le formule in
+\[\boxed{\nu_{\mathrm{ricevuta}}=\sqrt{\frac{1+\beta}{1-\beta}}\nu_{\mathrm{emessa}}}\]
+
+
+
+
