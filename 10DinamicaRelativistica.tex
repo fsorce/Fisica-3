@@ -203,35 +203,16 @@ Consideriamo ora il caso di onde luminose ($v=c$)
 
 
 
-\section{Particelle}
-
-\begin{definition}[Elettron-Volt]
-Definiamo l'\textbf{elettron-volt} come
-\[\mathrm{eV}=1.6\cdot 10^{-19}\ \mathrm{J}.\]
-Quando lavoriamo in questo sistema possiamo misurare la quantit\`a di moto in $\mathrm{eV}/c$ e la massa in $\mathrm{eV}/c^2$.
-\end{definition}
-
-
-\begin{definition}[Unit\`a naturali]
-Pu\`o essere comodo porre $c=1$ per semplificare le formule. In queste unit\`a di misura
-\[[\text{Energia}]=[\text{Quantit\`a di moto}]=[\text{Massa}].\]
-\end{definition}
-
-
-
-
-
-
 \section{Elettro-Magnetismo}
 Ricordiamo la \textbf{Forza di Lorentz}
 \[\vec F=q(\vec E+\vec v\times \vec B)\]
 
-\begin{example}
+\begin{example}[Campo elettrico e campo magnetico sono la stessa cosa?]
 Consideriamo un filo entro il quale scorre una corrente $I$. Vicino al filo abbiamo una carica $q<0$ che si muove a velocit\`a $v_0$ parallela al filo e in direzione opposta a $I$
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics[width=9cm]{images/Filo_e_carica.png}
+    \includegraphics[width=8cm]{images/Filo_e_carica.png}
 \end{figure}
 
 \noindent
@@ -240,18 +221,130 @@ Il campo magnetico vale
 da cui, se il filo \`e complessivamente neutro,
 \[\vec F=q\vec v_0\times \vec B=\frac1{4\pi \e_0c^2}\frac{2 qIv_0}r.\]
 Mettiamoci ora in un sistema dove $q$ ha velocit\`a nulla. Abbiamo una forza di Lorentz?
+\medskip
+
+\noindent Si verifica sperimentalmente che $q$ \`e invariante per trasformazioni di Lorentz. Quindi se $\vec v'=0$ l'unica speranza \`e $\vec E$.\\
+Poich\'e le distanze cambiano sotto una trasformazione di Lorenz, \`e ragionevole pensare che la densit\`a di carica cambi: 
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=8cm]{images/corrente_in_filo.png}
+\end{figure}
+
+\noindent
+Se $L$ \`e la lunghezza di un pezzo del filo e $A$ \`e l'area di una sezione del filo,
+\[\rho=\frac q{LA}\leadsto \rho'=\frac q{L'A}=\gamma \rho.\]
+Nel sistema $S'$ la densit\`a delle cariche positive \`e $\rho'_+=\rho_+\gamma$. Considerando ora le cariche negative (che si spostano per trasportare la corrente a velocit\`a $v$ in verso opporto a $I$), per semplicit\`a scegliamo $I$ tale che $v=v_0$ \`e la velocit\`a della particella, vediamo che con questa scelta in $S'$ queste cariche sono ferme, quindi $\rho_-=\gamma \rho_-'$. Poich\'e avevamo supposto che il filo fosse neutro in $S$ si ha che $\rho_+=-\rho_-$, quindi \[\rho_+'=\rho_+\gamma=-\rho_-\gamma=-\gamma^2\rho_-',\]
+in particolare $\rho_+'\neq \rho_-'$ quindi il filo non \`e pi\`u neutro! Pi\`u precisamente
+\[\rho'=\rho'_++\rho_-'=\rho_+\pa{\gamma-\frac1\gamma}>0\]
+Il campo elettrico generato ha modulo
+\[E'=\frac{\rho' A}{2\pi\e_0r}=\frac{\rho_+A\frac{v^2}{c^2}}{2\pi\e_0 r\sqrt{1-v^2/c^2}},\]
+dunque c'\`e una forza di Lorentz pari a 
+\[F'=q\frac{\rho_+A\frac{v^2}{c^2}}{2\pi\e_0 r\sqrt{1-v^2/c^2}}.\]
+Confrontiamo questa forza con quella trovata prima:
+\[F=\frac1{4\pi \e_0c^2}\frac{2 qIv_0}r\pasgnlmath={I=\rho_-Av}q\frac{-\rho_- Av \frac{v_0}{c^2}}{2\pi \e_0 r}\pasgnlmath={v=v_0}q\frac{\rho_+ A \frac{v^2}{c^2}}{2\pi \e_0 r}\]
+che \`e esattamente $F'/\gamma$ come speravamo.
 \end{example}
 
+\begin{definition}[Quadrivettore densit\`a di corrente]
+Definiamo la \textbf{densit\`a di carica propria} come la densit\`a di carica misurata in un sistema dove l'oggetto \`e fermo.\\
+Se $\rho_0$ \`e la densit\`a di carica propria allora in un sistema dove l'oggetto si muove a velocit\`a $v$ la densit\`a di carica \`e
+\[\rho=\rho_0\gamma(v).\]
+Definiamo la \textbf{densit\`a di corrente relativistica} come
+\[\vec J=\rho\vec v=\rho_0\gamma(v)\vec v.\]
+Definiamo la \textbf{quadricorrente} come
+\[\wt J=(\rho c,\vec J)=\rho_0\gamma(v)(c,\vec v)=\rho_0\wt v.\]
+\end{definition}
 
 
+\begin{remark}[Teorema di Gauss relativistico]
+Calcoliamo
+\[\wt \nabla \cdot \wt J=\frac1c\pp t{(\rho c)}+\pp x{J_x}+\pp y{J_y}+\pp z{J_z}=\pp t\rho+\vec\nabla \cdot \vec J=0\]
+dove l'ultima uguaglianza \`e la legge di continuit\`a\footnote{cio\`e la conservazione della carica.}. Quindi possiamo effettivamente riscrivere la conservazione della carica come
+\[\wt\nabla\cdot \wt J=0\]
+e questa formulazione \`e evidentemente compatibile con la relativit\`a.
+\end{remark}
+
+\noindent
+Ricordiamo che $\phi$ e $\vec A$ sono definiti in modo tale che
+\[\begin{cases}
+\vec E=-\pp t{\vec A}-\vec \nabla \phi\\
+\vec B=\vec \nabla \times \vec A
+\end{cases}\]
+
+\begin{definition}[Quadripotenziale]
+Definiamo il \textbf{quadripotenziale} come
+\[\wt A=(\phi/c,\vec A).\]
+\end{definition}
 
 
+\begin{remark}
+Le equazioni di Maxwell si possono riscrivere come
+\[\begin{cases}
+\square\phi=\rho/\e_0\\
+\square \vec A=\mu_0\vec J
+\end{cases}\]
+quindi una forma compatta per le equazioni di Maxwell \`e
+\[\square\wt A=\mu_0\wt J,\]
+che mostra immediatamente che sono compatibili con la relativit\`a.
+\end{remark}
+\begin{proof}
+Le equazioni di Maxwell sono
+\[\begin{cases}
+\vec\nabla\cdot \vec E=\frac\rho{\e_0},\\
+\vec\nabla\cdot\vec B=0,\\
+\vec \nabla \times \vec E=-\pp t{\vec B},\\
+\vec \nabla \times \vec B=\mu_0\pa{\vec J+\e_0\pp t{\vec E}}
+\end{cases}\]
+Sostituendo le espressioni per $\vec E$ e $\vec B$ in termini di $\phi$ e $\vec A$ troviamo
+\[\begin{cases}
+\pp t{}\vec\nabla\cdot \vec A +\nabla^2 \phi=-\frac\rho{\e_0},\\
+\vec \nabla \times (\vec \nabla \times \vec A)=\mu_0\pa{\vec J-\e_0\pps[2] t{\vec A}-\e_0\pp t{}\vec \nabla \phi}=\mu_0\vec J-\frac1{c^2}\pps[2]t{\vec A}-\frac1c\pp t{}\vec\nabla(\phi/c)
+\end{cases}\]
+\[\begin{cases}
+-\nabla^2 \phi=\frac\rho{\e_0}+\pp t{}\vec\nabla\cdot \vec A,\\
+-\nabla^2\vec A+\vec\nabla(\vec\nabla\cdot\vec A)=\mu_0\vec J-\frac1{c^2}\pps[2]t{\vec A}-\frac1c\pp t{}\vec\nabla(\phi/c)
+\end{cases}\]
+\[\begin{cases}
+\square \phi = \frac\rho{\e_0}+\pp t{}\pa{\wt \nabla \cdot \wt A},\\
+\square\vec A +\vec\nabla(\vec\nabla\cdot\vec A)=\mu_0\vec J-\frac1c\pp t{}\vec\nabla(\phi/c)
+\end{cases}\]
+\[\begin{cases}
+\square \phi =\frac\rho{\e_0}+\pp t{}\pa{\wt \nabla \cdot \wt A},\\
+\square\vec A =\mu_0\vec J-\vec\nabla\pa{\wt \nabla \cdot \wt A}  
+\end{cases}\]
+Uniamo ora le due equazioni dividendo la prima per $c$ e poi sommando
+\[\square \wt A=\mu_0\wt J +\wt \nabla(\wt \nabla\cdot \wt A),\]
+per concludere possiamo scegliere il Gauge $\wt \nabla \cdot \wt A=0$.
+\end{proof}
 
+\noindent
+Se definiamo $A^0=\phi/c$, notiamo che
+\[\pp z{A^0}-\pp{ct}{A_z}=\frac1c\pa{\pp z\phi-\pp t{A_z}},\]
+che sembra la componente $z$ di $\vec E$ divisa per $c$, ma non tornano i segni. Osserviamo per\`o che
+\[\frac{E_z}c=-\pp z{\phi/c}-\frac1c\pp t{A_z}=\pa{-\pp z{}}A^0-\pa{\frac1c\pp t{}}A_z.\]
+Ispirandoci a questo tipo di equazioni definiamo
+\begin{definition}[Tensore elettromagnetico]
+Definiamo il \textbf{tensore elettromagnetico} come
+\[F_{\mu\nu}=\wt \nabla_\mu\wt A_\nu-\wt \nabla_\nu\wt A_{\mu},\]
+o in forma matriciale
+\[F_{\mu\nu}=\mat{
+0 & E_x/c & E_y/c & E_z/c\\
+-E_x/c & 0 & -B_z& B_y\\
+-E_y/c & B_z& 0  & -B_x\\
+-E_z/c &-B_y& B_x& 0  \\
+}\]
+\end{definition}
 
-
-
-
-
-
-
-
+\noindent
+Cerchiamo di capire come si trasforma: Se $\vec u$ \`e parallelo all'asse $x$,
+\[\begin{cases}
+E_x'=E_x\\
+E'_y=\gamma(E_y-u B_z)\\
+E'_z=\gamma(E_z-u B_y)\\
+B'_x=B_x\\
+B'_y=\gamma(B_y-u/c^2 E_z)\\
+B'_z=\gamma(B_z+u/c^2 E_y)
+\end{cases}\]
+Le equazioni di Maxwell diventano
+\[\sum_\mu\wt \nabla_\mu F^{\mu\nu}=\mu_0 \wt J^\nu.\]

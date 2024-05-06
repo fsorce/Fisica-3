@@ -1,5 +1,6 @@
-\chapter{Cinematica e dinamica relativistica}
-\section{Cinematica relativistica}
+\chapter{Cinematica relativistica}
+
+\section{Introduzione ai quadrivettori}
 \begin{definition}[Quadrivettore]
 Consideriamo lo spazio vettoriale $\R^4$ con prodotto scalare indotto dal \textbf{tensore metrico di Minkovsky}
 \[\eta_{\mu\nu}=\mat{1&&&\\
@@ -95,14 +96,13 @@ e $L_{10}=\pm L_{01}=\pm \sqrt{\gamma^2-1}$.
 Queste sono esattamente le trasformazioni di Lorenz, infatti se $\gamma=\pa{1-\frac{u^2}{c^2}}^{-\frac12}$ allora $\sqrt{\gamma^2-1}=\frac uc\gamma$.
 
 
-
 \subsection{Rapidit\`a}
 
 \begin{definition}[Rapidit\`a]
 Definiamo la \textbf{rapidit\`a} di un boost a velocit\`a $u$ come
-\[\xi=\mathrm{arctanh}\pa{-\beta(u)}.\]
+\[\xi=\arctanh\pa{-\beta(u)}.\]
 Segue che
-\[\gamma(u)=\cosh\xi,\quad -\gamma(u)\beta(u)=\sinh\xi,\quad -\beta(u)=\mathrm{tanh}\, \xi.\]
+\[\gamma(u)=\cosh\xi,\quad -\gamma(u)\beta(u)=\sinh\xi,\quad -\beta(u)=\tanh \xi.\]
 \end{definition}
 \begin{remark}
 Si ha che
@@ -153,6 +153,8 @@ x_0'=x_0\cosh(\xi-\xi')+x_1\sinh(\xi-\xi')\\
 x_1'=x_0\sinh(\xi-\xi')+x_1\cosh(\xi-\xi')
 \end{cases}\]
 
+
+\section{Quadrivelocit\`a e Quadriaccelerazione}
 \subsection{Tempo proprio e quadrivelocit\`a}
 Poich\'e il tempo non \`e invariante per trasformazioni di Lorenz, non avrebbe senso definire una velocit\`a relativistica in termini solo del tempo. La generalizzazione giusta \`e la seguente
 
@@ -273,5 +275,24 @@ che possiamo trovare dall'osservazione precedente o sfruttando l'equazione \[\wt
 \end{remark}
 
 
+\section{Quadrigradiente}
 
+Ricordiamo che
+\[\begin{cases}
+\pp t{}=\gamma\pp{t'}{}-\gamma u\pp{x'}{}\\
+\pp x{}=-\gamma \frac{u}{c^2}\pp{t'}{}+\gamma \pp{x'}{}\\
+\pp y{}=\pp {y'}{}\\
+\pp z{}=\pp {z'}{}
+\end{cases}\]
+
+\begin{definition}[Quadrigradiente]
+Definiamo la \textbf{quadridivergenza} come
+\[\wt \nabla=\pa{\frac1c\dd t{},-\pp x{},-\pp y{},-\pp z{}}.\]
+\end{definition}
+
+\begin{remark}
+Consideriamo l'equivalente del laplaciano
+\[\wt \nabla\cdot\wt\nabla=\frac1{c^2}\pps[2]t{}-(-\vec\nabla)(-\vec \nabla)=\frac1{c^2}\pps[2]t{}-\nabla^2=\square\]
+questo \`e l'operatore \textbf{dalembertiano}.
+\end{remark}
 
