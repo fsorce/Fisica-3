@@ -1,0 +1,74 @@
+\chapter{Meccanica Quantistica}
+
+\begin{definition}
+Definiamo \textbf{acca tagliato} come
+\[\hbar=\frac h{2\pi}.\]
+\end{definition}
+
+\section{Richiami di onde}
+\begin{definition}[Onda]
+Un'\textbf{onda} \`e una funzione di posizione e tempo della forma
+\[f(x,y)=f(kx-\omega t).\]
+La \textbf{lunghezza d'onda} \`e $\la=\frac{2\pi}k$ e la sua \textbf{frequenza} \`e $\nu=\frac\omega{2\pi}$.\\
+La velocit\`a di un'onda o \textbf{velocit\`a di fase} \`e $\frac{\omega}k=\nu\la$.
+\end{definition}
+
+\noindent
+Se l'onda si comporta anche come una particella, la velocit\`a di questa particella \`e la velocit\`a di fase?
+\begin{itemize}
+\item Caso non relativistico:
+\[\begin{cases}
+p=mv\\
+E=\frac12mv^2
+\end{cases}\implies v_{\text{particella}}=\frac{2E}p=\frac{2h\nu}{h/\la}=2\nu\la\neq \nu\la.\]
+\item Caso relativistico:
+\[\begin{cases}
+p=mv\gamma\\
+E=mc^2\gamma
+\end{cases}\implies v_{\text{particella}}=\frac{pc^2}E=\frac{hc^2}{h\la\nu}=\frac{c^2}{\la\nu}\]
+e questa quantit\`a vale $\la\nu$ solo se $\la\nu=c$, ma non tutte le particelle che vogliamo trattare vanno alla velocit\`a della luce.
+\end{itemize}
+\noindent La giusta definizione di $v_{\text{particella}}$ \`e
+
+\begin{definition}[Velocit\`a di gruppo]
+La \textbf{velocit\`a di gruppo} di un'onda \`e
+\[v_{\text{particella}}=\dd k\omega.\]
+\end{definition}
+
+\noindent
+Se l'onda in esame \`e una semplice sinusoide allora le due velocit\`a coincidono, ma se consideriamo somme di diverse sinusoidi\footnote{per esempio in una serie di Fourier} allora le due quantit\`a sono distinte e $v_{\text{particella}}$ \`e la misura di velocit\`a giusta per l'insieme delle onde.
+
+\begin{remark}
+Dato che $E=h\nu$ e $\la=h/p\coimplies p=\frac h{2\pi}k$ si ha che $E=\hbar\omega$ e $\vec p=\hbar \vec k$. In effetti
+\[(\nu/c,\vec k)\]
+\`e un quadrivettore.
+\end{remark}
+
+
+\section{Equazione di Schr\"odinger}
+
+\begin{theorem}[Equazione di Schr\"odinger]\label{EquazioneSchrodinger}
+Per onde vale l'\textbf{equazione di Schr\"odinger}
+\[\boxed{i\hbar \pp t\psi=-\frac{\hbar^2}{2m}\pps[2]x\psi +V}\]
+dove $V$ \`e un termine di energia potenziale.
+\end{theorem}
+\begin{proof}[Derivazione intuitiva]
+Trascuriamo momentaneamente la relativit\`a.
+\[E=\frac12mv^2+V=\frac{\vec p^2}{2m}+V.\]
+Poich\'e $E=\hbar \omega$ e $\vec p=\hbar \vec k$ si ha che
+\[\hbar \omega=\frac{\hbar^2}{2m}\vec k^2+V.\]
+Sia $\psi(x,t)$ l'equazione dell'onda. In particolare consideriamo
+\[\psi(x,t)=Ae^{i(kx-\omega t)}.\]
+Notiamo che
+\[\pp t\psi=-i\omega\psi,\quad \pp x\psi=ik\psi,\quad \pps[2]x\psi=-k^2\psi,\]
+dunque mettendo tutto insieme
+\[i\hbar \pp t\psi=-\frac{\hbar^2}{2m}\pps[2]x\psi +V.\]
+\end{proof}
+\begin{center}
+``Ma i numeri complessi che ci fanno in fisica?''
+\end{center}
+L'interpretazione fisica di $\psi$ \`e che $\abs{\psi(x,t)}^2\geq 0$ rappresenta la \textit{densit\`a di probabilit\`a di trovare la particella nel punto $x$ al tempo $t$}.
+\bigskip
+
+\noindent
+Abbiamo quindi rinunciato a trovare una posizione esatta. Sappiamo solo delle probabilit\`a.
