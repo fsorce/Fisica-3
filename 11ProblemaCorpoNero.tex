@@ -304,7 +304,7 @@ Ricordiamo che
 \[\pps[2]x{E_x}=\frac1{c^2}\pps[2]t{E_x}\]
 e che $E_x$ vale $0$ per $x=0$ e $x=L$ (condizioni analoghe valgono per le altre direzioni). Dunque
 \[\abs{\vec E}=E_0\sin\pa{n_x\frac{\pi x}L}\sin\pa{n_y\frac{\pi y}L}\sin\pa{n_z\frac{\pi z}L}\]
-con $n_x,n_y$ e $n_z$ numeri naturali. Osserviamo che per sottisfare l'equazione dell'onda
+con $n_x,n_y$ e $n_z$ numeri naturali. Osserviamo che per soddisfare l'equazione dell'onda
 \[n_x^2+n_y^2+n_z^2=\frac{4L^2}{\la^4}.\]
 Cerchiamo di calcolare il numero possibile di terne. Questo numero intuitivamente corrisponde al numero possibile di onde luminose nella scatola e quindi alla densit\`a di energia.
 
@@ -362,7 +362,7 @@ Per la termodinamica
 quindi
 \[\rbar{\dd ES}_V=-\frac1{B\nu}\log\pa{\frac{8\pi E}{A\nu c^3}}\implies \rbar{\dds[2] ES}_V\propto -\frac 1E.\]
 \item Per basse frequenze invece notiamo sperimentalmente che la formula di Rayleigh sembra funzionare, cio\`e $E\sim k_bT$, cio\`e per basse frequenze
-\[\dd ES=\frac1T\propto\frac1E\implies \rbar{\dds[2] ES}_V\propto -\frac 1E.\]
+\[\dd ES=\frac1T\propto\frac1E\implies \rbar{\dds[2] ES}_V\propto -\frac 1{E^2}.\]
 \end{itemize}
 Poniamo allora
 \[\dds[2]ES=\frac{-a}{E(b+E)}.\]
@@ -411,82 +411,3 @@ Dopo molto tempo Bohr ipotizza che per certi atomi, gli elettroni possono girare
     \centering
     \includegraphics[width=8cm]{images/diverse_frequenze.png}
 \end{figure}
-
-
-
-\section{Esperimento della doppia fenditura}
-Consideriamo due pareti parallele, di cui la pi\`u vicina con due fessure. Due versioni standard di questo esperimento sono
-\newpage
-\begin{itemize}
-\item Se lanciamo delle palline al primo muro, quelle che passano vengono rilevate dal secondo muro e viene tenuto conto di dove le palline colpiscono la parete. 
-
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[width=11cm]{images/Double_slit_palline.png}
-\end{figure}
-
-\item Consideriamo ora una sorgente puntiforme prima del primo muro. Se chiudiamo una fenditura non succede niente di inaspettato, ma aprendole entrambe troviamo un pattern di interferenza.
-
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[width=11cm]{images/double_slit_onda.png}
-\end{figure}
-\end{itemize}
-
-
-\noindent
-Come si comporta un elettrone se facciamo questo esperimento? Se lanciamo tanti elettroni uno alla volta troviamo lo stesso pattern di interferenza delle onde.
-
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[width=11cm]{images/double_slit_elettroni.png}
-\end{figure}
-
-\bigskip
-
-\noindent
-Supponiamo ora di inserire dei rilevatori sulle fenditure che ci informano su quale fessura riceve qualche elettrone.
-Scopriamo che se mandiamo un elettrone alla volta i rilevatori non si attivano mai contemporaneamente e il pattern in arrivo cambia e torna simile al caso delle palline.\bigskip
-
-
-Possiamo ipotizzare che il rilevatore sia troppo pesante, fino al punto da modificare l'elettrone a sufficienza da cambiare l'esito.\\
-Proviamo a usare una luce molto fioca. Quando rileviamo un elettrone ci segnamo da quale fenditura \`e passato o se non lo abbiamo rilevato (magari la luce \`e cos\`i fioca che a volte non rileva l'elettrone).\\
-Il risultato \`e che se l'elettrone \`e stato rilevato si comporta come una pallina, altrimenti segue il pattern di interferenza.
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[width=6cm]{images/visti_passare_o_non_visti.png}
-\end{figure}
-
-
-Anche diminuendo la frequenza riscontriamo lo stesso fenomeno finch\'e la lunghezza d'onda non supera la distanza tra le fessure, da quel punto l'elettrone segue sempre il pattern di interferenza.\bigskip
-
-
-In in qualche modo c'\`e una ``interazione minima" che l'elettrone pu\`o subire. Se avviene una interazione che ci permette di rilevare quale fessura \`e stata attraversata allora l'energia neccessaria \`e stata tale da modificare l'elettrone, se invece usiamo frequenze abbastanza basse, in modo da scendere sotto la soglia di energia di interazione minima, allora l'elettrone pu\`o restare inalterato e comportarsi come un'onda, ma non riusciamo a capire attraverso quale fessura \`e passato.
-
-\subsection{Interpretazione}
-\begin{fact}[Interpretazione di Copenhagen]
-\textbf{Prima di una misura, la posizione di una particella non \`e ben definita.}
-\end{fact}
-
-\begin{theorem}[Bell]
-Esistono degli esperimenti che ci permetterebbero di verificare se la quantistica \`e completa o se potrebbero esistere ``variabili nascoste". 
-\end{theorem}
-\begin{fact}
-Facendo gli esperimenti descritti da Bell la meccanica quantistica \`e verificata.
-\end{fact}
-
-
-\noindent
-Ma quindi la materia in generale di comporta come un'onda? Si ma a livelli macroscopici non si nota. 
-
-\begin{remark}
-Per un fotone abbiamo
-\[h\frac c\la=h\nu=E\pasgnl={luce}pc\implies \la=\frac hp.\]
-\end{remark}
-
-\noindent
-De Broglie usa la stessa formula per la lunghezza d'onda caratteristica di un oggetto:
-\[\la=\frac hp,\]
-dove $p$ \`e la quantit\`a di moto.\\
-Per un oggetto macroscopico $\la$ \`e molto piccolo, in particolare molto pi\`u piccolo delle dimensioni dell'oggetto, rendendo effetti quantistici impercettibili.\\
-Per esempio, effetti di diffrazione si verificano quando la fenditura ha una larghezza simile alla lunghezza d'onda.

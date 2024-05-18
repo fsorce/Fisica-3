@@ -148,7 +148,7 @@ Cosa potrebbe star succedendo?
 \[\frac cn+u\pa{1-\frac1{n^2}}.\]
 \item[$\boxed{Fitzgerald}$] Magari le lunghezze parallele parallele alla direzione di modo si contraggono
 \[L_{\parallel}=L_0\sqrt{1-\frac{u^2}{c^2}}.\]
-Con questo cambiamento la differenza dei tempi trovata nell'esperimento di MIchelson-Morley effettivamente si annulla. 
+Con questo cambiamento la differenza tra i tempi riscontrata nell'esperimento di Michelson-Morley effettivamente si annulla. 
 \end{enumerate}
 \setlength{\leftmargini}{0.5cm}
 \noindent Resta ancora una questione: se osserviamo l'esperimento di Michelson-Morley in movimento, il tempo che la luce sembra impiegare per percorrere il tratto perpendicolare alla direzione del moto aumenta
@@ -286,15 +286,15 @@ Se due osservatori sono in moto l'uno rispetto all'altro e uno dei due misura du
 \section{Trasformazioni di velocit\`a}
 \begin{proposition}[Formula di Boost]\label{FormulaBoost}
 Se un oggetto si muove parrallelo al moto tra due sistemi di riferimento inerziali allora
-\[v=\dfrac{v'+u}{\displaystyle 1+\frac{uv'}{c^2}}=\pa{\frac{\beta(v')+\beta(u)}{1+\beta(v')\beta(u)}}c.\]
+\[v'=\dfrac{v-u}{\displaystyle 1-\frac{uv}{c^2}}=\pa{\frac{\beta(v)-\beta(u)}{1-\beta(v)\beta(u)}}c.\]
 \end{proposition}
 \begin{proof}
-Consideriamo $x'(t')=v't'$ e portiamo nel sistema $S$
-\[x=\gamma(x'+ut')=\gamma(v'+u)t'=\gamma^2(v'+u)\pa{t-\frac{ux}{c^2}}\]
+Consideriamo $x(t)=vt$ e portiamo nel sistema $S'$
+\[x'=\gamma(x-ut)=\gamma(v-u)t=\gamma^2(v-u)\pa{t'+\frac{ux'}{c^2}}\]
 dunque
-\[x\pa{1+\frac u{c^2}\gamma^2(v'+u)}=\gamma^2(v'+u)t,\]
+\[x'\pa{1-\frac u{c^2}\gamma^2(v-u)}=\gamma^2(v-u)t',\]
 da cui 
-\[x=\frac{v'+u}{1-\frac{u^2}{c^2}+\frac u{c^2}(v'+u)}t=\frac{v'+u}{1+\frac{uv'}{c^2}}t.\]
+\[x'=\frac{v-u}{1-\frac{u^2}{c^2}-\frac u{c^2}(v-u)}t'=\frac{v-u}{1-\frac{uv}{c^2}}t'.\]
 \end{proof}
 
 \begin{remark}
@@ -302,22 +302,22 @@ Considerando i limiti $\beta(u)\to 0$ e $\beta(v')\to 0$ allora ritroviamo il Bo
 \end{remark}
 
 \begin{remark}
-Se $v'=c$ oppure $u=c$ troviamo $v=c$, che \`e l'assioma sulla costanza della velocit\`a della luce.
+Se $v=c$ oppure $u=c$ troviamo $v'=c$, che \`e l'assioma sulla costanza della velocit\`a della luce.
 \end{remark}
 
 \begin{remark}
 Se il moto non \`e allineato con quello dei sistemi troviamo
 \[\begin{cases}
-\displaystyle v_x=\frac{v_x'+u}{1+\frac{v_x' u}{c^2}}=\frac{v_x'+u}{1+\beta(v'_x)\beta(u)}\\\\
-\displaystyle v_y=\dfrac{v_y'}{\gamma\pa{1+\frac{v_x' u}{c^2}}}=\frac{v_y'}{\gamma\pa{1+\beta(v_x')\beta(u)}}\\\\
-\displaystyle v_z=\dfrac{v_z'}{\gamma\pa{1+\frac{v_x' u}{c^2}}}=\frac{v_z'}{\gamma\pa{1+\beta(v_x')\beta(u)}}
+\displaystyle v_x'=\frac{v_x-u}{1-\frac{v_x u}{c^2}}=\frac{v_x-u}{1-\beta(v_x)\beta(u)}\\\\
+\displaystyle v_y'=\dfrac{v_y}{\gamma(u)\pa{1-\frac{v_x u}{c^2}}}=\frac{v_y}{\gamma(u)\pa{1-\beta(v_x)\beta(u)}}\\\\
+\displaystyle v_z'=\dfrac{v_z}{\gamma(u)\pa{1-\frac{v_x u}{c^2}}}=\frac{v_z}{\gamma(u)\pa{1-\beta(v_x)\beta(u)}}
 \end{cases}\]
 \end{remark}
 
 \noindent La formula vettoriale per il boost di Lorenz \`e
-\[\vec v=\frac1{1+\frac{\vec u\cdot \vec v'}{c^2}}\pa{\frac1\gamma \vec v'+\vec u+\pa{1+\frac1\gamma}\frac{\vec u\cdot \vec v'}{c^2}\vec u}\]
+\[\vec v'=\frac1{1-\frac{\vec u\cdot \vec v}{c^2}}\pa{\frac1\gamma \vec v-\vec u+\pa{1-\frac1\gamma}\frac{\vec u\cdot \vec v}{u^2}\vec u}\]
 o equivalentemente
-\[\vec v=\frac1{1+\frac{\vec u\cdot \vec v'}{c^2}}\pa{\vec v'+\vec u+\frac1{c^2}\frac{\gamma}{1+\gamma} \vec u\times (\vec u\times \vec v')}\]
+\[\vec v'=\frac1{1-\frac{\vec u\cdot \vec v}{c^2}}\pa{\vec v-\vec u+\pa{1-\frac1\gamma} \frac{\vec u\times (\vec u\times \vec v)}{u^2}}\]
 
 
 \begin{example}[Formula di Fizeau]
