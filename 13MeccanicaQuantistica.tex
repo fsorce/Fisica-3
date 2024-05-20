@@ -1,31 +1,42 @@
 \chapter{Meccanica Quantistica}
 
+\section{Operatori autoaggiunti}
 \begin{definition}[Stato]
-Uno \textbf{stato} \`e un vettore unitario in uno spazio di Hilbert di classe $L^2$.\\
-Date due funzioni $\phi$ e $\psi$ definiamo
+Uno \textbf{stato} \`e una funzione d'onda che per ogni $t$ \`e un vettore unitario nello spazio di Hilbert dato da funzioni $L^2$ con prodotto interno
 \[\ps{\phi,\psi}=\int\phi^\ast(x)\psi(x)dx.\]
 \end{definition}
 \begin{remark}
-$\ps{\phi,\psi}=\ps{\psi,\phi}^\ast$. $\ps{\psi,\psi}=\int\abs{\psi}^2dx$. Se $\psi$ \`e una funzione d'onda allora $\ps{\psi,\psi}=1$. 
+Il prodotto \`e hermitiano, cio\`e $\ps{\phi,\psi}=\ps{\psi,\phi}^\ast$.
+\end{remark}
+\begin{remark}
+La condizione che uno stato abbia norma unitaria corrisponde al fatto che $\abs{\psi}^2$ \`e una densit\`a di probabilit\`a, infatti
+\[\ps{\psi,\psi}=\int \abs{\psi}^2dx.\]
 \end{remark}
 
-Ricordiamo che se $A$ \`e un operatore, il suo aggiunto $A^\dag$ \`e l'operatore tale che
+\begin{definition}[Operatore autoaggiunto]
+Un \textbf{operatore} \`e una funzione lineare nello spazio di Hilbert descritto sopra.\\
+Se $A$ \`e un operatore, il suo \textbf{aggiunto} \`e l'operatore $A^\dag$ definito da
 \[\ps{\phi,A\psi}=\ps{A^\dag\phi,\psi}.\]
-Un operatore \`e \textbf{autoaggiunto} se $A=A^\dag$.
-
-\begin{definition}[Grandezze fisiche]
-Le grandezze fisiche corrispondono a operatori autoaggiunti (o hermitiani).\\
-Per ogni operatore $A$, gli unici valori misurabili sono gli autovalori di $A$.\\
-Un'autofunzione corrisponde ad uno stato dove la misura restituisce come valore l'autovalore corrispondente con certezza.
+Un operatore \`e \textbf{autoaggiunto} (o \textbf{hermitiano}) se $A=A^\dag$.
 \end{definition}
 
-\begin{remark}[Autovalori per autoaggiunti sono reali]
-Se $\phi_A^{(\la)}$ \`e un'autofunzione per l'operatore $A$ relativa a $\la$ allora
-\[\la\ps{\phi_A^{(\la)},\phi^{(\la)}_A}=\ps{\phi_A^{(\la)},A\phi_A^{(\la)}}=\ps{A^\dag \phi_A^{(\la)},\phi_A^{(\la)}}.\]
-Se $A$ \`e autoaggiunto allora l'uguaglianza prosegue con
-\[=\ps{A\phi_A^{(\la)},\phi_A^{(\la)}}=\ps{\phi_A^{(\la)},\phi_A^{(\la)}}^\ast=\la^\ast\ps{\phi_A^{(\la)},\phi_A^{(\la)}},\]
-cio\`e $\la\in\R$.
-\end{remark}
+\noindent In questo formalismo, gli operatori autoaggiunti corrispondono a \textbf{grandezze fisiche} e i loro autovalori ai possibili esiti di una misura della data grandezza.\\
+Un'autofunzione corrisponde dunque ad uno stato per cui la misura della grandezza per cui \`e un autostato ha come esito certo l'autovalore relativo.
+
+\begin{proposition}[Autovalori per autoaggiunti sono reali]
+Se $\la$ \`e un autovalore per $A$ autoaggiunto allora $\la\in \R$.
+\end{proposition}
+\begin{proof}
+Sia $\phi_A^{(\la)}$ un'autofunzione per $A$ relativa a $\la$. Osserviamo che
+\begin{align*}
+\la\ps{\phi_A^{(\la)},\phi^{(\la)}_A}=&\ps{\phi_A^{(\la)},A\phi_A^{(\la)}}=\ps{A^\dag \phi_A^{(\la)},\phi_A^{(\la)}}\pasgnlmath={A=A^\dag}\\
+=&\ps{A\phi_A^{(\la)},\phi_A^{(\la)}}=\ps{\phi_A^{(\la)},A\phi_A^{(\la)}}^\ast=\\
+=&\la^\ast\ps{\phi_A^{(\la)},\phi_A^{(\la)}},
+\end{align*}
+cio\`e $\la=\la^\ast$ e quindi $\la\in\R$.
+\end{proof}
+
+
 
 \begin{proposition}
 Se $\la_1\neq \la_2$ autovalori per $A$ autoaggiunto allora $\ps{\phi_A^{(\la_1)},\phi_A^{(\la_2)}}=0$.
@@ -42,16 +53,28 @@ Segue dalla seguente catena di uguaglianze
 \noindent Se $A$ autoaggiunto ammette una base di autofunzioni normalizzate $\phi_A^{(\la)}$ allora
 \[\psi(x)=\int c(\la)\phi_A^{(\la)}(x)d\la,\quad\text{dove }c(\la)=\ps{\phi_A^{(\la)},\psi}.\]
 
-\begin{remark}
-Osserviamo che $\ps{\phi,A\psi}=\int \la \abs{c(\la)}^2$, che \`e il valore medio che $A$ assume per la funzione d'onda $\psi$. La funzione $\abs{c(\la)}^2$ \`e dunque la \textbf{densit\`a di probabilit\`a di misurare $\la$}.
-\end{remark}
+\begin{definition}[Media di un operatore]
+Fissiato uno stato $\psi$, definiamo il \textbf{valore medio} dell'operatore autoaggiunto $A$ come
+\begin{align*}
+\ps{A}=\ps{\psi,A\psi}=&\int \psi^\ast A\psi dx=\\
+=&\iiint \la c(\mu)^\ast c(\la) (\phi_A^{(\mu)})^\ast\phi_A^{(\la)} d\mu d\la dx=\\
+=&\iint  \la c(\mu)^\ast c(\la) \ps{\phi_A^{(\mu)},\phi_A^{(\la)}} d\mu d\la=\\
+=&\int \la\abs{c(\la)}^2d\la.
+\end{align*}
+In particolare $\abs{c(\la)}^2=\abs{\ps{\phi_A^{(\la)},\psi}}^2$ \`e la \textbf{densit\`a di probabilit\`a di misurare $\la$}.
+\end{definition}
 
-\noindent E quando effettivamente misuro cosa succede?\\
+\begin{definition}[Varianza di un operatore]
+Fissiato uno stato $\psi$, definiamo la \textbf{varianza} dell'operatore autoaggiunto $A$ come
+\[\sigma^2_A=\ps{(A-\ps A)^2}.\]
+\end{definition}
+
+\noindent Ma quando effettivamente misuro cosa succede alla funzione d'onda?\\
 Avviene il \textbf{collasso della funzione d'onda}, cio\`e dopo la misura, se abbiamo misurato il valore $\la$ allora la funzione d'onda DIVENTA\footnote{ci sono alcuni problemi quando abbiamo un autospazio di dimensione maggiore ad 1 ma per il momento ignoriamo questi problemi.} $\phi_A^{(\la)}$.
 
 \section{Operatori principali}
 
-\subsection{Operatore Hamiltoniamno}
+\subsection{Operatore Hamiltoniano}
 \begin{definition}[Operatore Hamiltoniano]
 Definiamo l'\textbf{operatore Hamiltoniano} come
 \[H=-\frac{\hbar^2}{2m}\pps[2]x{}+V(x).\]
@@ -65,23 +88,21 @@ L'equazione di Schr\"odinger si scrive
 \[i\hbar\dd t\psi=H\psi.\]
 \end{remark}
 
-\noindent Le autofunzioni di $H$ sono gli stati stazionari
+\noindent Per quanto detto nel capitolo precedente, le autofunzioni di $H$ sono gli stati stazionari
 \[\psi(x,t)=e^{-iEt/\hbar} f(x)\]
-Sia $\psi^{(E)}$ un tale stato
+Sia $\psi^{(E)}$ un tale stato, allora
 \[\ps{\psi^{(E)},H\psi^{(E)}}=\ps{\psi^{(E)},E\psi^{(E)}}=E\ps{\psi^{(E)},\psi^{(E)}}=E.\]
-Osserviamo anche che per motivi analoghi
-\[\ps{\psi^{(E)},H^2\psi^{(E)}}=E^2\]
-dunque la varianza per l'autofunzione \`e
-\[\sigma_H^2=\ps{H^2}-\ps{H}^2=E^2-E^2=0.\]
-Consideriamo ora $\psi=\sum_n c_n\psi_n$ con $\psi_n=\psi^{(E_n)}=f_n(x)e^{-iE_nt/\hbar}$. Poich\'e deve valere la normalizzazione
-\[1\pasgnl={indi. da $t$}\int\abs{\psi(x,0)}^2dx=\sum_n\sum_m c_n^\ast c_m \int f_n^\ast f_m dx=\sum_n\abs{c_n}^2.\]
-Segue che
-\begin{align*}
-\ps{H}=&\ps{\psi,H\psi}=\sum_n\sum_m c_n^\ast c_m\int f_n^\ast E_m f_m e^{i(E_n-E_m) t/\hbar}dx=\\
-=&\sum_n\sum_m c_n^\ast c_m E_me^{i(E_n-E_m) t/\hbar}\delta_{nm} dx=\\
-=&\sum_m E_m\abs{c_m}^2,
-\end{align*}
-osserviamo in particolare che anche questa media non dipende dal tempo. Questa \`e la versione quantistica della \textbf{conservazione dell'energia}.
+Similmente
+\[\ps{\psi^{(E)},H^2\psi^{(E)}}=E^2,\]
+quindi la varianza per l'autofunzione \`e
+\[\sigma_H^2=\ps{(H-\ps H)^2}=\ps{H^2}-2\ps H^2+\ps H^2=E^2-2E^2+E^2=0.\]
+
+\begin{remark}[Conservazione dell'energia]
+Consideriamo $\psi=\sum_n c_n\psi_n$ con $\psi_n=\psi^{(E_n)}=f_n(x)e^{-iE_nt/\hbar}$. Osserviamo che 
+\[\ps H=\sum_m E_me^{i(E_m-E_m) t/\hbar}\abs{c_m}^2=\sum_m E_m\abs{c_m}^2,\]
+in particolare questa media non dipende dal tempo. Questa \`e la versione quantistica della \textbf{conservazione dell'energia}.
+\end{remark}
+
 
 \subsection{Operatore Posizione}
 
@@ -89,9 +110,11 @@ osserviamo in particolare che anche questa media non dipende dal tempo. Questa \
 Definiamo l'\textbf{operatore posizione} $X$ come
 \[X\psi(x,t)=x\psi(x,t).\]
 \end{definition}
-Osserviamo che
-\[\ps{X}=\ps{\psi,X\psi}=\int x\abs{\psi(x,t)}^2dx,\]
-cio\`e la posizione media.\bigskip
+
+\begin{remark}
+La posizione media \`e data da
+\[\ps{X}=\ps{\psi,X\psi}=\int x\abs{\psi(x,t)}^2dx.\]
+\end{remark}
 
 \noindent Chi sono le autofunzioni?
 \[X\phi_X^{(\la)}(x)=
@@ -99,13 +122,22 @@ cio\`e la posizione media.\bigskip
 \la \phi_X^{(\la)}(x) &\text{perch\'e autofunzione}\\
 x\phi_X^{(\la)}(x) &\text{per definizione}
 \end{cases}\]
-Questa non \`e davvero una funzione, \`e un limite di distribuzioni e si chiama \textbf{delta di Dirac}. Moralmente \`e $\delta(x-\la)$ per 
+Quindi serve una funzione che in un qualche modo \`e nulla ovunque eccetto in $\la$ ma tale che integrando il modulo viene 1. Queste condizioni NON sono verificate da una funzione ma spesso in fisica torna comodo considerare un oggetto con propriet\`a simili
+
+\begin{definition}[Delta di Dirac]
+La \textbf{delta di Dirac} \`e la misura definita da
+\[\delta(x-\la)dx:\funcDef{\powerset(\R)}{\R_{\geq0}}{E}{\chi_E(\la)},\]
+dove $\chi_E$ \`e la funzione caratteristica di $E$.
+\end{definition}
+\begin{remark}
+\`E possibile verificare che
+\[\int f(x)\delta(x-\la)dx=f(\la).\]
+\end{remark}
+\noindent Intuitivamente pu\`o essere utile immaginarsi la delt\`a di Dirac come una funzione
 \[\delta(x)=\begin{cases}
 0 &x\neq 0\\
 \infty &x=0
 \end{cases}\]
-La vera propriet\`a che definisce questo oggetto \`e che
-\[\int f(x)\delta(x-\la)dx=f(\la).\]
 
 \subsection{Operatore Quantit\`a di moto}
 \noindent Avendo una posizione media proviamo a trovare una velocit\`a\footnote{assumiamo potenziale nullo}:
@@ -117,36 +149,46 @@ La vera propriet\`a che definisce questo oggetto \`e che
 =&-\frac{i\hbar}{m}\int\pp x{\psi}\psi^\ast dx.
 \end{align*}
 \begin{definition}[Operatore quantit\`a di moto]
-Definiamo l\textbf{operatore quantit\`a di moto} come
+Definiamo l'\textbf{operatore quantit\`a di moto} come
 \[P_x=-i\hbar \pp x{}.\]
 \end{definition}
 \begin{remark}
-$\ps{P_x}=-i\hbar\int \psi^\ast\pp x\psi dx=m\dd t{}\ps{X}$.
+Se il potenziale \`e nullo allora 
+\[\ps{P_x}=-i\hbar\int \psi^\ast\pp x\psi dx=m\dd t{}\ps{X}.\]
 \end{remark}
 \begin{remark}
-$P_x$ \`e effettivamente un operatore autoaggiunto perch\'e
-\[\ps{\psi,\pp x\psi}=\int\psi^\ast\pp x\psi dx=\rbar{\psi^\ast\psi}^\infty_{-\infty}-\int \pp x{\phi^\ast}\psi dx=-\ps{\pp x\phi,\psi}\]
-e quel segno viene compensato dall'unit\`a immaginaria nella definizione di $P_x$.
+$P_x$ \`e effettivamente un operatore autoaggiunto.
 \end{remark}
+\begin{proof}
+Segue calcolando:
+\begin{align*}
+\ps{\psi,-i\hbar\pp x\psi}=&\int-i\hbar\psi^\ast\pp x\psi dx=\int-i\hbar\psi^\ast\pp x\psi dx=\\
+=&\cancelto{0}{\rbar{-i\hbar\psi^\ast\psi}^\infty_{-\infty}}-\int -i\hbar\pp x{\psi^\ast}\psi dx=\\
+=&-\int -\pa{-i\hbar\pp x{\psi}}^\ast\psi dx=\\
+=&\ps{-i\hbar\pp x\psi,\psi}.
+\end{align*}
+\end{proof}
 
+\begin{remark}
 Le autofunzioni dell'operatore impulso sono
 \[\phi^{(k)}_{P_x}=Ae^{ikx},\]
-dove l'autovalore \`e $\hbar k$.\\
-Queste funzioni non sono normalizzabili ma si possono comunque usare come una base.\\
-Se $\psi=\int c(k)e^{ikx}dx$ allora
+dove \underline{l'autovalore \`e $\hbar k$}. 
+Queste funzioni non sono normalizzabili ma si possono comunque usare come una base.
+\end{remark}
+\noindent Se $\psi=\int c(k)e^{ikx}dx$ allora
 \[P_x\psi=\int c(k)\hbar k e^{ikx}dx,\]
 da cui
 \begin{align*}
-\ps{P_x}=&\int\pa{\int c(k)^\ast e^{-ikx}dk}\pa{\int \hbar k'c(k')^\ast e^{-ik'x}dk'}dx=\\
-=&\iint \int c(k)^\ast c(k') \hbar k' e^{i(k'-k)x}dx\ dkdk'\pasgnl={intuitivamente}\\
-=&\iint\delta(k-k')c(k)^\ast c(k') \hbar k'dkdk'=\\
-=&\int \hbar k\abs{c(k)}^2dk
+\ps{P_x}=&\int\pa{\int c(k')^\ast e^{ik'x}dk'}^\ast\pa{\int \hbar kc(k)^\ast e^{ikx}dk}dx=\\
+=&\iint \int c(k')^\ast c(k) \hbar k e^{i(k-k')x}dx\ dk'dk\pasgnl={intuitivamente}\\
+=&\iint c(k')^\ast c(k) \hbar k\delta(k'-k)dk'dk=\\
+=&\int \hbar k\abs{c(k)}^2dk.
 \end{align*}
 
-\section{Operatori incompatibili}
+\section{Operatori incompatibili e Principio di indeterminazione}
 
 \begin{remark}
-Osserviamo che $X$ e $P_x$ non commutano
+Osserviamo che $X$ e $P_x$ non commutano, infatti
 \begin{align*}
 P_xX\psi=P_xx\psi=-i\hbar \psi -i\hbar x\pp x\psi=-i\hbar \psi+xP_x\psi=-i\hbar \psi+XP_x\psi
 \end{align*}
@@ -154,14 +196,22 @@ In particolare il commutatore vale
 \[[X,P_x]=XP_x-P_xX=i\hbar.\]
 \end{remark}
 
-\begin{remark}
-Poich\'e $[X,P_x]\neq 0$, non \`e possibile trovare un'autofunzione comune a $X$ e $P_x$, cio\`e posizione e quantit\`a di moto sono imcompatibili (non simultaneamente conoscibili).
-\end{remark}
+\begin{definition}[Operatori incompatibili]
+Due operatori autoaggiunti sono \textbf{incompatibili} se non ammettono autofunzioni comuni.
+\end{definition}
+
+\begin{proposition}
+Se $A$ e $B$ sono operatori autoaggiunti allora 
+\[[A,B]\neq 0\implies A,B \text{ incompatibili.}\]
+\end{proposition}
 \begin{proof}
-Se $\phi$ \`e un autofunzione di $X$ e $P_x$ (con posizione $x$ e quantit\`a di moto $\la$) allora
-\[i\hbar \phi=[X,P_x]\phi=(x\la-\la x)\phi=0,\]
-assurdo.
+Se per assurdo $\phi$ \`e un'autofunzione che hanno in comune ($A\phi=\al \phi$ e $B\phi=\beta\phi$) allora
+\[0\neq [A,B]\phi=AB\phi-BA\phi=\beta A\phi-\al B\phi=(\al\beta-\al\beta)\phi=0.\]
 \end{proof}
+
+\begin{remark}
+Poich\'e $[X,P_x]=i\hbar\neq 0$, posizione e quantit\`a di moto sono incompatibili.
+\end{remark}
 
 
 
@@ -172,8 +222,9 @@ $\dd t{}\ps{A}=\frac1{i\hbar}\ps{\psi,[A,H]\psi}$.
 \begin{proof}
 \`E il seguente conto
 \begin{align*}
-\dd t{}\ps{\psi,A\psi}=&\ps{\dd t\psi,A\psi}+\ps{\psi,A\dd t\psi}=\\
+\dd t{}\ps{\psi,A\psi}=&\ps{\dd t\psi,A\psi}+\ps{\psi,A\dd t\psi}\pasgnl={(\ref{EquazioneSchrodinger})}\\
 =&-\frac1{i\hbar}\ps{H\psi,A\psi}+\frac1{i\hbar}\ps{\psi,AH\psi}=\\
+=&\frac1{i\hbar}\ps{\psi,AH\psi}+\frac1{i\hbar}\ps{\psi,-HA\psi}=\\
 =&\frac1{i\hbar}\ps{\psi,[A,H]\psi}.
 \end{align*}
 \end{proof}
@@ -188,23 +239,25 @@ Se $A$ e $B$ sono operatori autoaggiunti allora
 \end{theorem}
 \begin{proof}
 Siano $\al=(A-\ps{A})\psi$ e $\beta=(B-\ps{B})\psi$, in modo tale che 
-\[\sigma_A^2=\ps{(A-\ps{A})^2}=\ps{(A-\ps{A})\psi,(A-\ps{A})\psi}\]
-e similmente $\sigma_B^2=\ps{\beta,\beta}$.\\
+\[\sigma_A^2=\ps{(A-\ps{A})^2}=\ps{(A-\ps{A})\psi,(A-\ps{A})\psi}=\ps{\al,\al}\]
+e similmente $\sigma_B^2=\ps{\beta,\beta}$.\medskip
+
+\noindent
 Per Cauchy-Schwarz
 \[\sigma_A^2\sigma_B^2=\ps{\al,\al}\ps{\beta,\beta}\geq\abs{\ps{\al,\beta}}^2,\]
-inoltre, notando
-\[\abs{z}^2\geq \Imag^2z=\pa{\frac{z-z^\ast}{2i}}^2,\]
-se $z=\spa{\al,\beta}$ troviamo
-\[\sigma_A^2\sigma_B^2\geq\pa{\frac1{2i}(\ps{\al,\beta}-\ps{\beta,\al})}^2.\]
-Sviluppiamo i due prodotti scalari coinvolti:
+inoltre, notando che
+\[\abs{z}^2\geq (\Imag(z))^2=\pa{\frac{z-z^\ast}{2i}}^2,\]
+troviamo
+\[\sigma_A^2\sigma_B^2\geq\abs{\ps{\al,\beta}}^2=\pa{\frac1{2i}(\ps{\al,\beta}-\ps{\beta,\al})}^2.\]
+Sviluppiamo i prodotti scalari coinvolti:
 \begin{align*}
 \ps{\al,\beta}=&\ps{(A-\ps A)\psi,(B-\ps B)\psi}=\\
-=&\ps{\psi,AB\psi}-\ps A\ps{\psi,B\psi}-\ps B\ps{\psi,A\psi}+\ps A\ps B\ps{\psi,\psi}=\\
+=&\ps{\psi,AB\psi}-\ps A\ps{\psi,B\psi}-\ps B\ps{\psi,A\psi}+\ps A\ps B\cancelto{1}{\ps{\psi,\psi}}\ \ \ =\\
 =&\ps{AB}-\ps A\ps B.
 \end{align*}
 Segue che
 \[\ps{\al,\beta}-\ps{\beta,\al}=\ps{[A,B]}\]
-e quindi
+e quindi troviamo la tesi
 \[\sigma_A^2\sigma_B^2\geq\pa{\frac{\ps{[A,B]}}{2i}}^2.\]
 \end{proof}
 \begin{corollary}
