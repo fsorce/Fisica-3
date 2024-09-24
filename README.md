@@ -7,5 +7,3 @@ Invito chiunque abbia suggerimenti su come migliorare questi appunti (leggibilit
 
 NOTA:
 Le dispense sono SOLO il file "main.pdf", gli altri file sono rilevanti solo per chi è interessato al codice sorgente.
-
-Per compilare il file in locale scaricate preamble.tex e leggete il README.md nella repo https://github.com/fsorce/Template_per_LaTeX.
